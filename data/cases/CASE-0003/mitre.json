@@ -1,0 +1,38 @@
+[
+    {
+        "technique_id": "T1548.003",
+        "name": "Sudo and Sudo Caching",
+        "tactic": "Privilege Escalation",
+        "description": "Sudo was used to execute a command with higher local privileges.",
+        "finding_ids": [
+            "PRIV-ESC-0001",
+            "PRIV-ESC-0002",
+            "PRIV-ESC-0003",
+            "PRIV-ESC-0004",
+            "PRIV-ESC-0005",
+            "PRIV-ESC-0006"
+        ],
+        "event_ids": [
+            "AUTH-00003",
+            "SUDO-00001",
+            "AUTH-00004",
+            "SUDO-00002",
+            "SUDO-00003",
+            "SUDO-00004"
+        ]
+    },
+    {
+        "technique_id": "T1003",
+        "name": "OS Credential Dumping",
+        "tactic": "Credential Access",
+        "description": "Credential-related system files or artifacts were accessed.",
+        "finding_ids": [
+            "SUSPICIOUS-CMD-0001",
+            "SUSPICIOUS-CMD-0002"
+        ],
+        "event_ids": [
+            "SUDO-00003",
+            "BASH-00004"
+        ]
+    }
+]

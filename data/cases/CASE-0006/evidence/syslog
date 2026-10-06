@@ -1,0 +1,3 @@
+Oct  6 15:33:01 server cron[6110]: (root) CMD (/tmp/update.sh)
+Oct  6 15:34:01 server cron[6111]: (root) CMD (/tmp/update.sh)
+Oct  6 15:35:01 server cron[6112]: (root) CMD (/tmp/update.sh)

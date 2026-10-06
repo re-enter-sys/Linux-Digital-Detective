@@ -1,0 +1,304 @@
+{
+    "events": [
+        {
+            "event_id": "SSH-00001",
+            "timestamp": "2026-10-06T09:14:01+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:01 server sshd[2101]: Failed password for invalid user admin from 198.51.100.24 port 42111 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42111
+            }
+        },
+        {
+            "event_id": "SSH-00002",
+            "timestamp": "2026-10-06T09:14:03+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:03 server sshd[2102]: Failed password for invalid user admin from 198.51.100.24 port 42112 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42112
+            }
+        },
+        {
+            "event_id": "SSH-00003",
+            "timestamp": "2026-10-06T09:14:05+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:05 server sshd[2103]: Failed password for invalid user root from 198.51.100.24 port 42113 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42113
+            }
+        },
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T09:14:07+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:07 server sshd[2104]: Failed password for root from 198.51.100.24 port 42114 ssh2",
+            "metadata": {
+                "port": 42114,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "SSH-00004",
+            "timestamp": "2026-10-06T09:14:07+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:07 server sshd[2104]: Failed password for root from 198.51.100.24 port 42114 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42114
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T09:14:12+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:14:12 server sshd[2105]: Accepted password for analyst from 198.51.100.24 port 42115 ssh2",
+            "metadata": {
+                "port": 42115,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "SSH-00005",
+            "timestamp": "2026-10-06T09:14:12+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:14:12 server sshd[2105]: Accepted password for analyst from 198.51.100.24 port 42115 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "success",
+                "port": 42115
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T09:14:15+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:14:15 server sshd[2105]: pam_unix(sshd:session): session opened for user analyst",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T09:15:02+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:15:02 server systemd[1]: Started User Manager for UID 1001.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "User Manager for UID 1001"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00003",
+            "timestamp": "2026-10-06T09:16:30+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:16:30 server kernel: audit: SSH authentication activity observed",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "SSH-00001",
+            "timestamp": "2026-10-06T09:20:01+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:01 server sshd[2201]: Failed password for analyst from 198.51.100.24 port 42121 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42121
+            }
+        },
+        {
+            "event_id": "SSH-00002",
+            "timestamp": "2026-10-06T09:20:03+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:03 server sshd[2202]: Failed password for analyst from 198.51.100.24 port 42122 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42122
+            }
+        },
+        {
+            "event_id": "SSH-00003",
+            "timestamp": "2026-10-06T09:20:05+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:05 server sshd[2203]: Failed password for analyst from 198.51.100.24 port 42123 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42123
+            }
+        },
+        {
+            "event_id": "SSH-00004",
+            "timestamp": "2026-10-06T09:20:07+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:07 server sshd[2204]: Failed password for analyst from 198.51.100.24 port 42124 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42124
+            }
+        },
+        {
+            "event_id": "SSH-00005",
+            "timestamp": "2026-10-06T09:20:12+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:20:12 server sshd[2205]: Accepted password for analyst from 198.51.100.24 port 42125 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "success",
+                "port": 42125
+            }
+        },
+        {
+            "event_id": "SSH-00006",
+            "timestamp": "2026-10-06T09:20:13+00:00",
+            "source": "ssh",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:20:13 server sshd[2205]: pam_unix(sshd:session): session opened for user analyst",
+            "metadata": {
+                "session_state": "opened"
+            }
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "case_id": "CASE-0006",
+    "title": "Multi-Stage Linux Intrusion",
+    "description": "Investigation involving reconnaissance, unauthorized access, privilege escalation and persistence indicators.",
+    "status": "NEW",
+    "severity": "CRITICAL",
+    "created_at": "2026-10-06T20:05:07.818032+00:00",
+    "updated_at": "2026-10-06T20:05:07.818032+00:00",
+    "investigator": "Linux Digital Detective",
+    "closed_at": null
+}

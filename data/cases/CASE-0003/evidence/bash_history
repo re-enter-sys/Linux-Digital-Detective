@@ -1,0 +1,5 @@
+sudo -i
+id
+whoami
+cat /etc/shadow
+systemctl status ssh

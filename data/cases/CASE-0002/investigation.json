@@ -1,0 +1,789 @@
+{
+    "events": [
+        {
+            "event_id": "SSH-00001",
+            "timestamp": "2026-10-06T09:14:01+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:01 server sshd[2101]: Failed password for invalid user admin from 198.51.100.24 port 42111 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42111
+            }
+        },
+        {
+            "event_id": "SSH-00002",
+            "timestamp": "2026-10-06T09:14:03+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:03 server sshd[2102]: Failed password for invalid user admin from 198.51.100.24 port 42112 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42112
+            }
+        },
+        {
+            "event_id": "SSH-00003",
+            "timestamp": "2026-10-06T09:14:05+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:05 server sshd[2103]: Failed password for invalid user root from 198.51.100.24 port 42113 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42113
+            }
+        },
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T09:14:07+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:07 server sshd[2104]: Failed password for root from 198.51.100.24 port 42114 ssh2",
+            "metadata": {
+                "port": 42114,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "SSH-00004",
+            "timestamp": "2026-10-06T09:14:07+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:14:07 server sshd[2104]: Failed password for root from 198.51.100.24 port 42114 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42114
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T09:14:12+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:14:12 server sshd[2105]: Accepted password for analyst from 198.51.100.24 port 42115 ssh2",
+            "metadata": {
+                "port": 42115,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "SSH-00005",
+            "timestamp": "2026-10-06T09:14:12+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:14:12 server sshd[2105]: Accepted password for analyst from 198.51.100.24 port 42115 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "success",
+                "port": 42115
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T09:14:15+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:14:15 server sshd[2105]: pam_unix(sshd:session): session opened for user analyst",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T09:15:02+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:15:02 server systemd[1]: Started User Manager for UID 1001.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "User Manager for UID 1001"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00003",
+            "timestamp": "2026-10-06T09:16:30+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:16:30 server kernel: audit: SSH authentication activity observed",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "SSH-00001",
+            "timestamp": "2026-10-06T09:20:01+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:01 server sshd[2201]: Failed password for analyst from 198.51.100.24 port 42121 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42121
+            }
+        },
+        {
+            "event_id": "SSH-00002",
+            "timestamp": "2026-10-06T09:20:03+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:03 server sshd[2202]: Failed password for analyst from 198.51.100.24 port 42122 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42122
+            }
+        },
+        {
+            "event_id": "SSH-00003",
+            "timestamp": "2026-10-06T09:20:05+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:05 server sshd[2203]: Failed password for analyst from 198.51.100.24 port 42123 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42123
+            }
+        },
+        {
+            "event_id": "SSH-00004",
+            "timestamp": "2026-10-06T09:20:07+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 09:20:07 server sshd[2204]: Failed password for analyst from 198.51.100.24 port 42124 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42124
+            }
+        },
+        {
+            "event_id": "SSH-00005",
+            "timestamp": "2026-10-06T09:20:12+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "198.51.100.24",
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:20:12 server sshd[2205]: Accepted password for analyst from 198.51.100.24 port 42125 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "success",
+                "port": 42125
+            }
+        },
+        {
+            "event_id": "SSH-00006",
+            "timestamp": "2026-10-06T09:20:13+00:00",
+            "source": "ssh",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "09",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 09:20:13 server sshd[2205]: pam_unix(sshd:session): session opened for user analyst",
+            "metadata": {
+                "session_state": "opened"
+            }
+        }
+    ],
+    "findings": [
+        {
+            "finding_id": "BRUTE-FORCE-0001",
+            "event_type": "SSH_BRUTE_FORCE",
+            "title": "SSH Brute-Force Activity Detected",
+            "description": "4 failed SSH authentication attempts were detected from 198.51.100.24 against user analyst within 300 seconds.",
+            "severity": "HIGH",
+            "source_ip": "198.51.100.24",
+            "username": "analyst",
+            "failed_attempts": 4,
+            "first_seen": "2026-10-06T09:20:01+00:00",
+            "last_seen": "2026-10-06T09:20:07+00:00",
+            "event_ids": [
+                "SSH-00001",
+                "SSH-00002",
+                "SSH-00003",
+                "SSH-00004"
+            ],
+            "metadata": {
+                "threshold": 4,
+                "window_seconds": 300,
+                "detection": "repeated_failed_ssh_authentication"
+            }
+        },
+        {
+            "finding_id": "BRUTE-FORCE-SUCCESS-0001",
+            "event_type": "SSH_BRUTE_FORCE_SUCCESS",
+            "title": "Successful SSH Login After Brute-Force Activity",
+            "description": "4 failed SSH authentication attempts from 198.51.100.24 against user analyst were followed by a successful SSH authentication.",
+            "severity": "CRITICAL",
+            "source_ip": "198.51.100.24",
+            "username": "analyst",
+            "failed_attempts": 4,
+            "first_failure": "2026-10-06T09:20:01+00:00",
+            "successful_login": "2026-10-06T09:20:12+00:00",
+            "session_opened": "2026-10-06T09:20:13+00:00",
+            "event_ids": [
+                "SSH-00001",
+                "SSH-00002",
+                "SSH-00003",
+                "SSH-00004",
+                "SSH-00005",
+                "SSH-00006"
+            ],
+            "metadata": {
+                "threshold": 4,
+                "window_seconds": 300,
+                "detection": "successful_login_after_repeated_failed_ssh_authentication",
+                "session_detected": true
+            }
+        }
+    ],
+    "attack_chains": [
+        {
+            "chain_id": "CHAIN-0001",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Reconstructed attack sequence: Initial Access. The activity involved analyst and 198.51.100.24. 2 finding(s) were correlated. 3 correlation signal(s) support the reconstructed sequence.",
+            "severity": "CRITICAL",
+            "confidence": 60,
+            "start_time": "2026-10-06T09:20:01+00:00",
+            "end_time": "2026-10-06T09:20:01+00:00",
+            "source_ips": [
+                "198.51.100.24"
+            ],
+            "usernames": [
+                "analyst"
+            ],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0001-STEP-01",
+                    "stage": "INITIAL_ACCESS",
+                    "title": "SSH Brute-Force Activity Detected",
+                    "description": "4 failed SSH authentication attempts were detected from 198.51.100.24 against user analyst within 300 seconds.",
+                    "timestamp": "2026-10-06T09:20:01+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "SSH-00001",
+                        "SSH-00002",
+                        "SSH-00003",
+                        "SSH-00004"
+                    ],
+                    "finding_ids": [
+                        "BRUTE-FORCE-0001"
+                    ],
+                    "indicators": [],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "SSH_BRUTE_FORCE",
+                        "source": null,
+                        "evidence_sources": [
+                            "ssh"
+                        ],
+                        "usernames": [
+                            "analyst"
+                        ],
+                        "source_ips": [
+                            "198.51.100.24"
+                        ]
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-02",
+                    "stage": "INITIAL_ACCESS",
+                    "title": "Successful SSH Login After Brute-Force Activity",
+                    "description": "4 failed SSH authentication attempts from 198.51.100.24 against user analyst were followed by a successful SSH authentication.",
+                    "timestamp": "2026-10-06T09:20:01+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SSH-00001",
+                        "SSH-00002",
+                        "SSH-00003",
+                        "SSH-00004",
+                        "SSH-00005",
+                        "SSH-00006"
+                    ],
+                    "finding_ids": [
+                        "BRUTE-FORCE-SUCCESS-0001"
+                    ],
+                    "indicators": [],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "SSH_BRUTE_FORCE_SUCCESS",
+                        "source": null,
+                        "evidence_sources": [
+                            "ssh"
+                        ],
+                        "usernames": [
+                            "analyst"
+                        ],
+                        "source_ips": [
+                            "198.51.100.24"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "BRUTE-FORCE-0001",
+                "BRUTE-FORCE-SUCCESS-0001"
+            ],
+            "event_ids": [
+                "SSH-00001",
+                "SSH-00002",
+                "SSH-00003",
+                "SSH-00004",
+                "SSH-00005",
+                "SSH-00006"
+            ],
+            "metadata": {
+                "stages": [
+                    "INITIAL_ACCESS"
+                ],
+                "stage_count": 1,
+                "finding_count": 2,
+                "event_count": 6,
+                "evidence_sources": [
+                    "ssh"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [
+                    {
+                        "type": "IDENTITY_CORRELATION",
+                        "reason": "Multiple findings are associated with the same user identity.",
+                        "users": [
+                            "analyst"
+                        ],
+                        "confidence": 90
+                    },
+                    {
+                        "type": "SOURCE_CORRELATION",
+                        "reason": "Multiple findings contain a shared network source indicator.",
+                        "source_ips": [
+                            "198.51.100.24"
+                        ],
+                        "confidence": 95
+                    },
+                    {
+                        "type": "TEMPORAL_CORRELATION",
+                        "reason": "Related findings occurred within the configured investigation window.",
+                        "duration_seconds": 0.0,
+                        "confidence": 80
+                    }
+                ],
+                "attack_sequence": [
+                    {
+                        "order": 1,
+                        "stage": "INITIAL_ACCESS",
+                        "title": "SSH Brute-Force Activity Detected",
+                        "finding_ids": [
+                            "BRUTE-FORCE-0001"
+                        ],
+                        "event_ids": [
+                            "SSH-00001",
+                            "SSH-00002",
+                            "SSH-00003",
+                            "SSH-00004"
+                        ]
+                    },
+                    {
+                        "order": 2,
+                        "stage": "INITIAL_ACCESS",
+                        "title": "Successful SSH Login After Brute-Force Activity",
+                        "finding_ids": [
+                            "BRUTE-FORCE-SUCCESS-0001"
+                        ],
+                        "event_ids": [
+                            "SSH-00001",
+                            "SSH-00002",
+                            "SSH-00003",
+                            "SSH-00004",
+                            "SSH-00005",
+                            "SSH-00006"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "risk_score": {
+        "score": 70,
+        "severity": "HIGH",
+        "confidence": 70,
+        "factors": [
+            {
+                "type": "finding",
+                "finding_id": "BRUTE-FORCE-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "BRUTE-FORCE-SUCCESS-0001",
+                "severity": "CRITICAL",
+                "points": 40
+            }
+        ]
+    },
+    "mitre": [
+        {
+            "technique_id": "T1110.001",
+            "name": "Password Guessing",
+            "tactic": "Credential Access",
+            "description": "Repeated authentication attempts against an SSH account are consistent with password guessing.",
+            "finding_ids": [
+                "BRUTE-FORCE-0001",
+                "BRUTE-FORCE-SUCCESS-0001"
+            ],
+            "event_ids": [
+                "SSH-00001",
+                "SSH-00002",
+                "SSH-00003",
+                "SSH-00004",
+                "SSH-00005",
+                "SSH-00006"
+            ]
+        }
+    ],
+    "attack_story": {
+        "title": "Linux Digital Detective Investigation",
+        "narrative": [
+            "Repeated SSH authentication failures were detected from 198.51.100.24 against account(s) analyst. This behavior is consistent with credential-guessing activity.",
+            "A successful SSH authentication occurred after the failed authentication sequence. This materially increases the likelihood that the targeted account was successfully accessed.",
+            "The authentication sequence was followed by an SSH session, providing additional evidence of successful account access."
+        ],
+        "conclusion": "The available evidence is consistent with successful SSH access following repeated authentication failures. Observed user=analyst and source=198.51.100.24. Overall assessed risk is HIGH (70/100).",
+        "risk_score": {
+            "score": 70,
+            "severity": "HIGH",
+            "confidence": 70,
+            "factors": [
+                {
+                    "type": "finding",
+                    "finding_id": "BRUTE-FORCE-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "BRUTE-FORCE-SUCCESS-0001",
+                    "severity": "CRITICAL",
+                    "points": 40
+                }
+            ]
+        },
+        "attack_chains": [
+            {
+                "chain_id": "CHAIN-0001",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Reconstructed attack sequence: Initial Access. The activity involved analyst and 198.51.100.24. 2 finding(s) were correlated. 3 correlation signal(s) support the reconstructed sequence.",
+                "severity": "CRITICAL",
+                "confidence": 60,
+                "start_time": "2026-10-06T09:20:01+00:00",
+                "end_time": "2026-10-06T09:20:01+00:00",
+                "source_ips": [
+                    "198.51.100.24"
+                ],
+                "usernames": [
+                    "analyst"
+                ],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0001-STEP-01",
+                        "stage": "INITIAL_ACCESS",
+                        "title": "SSH Brute-Force Activity Detected",
+                        "description": "4 failed SSH authentication attempts were detected from 198.51.100.24 against user analyst within 300 seconds.",
+                        "timestamp": "2026-10-06T09:20:01+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "SSH-00001",
+                            "SSH-00002",
+                            "SSH-00003",
+                            "SSH-00004"
+                        ],
+                        "finding_ids": [
+                            "BRUTE-FORCE-0001"
+                        ],
+                        "indicators": [],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "SSH_BRUTE_FORCE",
+                            "source": null,
+                            "evidence_sources": [
+                                "ssh"
+                            ],
+                            "usernames": [
+                                "analyst"
+                            ],
+                            "source_ips": [
+                                "198.51.100.24"
+                            ]
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-02",
+                        "stage": "INITIAL_ACCESS",
+                        "title": "Successful SSH Login After Brute-Force Activity",
+                        "description": "4 failed SSH authentication attempts from 198.51.100.24 against user analyst were followed by a successful SSH authentication.",
+                        "timestamp": "2026-10-06T09:20:01+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SSH-00001",
+                            "SSH-00002",
+                            "SSH-00003",
+                            "SSH-00004",
+                            "SSH-00005",
+                            "SSH-00006"
+                        ],
+                        "finding_ids": [
+                            "BRUTE-FORCE-SUCCESS-0001"
+                        ],
+                        "indicators": [],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "SSH_BRUTE_FORCE_SUCCESS",
+                            "source": null,
+                            "evidence_sources": [
+                                "ssh"
+                            ],
+                            "usernames": [
+                                "analyst"
+                            ],
+                            "source_ips": [
+                                "198.51.100.24"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "BRUTE-FORCE-0001",
+                    "BRUTE-FORCE-SUCCESS-0001"
+                ],
+                "event_ids": [
+                    "SSH-00001",
+                    "SSH-00002",
+                    "SSH-00003",
+                    "SSH-00004",
+                    "SSH-00005",
+                    "SSH-00006"
+                ],
+                "metadata": {
+                    "stages": [
+                        "INITIAL_ACCESS"
+                    ],
+                    "stage_count": 1,
+                    "finding_count": 2,
+                    "event_count": 6,
+                    "evidence_sources": [
+                        "ssh"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [
+                        {
+                            "type": "IDENTITY_CORRELATION",
+                            "reason": "Multiple findings are associated with the same user identity.",
+                            "users": [
+                                "analyst"
+                            ],
+                            "confidence": 90
+                        },
+                        {
+                            "type": "SOURCE_CORRELATION",
+                            "reason": "Multiple findings contain a shared network source indicator.",
+                            "source_ips": [
+                                "198.51.100.24"
+                            ],
+                            "confidence": 95
+                        },
+                        {
+                            "type": "TEMPORAL_CORRELATION",
+                            "reason": "Related findings occurred within the configured investigation window.",
+                            "duration_seconds": 0.0,
+                            "confidence": 80
+                        }
+                    ],
+                    "attack_sequence": [
+                        {
+                            "order": 1,
+                            "stage": "INITIAL_ACCESS",
+                            "title": "SSH Brute-Force Activity Detected",
+                            "finding_ids": [
+                                "BRUTE-FORCE-0001"
+                            ],
+                            "event_ids": [
+                                "SSH-00001",
+                                "SSH-00002",
+                                "SSH-00003",
+                                "SSH-00004"
+                            ]
+                        },
+                        {
+                            "order": 2,
+                            "stage": "INITIAL_ACCESS",
+                            "title": "Successful SSH Login After Brute-Force Activity",
+                            "finding_ids": [
+                                "BRUTE-FORCE-SUCCESS-0001"
+                            ],
+                            "event_ids": [
+                                "SSH-00001",
+                                "SSH-00002",
+                                "SSH-00003",
+                                "SSH-00004",
+                                "SSH-00005",
+                                "SSH-00006"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "mitre_techniques": [
+            {
+                "technique_id": "T1110.001",
+                "name": "Password Guessing",
+                "tactic": "Credential Access",
+                "description": "Repeated authentication attempts against an SSH account are consistent with password guessing.",
+                "finding_ids": [
+                    "BRUTE-FORCE-0001",
+                    "BRUTE-FORCE-SUCCESS-0001"
+                ],
+                "event_ids": [
+                    "SSH-00001",
+                    "SSH-00002",
+                    "SSH-00003",
+                    "SSH-00004",
+                    "SSH-00005",
+                    "SSH-00006"
+                ]
+            }
+        ],
+        "attack_path": [
+            "Brute Force",
+            "Successful SSH Access"
+        ],
+        "source_ips": [
+            "198.51.100.24"
+        ],
+        "usernames": [
+            "analyst"
+        ],
+        "finding_count": 2,
+        "chain_count": 1,
+        "highest_finding_severity": "CRITICAL",
+        "confidence": 70
+    }
+}

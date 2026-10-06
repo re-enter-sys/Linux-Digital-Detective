@@ -1,0 +1,11 @@
+{
+    "case_id": "CASE-0004",
+    "title": "Persistence Mechanism Investigation",
+    "description": "Investigation into suspicious commands and possible persistence mechanisms established on a Linux host.",
+    "status": "NEW",
+    "severity": "HIGH",
+    "created_at": "2026-10-06T20:05:07.815367+00:00",
+    "updated_at": "2026-10-06T20:05:07.815367+00:00",
+    "investigator": "Linux Digital Detective",
+    "closed_at": null
+}

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Linux Digital Detective — Linux forensic investigation and attack timeline platform."
+    >
+
+    <title>
+        Linux Digital Detective
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- ======================================================
+         TOP BAR
+         ====================================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                LDD
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    LINUX DIGITAL DETECTIVE
+                </strong>
+
+                <span>
+                    DIGITAL FORENSICS &amp; INCIDENT INVESTIGATION
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            <span>
+                SYSTEM ONLINE
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <main class="main">
+
+        <!-- ==================================================
+             POLICE STATION / CASE CONTROL CENTER
+             ================================================== -->
+
+        <section
+            id="station-page"
+            class="page active"
+        >
+
+            <div class="station">
+
+                <!-- ==================================================
+                     STATION SIGN
+                     ================================================== -->
+
+                <div class="station-sign">
+
+                    <div class="station-sign-top">
+                        DIGITAL FORENSICS UNIT
+                    </div>
+
+                    <div class="station-sign-title">
+                        LINUX DIGITAL DETECTIVE
+                    </div>
+
+                    <div class="station-sign-bottom">
+                        EVIDENCE • ANALYSIS • ATTRIBUTION
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     HERO
+                     ================================================== -->
+
+                <section class="hero">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CASE CONTROL CENTER
+                        </span>
+
+                        <h1>
+                            Every trace tells a story.
+                        </h1>
+
+                        <p>
+                            Turn scattered Linux evidence into
+                            an attack timeline.
+                        </p>
+
+                    </div>
+
+                    <div class="hero-status">
+
+                        <span class="status-dot"></span>
+
+                        <span>
+                            READY
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     ROOM 01 — CASE CELLS
+                     ================================================== -->
+
+                <section class="room">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <span class="room-number">
+                                ROOM 01
+                            </span>
+
+                            <h2 class="room-title">
+                                Case Cells
+                            </h2>
+
+                            <p class="room-description">
+                                Active investigations waiting for
+                                a detective.
+                            </p>
+
+                        </div>
+
+                        <div class="room-status">
+                            SECURED
+                        </div>
+
+                    </div>
+
+
+                    <div class="room-controls">
+
+                        <button
+                            id="refresh-cases"
+                            class="button secondary"
+                            type="button"
+                        >
+                            Refresh Cases
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="cases"
+                        class="case-cells"
+                    >
+
+                        <div class="loading">
+                            Loading cases...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     DETECTIVE
+                     ================================================== -->
+
+                <section class="room">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <span class="room-number">
+                                INVESTIGATOR
+                            </span>
+
+                            <h2 class="room-title">
+                                The Detective
+                            </h2>
+
+                            <p class="room-description">
+                                Your digital investigation partner.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="detective-card"
+                        class="detective-card"
+                    >
+
+                        <div class="detective-figure">
+
+                            <div class="detective-head">
+                                ◉
+                            </div>
+
+                            <div class="detective-body">
+                                ◆
+                            </div>
+
+                        </div>
+
+
+                        <div class="detective-dialogue">
+
+                            <span class="eyebrow">
+                                DETECTIVE'S NOTE
+                            </span>
+
+                            <p id="detective-message">
+                                Select a case from Room 01 to begin
+                                the investigation.
+                            </p>
+
+                            <button
+                                id="detective-inspect"
+                                class="button secondary"
+                                type="button"
+                            >
+                                Inspect Cases
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     ROOM 02 — EVIDENCE ROOM
+                     ================================================== -->
+
+                <section class="room">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <span class="room-number">
+                                ROOM 02
+                            </span>
+
+                            <h2 class="room-title">
+                                Evidence Room
+                            </h2>
+
+                            <p class="room-description">
+                                Inspect collected forensic artifacts
+                                and verify evidence integrity.
+                            </p>
+
+                        </div>
+
+                        <div class="room-status">
+                            EVIDENCE VAULT
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         EVIDENCE STATISTICS
+                         ================================================== -->
+
+                    <div class="evidence-overview">
+
+                        <div class="stat-card">
+
+                            <span>
+                                CASES
+                            </span>
+
+                            <strong id="case-count">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span>
+                                FINDINGS
+                            </span>
+
+                            <strong id="finding-count">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span>
+                                EVIDENCE
+                            </span>
+
+                            <strong id="evidence-count">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span>
+                                MITRE
+                            </span>
+
+                            <strong id="mitre-count">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         ACTIVE CASE EVIDENCE
+                         ================================================== -->
+
+                    <div
+                        id="station-evidence-content"
+                        class="station-evidence-panel"
+                    >
+
+                        <div class="empty-state">
+
+                            <strong>
+                                NO CASE SELECTED
+                            </strong>
+
+                            <br>
+
+                            Select a case from Room 01 to inspect
+                            its evidence.
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     ROOM 03 — INVESTIGATION BOARD
+                     ================================================== -->
+
+                <section class="room">
+
+                    <div class="room-header">
+
+                        <div>
+
+                            <span class="room-number">
+                                ROOM 03
+                            </span>
+
+                            <h2 class="room-title">
+                                Investigation Board
+                            </h2>
+
+                            <p class="room-description">
+                                Connect evidence, detections and
+                                attack stages.
+                            </p>
+
+                        </div>
+
+                        <div
+                            id="board-status"
+                            class="room-status"
+                        >
+                            AWAITING CASE
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         ACTIVE CASE INDICATOR
+                         ================================================== -->
+
+                    <div class="station-board-case">
+
+                        <span>
+                            ACTIVE CASE
+                        </span>
+
+                        <strong id="station-selected-case">
+                            NO CASE SELECTED
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         INVESTIGATION BOARD
+                         ================================================== -->
+
+                    <div
+                        id="board-content"
+                        class="dashboard-card"
+                    >
+
+                        <div class="empty-state station-board-empty">
+
+                            <strong>
+                                NO CASE SELECTED
+                            </strong>
+
+                            <br>
+
+                            Select a case from Room 01 to begin
+                            the investigation.
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             INVESTIGATION PAGE
+             ================================================== -->
+
+        <section
+            id="investigation-page"
+            class="page"
+        >
+
+            <div class="investigation-section">
+
+                <!-- ==================================================
+                     CASE BANNER
+                     ================================================== -->
+
+                <section class="case-banner">
+
+                    <div class="case-banner-main">
+
+                        <span class="eyebrow">
+                            ACTIVE INVESTIGATION
+                        </span>
+
+                        <h1 id="active-case-title">
+                            Investigation
+                        </h1>
+
+                        <p id="active-case-description">
+                            Loading investigation...
+                        </p>
+
+                    </div>
+
+
+                    <div class="case-banner-meta">
+
+                        <div>
+
+                            <span>
+                                CASE
+                            </span>
+
+                            <strong id="active-case-id">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                STATUS
+                            </span>
+
+                            <strong id="active-case-status">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SEVERITY
+                            </span>
+
+                            <strong id="active-case-severity">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     INVESTIGATION TOOLBAR
+                     ================================================== -->
+
+                <div class="investigation-toolbar">
+
+                    <div class="toolbar-left">
+
+                        <button
+                            id="back-to-station"
+                            class="button secondary"
+                            type="button"
+                        >
+                            ← Back to Station
+                        </button>
+
+                    </div>
+
+
+                    <div class="toolbar-right">
+
+                        <button
+                            id="run-investigation"
+                            class="button primary"
+                            type="button"
+                        >
+                            Run Investigation
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     INVESTIGATION TABS
+                     ================================================== -->
+
+                <nav
+                    class="tabs"
+                    role="tablist"
+                >
+
+                    <button
+                        class="tab active"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        data-tab="case"
+                    >
+                        Case
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-tab="evidence"
+                    >
+                        Evidence
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-tab="timeline"
+                    >
+                        Timeline
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-tab="findings"
+                    >
+                        Findings
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-tab="attack-board"
+                    >
+                        Attack Board
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-tab="attack-story"
+                    >
+                        Attack Story
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-tab="mitre"
+                    >
+                        MITRE ATT&amp;CK
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-tab="report"
+                    >
+                        Report
+                    </button>
+
+                </nav>
+
+
+                <!-- ==================================================
+                     CASE TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-case"
+                    class="tab-content active"
+                    data-tab-content="case"
+                >
+
+                    <div
+                        id="case-summary"
+                        class="dashboard-card"
+                    >
+
+                        <div class="loading">
+                            Loading case summary...
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="risk-summary"
+                        class="dashboard-card"
+                    >
+
+                        <div class="loading">
+                            Loading risk assessment...
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="case-story-preview"
+                        class="dashboard-card"
+                    >
+
+                        <div class="loading">
+                            Loading investigation story...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     EVIDENCE TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-evidence"
+                    class="tab-content"
+                    data-tab-content="evidence"
+                >
+
+                    <div id="evidence-content">
+
+                        <div class="loading">
+                            Evidence room is waiting...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     TIMELINE TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-timeline"
+                    class="tab-content"
+                    data-tab-content="timeline"
+                >
+
+                    <div id="timeline-content">
+
+                        <div class="loading">
+                            Timeline is waiting...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     FINDINGS TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-findings"
+                    class="tab-content"
+                    data-tab-content="findings"
+                >
+
+                    <div id="findings-content">
+
+                        <div class="loading">
+                            Detection center is waiting...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     ATTACK BOARD TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-attack-board"
+                    class="tab-content"
+                    data-tab-content="attack-board"
+                >
+
+                    <div id="attack-board-content">
+
+                        <div class="loading">
+                            Investigation board is waiting...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     ATTACK STORY TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-attack-story"
+                    class="tab-content"
+                    data-tab-content="attack-story"
+                >
+
+                    <div id="attack-story-content">
+
+                        <div class="loading">
+                            Attack story is waiting...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     MITRE ATT&CK TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-mitre"
+                    class="tab-content"
+                    data-tab-content="mitre"
+                >
+
+                    <div id="mitre-content">
+
+                        <div class="loading">
+                            MITRE ATT&amp;CK mappings are waiting...
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     REPORT TAB
+                     ================================================== -->
+
+                <section
+                    id="tab-report"
+                    class="tab-content"
+                    data-tab-content="report"
+                >
+
+                    <div id="report-content">
+
+                        <div class="loading">
+                            Investigation report is waiting...
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+     ========================================================== -->
+
+<script src="/static/js/app.js"></script>
+
+<script src="/static/js/dashboard.js"></script>
+
+<script src="/static/js/detective.js"></script>
+
+<script src="/static/js/cases.js"></script>
+
+<script src="/static/js/evidence.js"></script>
+
+<script src="/static/js/timeline.js"></script>
+
+<script src="/static/js/board.js"></script>
+
+<script src="/static/js/findings.js"></script>
+
+<script src="/static/js/attack-story.js"></script>
+
+<script src="/static/js/mitre.js"></script>
+
+<script src="/static/js/report.js"></script>
+
+
+</body>
+</html>

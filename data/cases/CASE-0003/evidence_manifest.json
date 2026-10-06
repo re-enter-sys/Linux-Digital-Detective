@@ -1,0 +1,29 @@
+[
+    {
+        "filename": "auth.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0003/auth.log",
+        "size_bytes": 386,
+        "acquired_at": "2026-10-06T20:08:49.001518+00:00",
+        "stored_filename": "auth.log",
+        "sha256": "627f91385a6ed7ccccc730807140ae2b3bf46b9cba3a71e303e8ae44abe755a0",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "bash_history",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0003/bash_history",
+        "size_bytes": 55,
+        "acquired_at": "2026-10-06T20:08:49.167154+00:00",
+        "stored_filename": "bash_history",
+        "sha256": "8ce3a9255311a9088c0ac0ab5908ad5d62a2850cb8ac68f4c0992e3869774efe",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "sudo.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0003/sudo.log",
+        "size_bytes": 417,
+        "acquired_at": "2026-10-06T20:08:49.422984+00:00",
+        "stored_filename": "sudo.log",
+        "sha256": "264373c37dbe4a87ae043d0ddb8672bcfd57da85b5abaa5aad7b68e43d1e8b63",
+        "integrity": "VERIFIED"
+    }
+]

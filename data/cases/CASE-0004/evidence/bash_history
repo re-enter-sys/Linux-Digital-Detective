@@ -1,0 +1,5 @@
+crontab -l
+crontab -e
+echo "*/5 * * * * /tmp/update.sh" >> /var/spool/cron/crontabs/analyst
+chmod +x /tmp/update.sh
+./tmp/update.sh

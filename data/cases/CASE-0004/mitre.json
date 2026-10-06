@@ -1,0 +1,18 @@
+[
+    {
+        "technique_id": "T1053.003",
+        "name": "Cron",
+        "tactic": "Persistence",
+        "description": "Cron-based persistence activity was detected.",
+        "finding_ids": [
+            "PERSISTENCE-0001",
+            "PERSISTENCE-0002",
+            "PERSISTENCE-0003"
+        ],
+        "event_ids": [
+            "BASH-00001",
+            "BASH-00002",
+            "BASH-00003"
+        ]
+    }
+]

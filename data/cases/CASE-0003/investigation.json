@@ -1,0 +1,1567 @@
+{
+    "events": [
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T10:22:01+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "203.0.113.45",
+            "process": "10",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 10:22:01 server sshd[3101]: Accepted password for analyst from 203.0.113.45 port 43210 ssh2",
+            "metadata": {
+                "port": 43210,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T10:22:02+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "10",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 10:22:02 server sshd[3101]: pam_unix(sshd:session): session opened for user analyst",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "AUTH-00003",
+            "timestamp": "2026-10-06T10:25:44+00:00",
+            "source": "auth.log",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "10",
+            "pid": null,
+            "command": "/bin/bash",
+            "severity": "HIGH",
+            "raw": "Oct  6 10:25:44 server sudo: analyst : TTY=pts/1 ; PWD=/home/analyst ; USER=root ; COMMAND=/bin/bash",
+            "metadata": {
+                "tty": "pts/1",
+                "pwd": "/home/analyst",
+                "target_user": "root",
+                "privilege_change": true
+            }
+        },
+        {
+            "event_id": "SUDO-00001",
+            "timestamp": "2026-10-06T10:25:44+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "10",
+            "pid": null,
+            "command": "/bin/bash",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 10:25:44 server sudo: analyst : TTY=pts/1 ; PWD=/home/analyst ; USER=root ; COMMAND=/bin/bash",
+            "metadata": {
+                "tty": "pts/1",
+                "pwd": "/home/analyst",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "analyst->root"
+            }
+        },
+        {
+            "event_id": "AUTH-00004",
+            "timestamp": "2026-10-06T10:25:45+00:00",
+            "source": "auth.log",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "10",
+            "pid": null,
+            "command": "/usr/bin/id",
+            "severity": "HIGH",
+            "raw": "Oct  6 10:25:45 server sudo: analyst : TTY=pts/1 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/id",
+            "metadata": {
+                "tty": "pts/1",
+                "pwd": "/root",
+                "target_user": "root",
+                "privilege_change": true
+            }
+        },
+        {
+            "event_id": "SUDO-00002",
+            "timestamp": "2026-10-06T10:25:45+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "10",
+            "pid": null,
+            "command": "/usr/bin/id",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 10:25:45 server sudo: analyst : TTY=pts/1 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/id",
+            "metadata": {
+                "tty": "pts/1",
+                "pwd": "/root",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "analyst->root"
+            }
+        },
+        {
+            "event_id": "SUDO-00003",
+            "timestamp": "2026-10-06T10:26:03+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "10",
+            "pid": null,
+            "command": "/usr/bin/cat /etc/shadow",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 10:26:03 server sudo: analyst : TTY=pts/1 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow",
+            "metadata": {
+                "tty": "pts/1",
+                "pwd": "/root",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "analyst->root"
+            }
+        },
+        {
+            "event_id": "SUDO-00004",
+            "timestamp": "2026-10-06T10:26:11+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "10",
+            "pid": null,
+            "command": "/usr/bin/systemctl status ssh",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 10:26:11 server sudo: analyst : TTY=pts/1 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/systemctl status ssh",
+            "metadata": {
+                "tty": "pts/1",
+                "pwd": "/root",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "analyst->root"
+            }
+        },
+        {
+            "event_id": "BASH-00001",
+            "timestamp": "2026-10-06T20:08:57.003868+00:00",
+            "source": "bash_history",
+            "event_type": "SUDO_COMMAND",
+            "message": "Command executed through sudo",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "sudo -i",
+            "severity": "HIGH",
+            "raw": "sudo -i",
+            "metadata": {
+                "shell": "bash",
+                "classification": "SUDO_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00002",
+            "timestamp": "2026-10-06T20:08:57.003907+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "id",
+            "severity": "INFO",
+            "raw": "id",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00003",
+            "timestamp": "2026-10-06T20:08:57.003921+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "whoami",
+            "severity": "INFO",
+            "raw": "whoami",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00004",
+            "timestamp": "2026-10-06T20:08:57.003933+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/shadow",
+            "severity": "HIGH",
+            "raw": "cat /etc/shadow",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00005",
+            "timestamp": "2026-10-06T20:08:57.003944+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "systemctl status ssh",
+            "severity": "INFO",
+            "raw": "systemctl status ssh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        }
+    ],
+    "findings": [
+        {
+            "finding_id": "PRIV-ESC-0001",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "analyst",
+            "target_user": "root",
+            "command": "/bin/bash",
+            "source_ip": null,
+            "event_id": "AUTH-00003",
+            "timestamp": "2026-10-06T10:25:44+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "auth.log",
+                "tty": "pts/1",
+                "pwd": "/home/analyst",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0002",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "analyst",
+            "target_user": "root",
+            "command": "/bin/bash",
+            "source_ip": null,
+            "event_id": "SUDO-00001",
+            "timestamp": "2026-10-06T10:25:44+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/1",
+                "pwd": "/home/analyst",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0003",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "analyst",
+            "target_user": "root",
+            "command": "/usr/bin/id",
+            "source_ip": null,
+            "event_id": "AUTH-00004",
+            "timestamp": "2026-10-06T10:25:45+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "auth.log",
+                "tty": "pts/1",
+                "pwd": "/root",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0004",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "analyst",
+            "target_user": "root",
+            "command": "/usr/bin/id",
+            "source_ip": null,
+            "event_id": "SUDO-00002",
+            "timestamp": "2026-10-06T10:25:45+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/1",
+                "pwd": "/root",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0005",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "analyst",
+            "target_user": "root",
+            "command": "/usr/bin/cat /etc/shadow",
+            "source_ip": null,
+            "event_id": "SUDO-00003",
+            "timestamp": "2026-10-06T10:26:03+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/1",
+                "pwd": "/root",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0006",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "analyst",
+            "target_user": "root",
+            "command": "/usr/bin/systemctl status ssh",
+            "source_ip": null,
+            "event_id": "SUDO-00004",
+            "timestamp": "2026-10-06T10:26:11+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/1",
+                "pwd": "/root",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0001",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow",
+            "severity": "HIGH",
+            "username": "analyst",
+            "command": "/usr/bin/cat /etc/shadow",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "SUDO-00003",
+            "timestamp": "2026-10-06T10:26:03+00:00",
+            "indicators": [
+                "/etc/shadow",
+                "shadow"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "sudo",
+                "original_event_type": "SUDO_COMMAND",
+                "sudo_context": true
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0002",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+            "severity": "HIGH",
+            "username": null,
+            "command": "cat /etc/shadow",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "BASH-00004",
+            "timestamp": "2026-10-06T20:08:57.003933+00:00",
+            "indicators": [
+                "/etc/shadow",
+                "shadow"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "bash_history",
+                "original_event_type": "CREDENTIAL_ACCESS",
+                "sudo_context": false
+            }
+        }
+    ],
+    "attack_chains": [
+        {
+            "chain_id": "CHAIN-0001",
+            "title": "Cross-Evidence Linux Attack Chain",
+            "summary": "Reconstructed attack sequence: Privilege Escalation → Credential Access. The activity involved analyst, root and unidentified source(s). 7 finding(s) were correlated. 3 correlation signal(s) support the reconstructed sequence.",
+            "severity": "CRITICAL",
+            "confidence": 83,
+            "start_time": "2026-10-06T10:25:44+00:00",
+            "end_time": "2026-10-06T10:26:11+00:00",
+            "source_ips": [],
+            "usernames": [
+                "analyst",
+                "root"
+            ],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0001-STEP-01",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T10:25:44+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "AUTH-00003"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0001"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "auth.log"
+                        ],
+                        "usernames": [
+                            "analyst",
+                            "root"
+                        ],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-02",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T10:25:44+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00001"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0002"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ],
+                        "usernames": [
+                            "analyst",
+                            "root"
+                        ],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-03",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T10:25:45+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "AUTH-00004"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0003"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "auth.log"
+                        ],
+                        "usernames": [
+                            "analyst",
+                            "root"
+                        ],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-04",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T10:25:45+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00002"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0004"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ],
+                        "usernames": [
+                            "analyst",
+                            "root"
+                        ],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-05",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T10:26:03+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00003"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0005"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ],
+                        "usernames": [
+                            "analyst",
+                            "root"
+                        ],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-06",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow",
+                    "timestamp": "2026-10-06T10:26:03+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "SUDO-00003"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0001"
+                    ],
+                    "indicators": [
+                        "/etc/shadow",
+                        "shadow"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ],
+                        "usernames": [
+                            "analyst"
+                        ],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-07",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T10:26:11+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00004"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0006"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ],
+                        "usernames": [
+                            "analyst",
+                            "root"
+                        ],
+                        "source_ips": []
+                    }
+                }
+            ],
+            "finding_ids": [
+                "PRIV-ESC-0001",
+                "PRIV-ESC-0002",
+                "PRIV-ESC-0003",
+                "PRIV-ESC-0004",
+                "PRIV-ESC-0005",
+                "SUSPICIOUS-CMD-0001",
+                "PRIV-ESC-0006"
+            ],
+            "event_ids": [
+                "AUTH-00003",
+                "SUDO-00001",
+                "AUTH-00004",
+                "SUDO-00002",
+                "SUDO-00003",
+                "SUDO-00004"
+            ],
+            "metadata": {
+                "stages": [
+                    "PRIVILEGE_ESCALATION",
+                    "CREDENTIAL_ACCESS"
+                ],
+                "stage_count": 2,
+                "finding_count": 7,
+                "event_count": 6,
+                "evidence_sources": [
+                    "auth.log",
+                    "sudo"
+                ],
+                "cross_evidence": true,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [
+                    {
+                        "type": "CROSS_EVIDENCE",
+                        "reason": "The attack sequence is represented across multiple forensic evidence sources.",
+                        "sources": [
+                            "auth.log",
+                            "sudo"
+                        ],
+                        "confidence": 90
+                    },
+                    {
+                        "type": "IDENTITY_CORRELATION",
+                        "reason": "Multiple findings are associated with the same user identity.",
+                        "users": [
+                            "analyst",
+                            "root"
+                        ],
+                        "confidence": 90
+                    },
+                    {
+                        "type": "TEMPORAL_CORRELATION",
+                        "reason": "Related findings occurred within the configured investigation window.",
+                        "duration_seconds": 27.0,
+                        "confidence": 80
+                    }
+                ],
+                "attack_sequence": [
+                    {
+                        "order": 1,
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "finding_ids": [
+                            "PRIV-ESC-0001"
+                        ],
+                        "event_ids": [
+                            "AUTH-00003"
+                        ]
+                    },
+                    {
+                        "order": 2,
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "finding_ids": [
+                            "PRIV-ESC-0002"
+                        ],
+                        "event_ids": [
+                            "SUDO-00001"
+                        ]
+                    },
+                    {
+                        "order": 3,
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "finding_ids": [
+                            "PRIV-ESC-0003"
+                        ],
+                        "event_ids": [
+                            "AUTH-00004"
+                        ]
+                    },
+                    {
+                        "order": 4,
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "finding_ids": [
+                            "PRIV-ESC-0004"
+                        ],
+                        "event_ids": [
+                            "SUDO-00002"
+                        ]
+                    },
+                    {
+                        "order": 5,
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "finding_ids": [
+                            "PRIV-ESC-0005"
+                        ],
+                        "event_ids": [
+                            "SUDO-00003"
+                        ]
+                    },
+                    {
+                        "order": 6,
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0001"
+                        ],
+                        "event_ids": [
+                            "SUDO-00003"
+                        ]
+                    },
+                    {
+                        "order": 7,
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "finding_ids": [
+                            "PRIV-ESC-0006"
+                        ],
+                        "event_ids": [
+                            "SUDO-00004"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "chain_id": "CHAIN-0002",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Reconstructed attack sequence: Credential Access. The activity involved unidentified account(s) and unidentified source(s). 1 finding(s) were correlated.",
+            "severity": "HIGH",
+            "confidence": 47,
+            "start_time": "2026-10-06T20:08:57.003933+00:00",
+            "end_time": "2026-10-06T20:08:57.003933+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0002-STEP-01",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+                    "timestamp": "2026-10-06T20:08:57.003933+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00004"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0002"
+                    ],
+                    "indicators": [
+                        "/etc/shadow",
+                        "shadow"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0002"
+            ],
+            "event_ids": [
+                "BASH-00004"
+            ],
+            "metadata": {
+                "stages": [
+                    "CREDENTIAL_ACCESS"
+                ],
+                "stage_count": 1,
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [],
+                "attack_sequence": [
+                    {
+                        "order": 1,
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0002"
+                        ],
+                        "event_ids": [
+                            "BASH-00004"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "risk_score": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "confidence": 100,
+        "factors": [
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0001",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0002",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0003",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0004",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0005",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0006",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0002",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "attack_chain",
+                "chain_id": "CHAIN-0001",
+                "reason": "multi-stage attack chain",
+                "points": 15
+            }
+        ]
+    },
+    "mitre": [
+        {
+            "technique_id": "T1548.003",
+            "name": "Sudo and Sudo Caching",
+            "tactic": "Privilege Escalation",
+            "description": "Sudo was used to execute a command with higher local privileges.",
+            "finding_ids": [
+                "PRIV-ESC-0001",
+                "PRIV-ESC-0002",
+                "PRIV-ESC-0003",
+                "PRIV-ESC-0004",
+                "PRIV-ESC-0005",
+                "PRIV-ESC-0006"
+            ],
+            "event_ids": [
+                "AUTH-00003",
+                "SUDO-00001",
+                "AUTH-00004",
+                "SUDO-00002",
+                "SUDO-00003",
+                "SUDO-00004"
+            ]
+        },
+        {
+            "technique_id": "T1003",
+            "name": "OS Credential Dumping",
+            "tactic": "Credential Access",
+            "description": "Credential-related system files or artifacts were accessed.",
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0001",
+                "SUSPICIOUS-CMD-0002"
+            ],
+            "event_ids": [
+                "SUDO-00003",
+                "BASH-00004"
+            ]
+        }
+    ],
+    "attack_story": {
+        "title": "Linux Digital Detective Investigation",
+        "narrative": [
+            "A privilege transition was detected through sudo execution. This indicates that the authenticated account obtained higher local privileges and requires investigation. Observed command(s): /bin/bash; /usr/bin/id; /usr/bin/cat /etc/shadow; /usr/bin/systemctl status ssh.",
+            "Credential-access behavior was observed, indicating possible attempts to obtain or inspect authentication material."
+        ],
+        "conclusion": "The available evidence contains a privilege transition that requires investigation. Observed user=analyst, root. Overall assessed risk is CRITICAL (100/100).",
+        "risk_score": {
+            "score": 100,
+            "severity": "CRITICAL",
+            "confidence": 100,
+            "factors": [
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0001",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0002",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0003",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0004",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0005",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0006",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0002",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "attack_chain",
+                    "chain_id": "CHAIN-0001",
+                    "reason": "multi-stage attack chain",
+                    "points": 15
+                }
+            ]
+        },
+        "attack_chains": [
+            {
+                "chain_id": "CHAIN-0001",
+                "title": "Cross-Evidence Linux Attack Chain",
+                "summary": "Reconstructed attack sequence: Privilege Escalation → Credential Access. The activity involved analyst, root and unidentified source(s). 7 finding(s) were correlated. 3 correlation signal(s) support the reconstructed sequence.",
+                "severity": "CRITICAL",
+                "confidence": 83,
+                "start_time": "2026-10-06T10:25:44+00:00",
+                "end_time": "2026-10-06T10:26:11+00:00",
+                "source_ips": [],
+                "usernames": [
+                    "analyst",
+                    "root"
+                ],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0001-STEP-01",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T10:25:44+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "AUTH-00003"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0001"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "auth.log"
+                            ],
+                            "usernames": [
+                                "analyst",
+                                "root"
+                            ],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-02",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T10:25:44+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00001"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0002"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ],
+                            "usernames": [
+                                "analyst",
+                                "root"
+                            ],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-03",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T10:25:45+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "AUTH-00004"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0003"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "auth.log"
+                            ],
+                            "usernames": [
+                                "analyst",
+                                "root"
+                            ],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-04",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T10:25:45+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00002"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0004"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ],
+                            "usernames": [
+                                "analyst",
+                                "root"
+                            ],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-05",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T10:26:03+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00003"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0005"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ],
+                            "usernames": [
+                                "analyst",
+                                "root"
+                            ],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-06",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow",
+                        "timestamp": "2026-10-06T10:26:03+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "SUDO-00003"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0001"
+                        ],
+                        "indicators": [
+                            "/etc/shadow",
+                            "shadow"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ],
+                            "usernames": [
+                                "analyst"
+                            ],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-07",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User analyst executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T10:26:11+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00004"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0006"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ],
+                            "usernames": [
+                                "analyst",
+                                "root"
+                            ],
+                            "source_ips": []
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "PRIV-ESC-0001",
+                    "PRIV-ESC-0002",
+                    "PRIV-ESC-0003",
+                    "PRIV-ESC-0004",
+                    "PRIV-ESC-0005",
+                    "SUSPICIOUS-CMD-0001",
+                    "PRIV-ESC-0006"
+                ],
+                "event_ids": [
+                    "AUTH-00003",
+                    "SUDO-00001",
+                    "AUTH-00004",
+                    "SUDO-00002",
+                    "SUDO-00003",
+                    "SUDO-00004"
+                ],
+                "metadata": {
+                    "stages": [
+                        "PRIVILEGE_ESCALATION",
+                        "CREDENTIAL_ACCESS"
+                    ],
+                    "stage_count": 2,
+                    "finding_count": 7,
+                    "event_count": 6,
+                    "evidence_sources": [
+                        "auth.log",
+                        "sudo"
+                    ],
+                    "cross_evidence": true,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [
+                        {
+                            "type": "CROSS_EVIDENCE",
+                            "reason": "The attack sequence is represented across multiple forensic evidence sources.",
+                            "sources": [
+                                "auth.log",
+                                "sudo"
+                            ],
+                            "confidence": 90
+                        },
+                        {
+                            "type": "IDENTITY_CORRELATION",
+                            "reason": "Multiple findings are associated with the same user identity.",
+                            "users": [
+                                "analyst",
+                                "root"
+                            ],
+                            "confidence": 90
+                        },
+                        {
+                            "type": "TEMPORAL_CORRELATION",
+                            "reason": "Related findings occurred within the configured investigation window.",
+                            "duration_seconds": 27.0,
+                            "confidence": 80
+                        }
+                    ],
+                    "attack_sequence": [
+                        {
+                            "order": 1,
+                            "stage": "PRIVILEGE_ESCALATION",
+                            "title": "Potential Privilege Escalation Detected",
+                            "finding_ids": [
+                                "PRIV-ESC-0001"
+                            ],
+                            "event_ids": [
+                                "AUTH-00003"
+                            ]
+                        },
+                        {
+                            "order": 2,
+                            "stage": "PRIVILEGE_ESCALATION",
+                            "title": "Potential Privilege Escalation Detected",
+                            "finding_ids": [
+                                "PRIV-ESC-0002"
+                            ],
+                            "event_ids": [
+                                "SUDO-00001"
+                            ]
+                        },
+                        {
+                            "order": 3,
+                            "stage": "PRIVILEGE_ESCALATION",
+                            "title": "Potential Privilege Escalation Detected",
+                            "finding_ids": [
+                                "PRIV-ESC-0003"
+                            ],
+                            "event_ids": [
+                                "AUTH-00004"
+                            ]
+                        },
+                        {
+                            "order": 4,
+                            "stage": "PRIVILEGE_ESCALATION",
+                            "title": "Potential Privilege Escalation Detected",
+                            "finding_ids": [
+                                "PRIV-ESC-0004"
+                            ],
+                            "event_ids": [
+                                "SUDO-00002"
+                            ]
+                        },
+                        {
+                            "order": 5,
+                            "stage": "PRIVILEGE_ESCALATION",
+                            "title": "Potential Privilege Escalation Detected",
+                            "finding_ids": [
+                                "PRIV-ESC-0005"
+                            ],
+                            "event_ids": [
+                                "SUDO-00003"
+                            ]
+                        },
+                        {
+                            "order": 6,
+                            "stage": "CREDENTIAL_ACCESS",
+                            "title": "Potential Credential or SSH Key Access",
+                            "finding_ids": [
+                                "SUSPICIOUS-CMD-0001"
+                            ],
+                            "event_ids": [
+                                "SUDO-00003"
+                            ]
+                        },
+                        {
+                            "order": 7,
+                            "stage": "PRIVILEGE_ESCALATION",
+                            "title": "Potential Privilege Escalation Detected",
+                            "finding_ids": [
+                                "PRIV-ESC-0006"
+                            ],
+                            "event_ids": [
+                                "SUDO-00004"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "chain_id": "CHAIN-0002",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Reconstructed attack sequence: Credential Access. The activity involved unidentified account(s) and unidentified source(s). 1 finding(s) were correlated.",
+                "severity": "HIGH",
+                "confidence": 47,
+                "start_time": "2026-10-06T20:08:57.003933+00:00",
+                "end_time": "2026-10-06T20:08:57.003933+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0002-STEP-01",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+                        "timestamp": "2026-10-06T20:08:57.003933+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00004"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0002"
+                        ],
+                        "indicators": [
+                            "/etc/shadow",
+                            "shadow"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0002"
+                ],
+                "event_ids": [
+                    "BASH-00004"
+                ],
+                "metadata": {
+                    "stages": [
+                        "CREDENTIAL_ACCESS"
+                    ],
+                    "stage_count": 1,
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [],
+                    "attack_sequence": [
+                        {
+                            "order": 1,
+                            "stage": "CREDENTIAL_ACCESS",
+                            "title": "Potential Credential or SSH Key Access",
+                            "finding_ids": [
+                                "SUSPICIOUS-CMD-0002"
+                            ],
+                            "event_ids": [
+                                "BASH-00004"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "mitre_techniques": [
+            {
+                "technique_id": "T1548.003",
+                "name": "Sudo and Sudo Caching",
+                "tactic": "Privilege Escalation",
+                "description": "Sudo was used to execute a command with higher local privileges.",
+                "finding_ids": [
+                    "PRIV-ESC-0001",
+                    "PRIV-ESC-0002",
+                    "PRIV-ESC-0003",
+                    "PRIV-ESC-0004",
+                    "PRIV-ESC-0005",
+                    "PRIV-ESC-0006"
+                ],
+                "event_ids": [
+                    "AUTH-00003",
+                    "SUDO-00001",
+                    "AUTH-00004",
+                    "SUDO-00002",
+                    "SUDO-00003",
+                    "SUDO-00004"
+                ]
+            },
+            {
+                "technique_id": "T1003",
+                "name": "OS Credential Dumping",
+                "tactic": "Credential Access",
+                "description": "Credential-related system files or artifacts were accessed.",
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0001",
+                    "SUSPICIOUS-CMD-0002"
+                ],
+                "event_ids": [
+                    "SUDO-00003",
+                    "BASH-00004"
+                ]
+            }
+        ],
+        "attack_path": [
+            "Privilege Escalation",
+            "Credential Access"
+        ],
+        "source_ips": [],
+        "usernames": [
+            "analyst",
+            "root"
+        ],
+        "finding_count": 8,
+        "chain_count": 2,
+        "highest_finding_severity": "CRITICAL",
+        "confidence": 100
+    }
+}

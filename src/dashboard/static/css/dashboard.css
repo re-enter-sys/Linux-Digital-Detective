@@ -1,0 +1,230 @@
+
+/* ============================================================
+   STATION INVESTIGATION ROOMS
+   Theme-safe additions only
+   ============================================================ */
+
+.station-evidence-panel {
+    min-height: 180px;
+}
+
+.station-evidence-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.station-evidence-summary > div {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: var(--panel-soft);
+}
+
+.station-evidence-summary span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 10px;
+    letter-spacing: .08em;
+}
+
+.station-evidence-summary strong {
+    color: var(--text);
+    font-size: 16px;
+}
+
+.station-evidence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.station-evidence-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: var(--panel-soft);
+}
+
+.station-evidence-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 30px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-small);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.station-evidence-main {
+    min-width: 0;
+    flex: 1;
+}
+
+.station-evidence-main strong {
+    display: block;
+    overflow: hidden;
+    color: var(--text);
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.station-evidence-main span {
+    display: block;
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.station-evidence-more {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+.station-board-case {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.station-board-case span {
+    color: var(--text-muted);
+    font-size: 10px;
+    letter-spacing: .08em;
+}
+
+.station-board-case strong {
+    color: var(--green);
+    font-size: 12px;
+}
+
+.station-board-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.station-board-header h3 {
+    margin: 5px 0 4px;
+    color: var(--text);
+    font-size: 18px;
+}
+
+.station-board-header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.station-board-severity {
+    min-width: 90px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: var(--panel-soft);
+    text-align: right;
+}
+
+.station-board-severity span {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+    font-size: 9px;
+    letter-spacing: .08em;
+}
+
+.station-board-severity strong {
+    color: var(--orange);
+    font-size: 11px;
+}
+
+.station-board-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.station-board-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+    background: var(--panel-soft);
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.station-board-status strong {
+    color: var(--text);
+}
+
+.station-board-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+#open-full-investigation {
+    cursor: pointer;
+}
+
+.station-board-empty {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+
+    .station-evidence-summary,
+    .station-board-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .station-board-header {
+        flex-direction: column;
+    }
+
+    .station-board-severity {
+        width: 100%;
+        text-align: left;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .station-evidence-summary,
+    .station-board-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .station-board-status {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}

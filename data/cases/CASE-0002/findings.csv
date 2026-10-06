@@ -1,0 +1,3 @@
+finding_id,event_type,category,title,severity,description,username,source_ip,destination_ip,destination_port,command,event_id,timestamp
+BRUTE-FORCE-0001,SSH_BRUTE_FORCE,,SSH Brute-Force Activity Detected,HIGH,4 failed SSH authentication attempts were detected from 198.51.100.24 against user analyst within 300 seconds.,analyst,198.51.100.24,,,,,
+BRUTE-FORCE-SUCCESS-0001,SSH_BRUTE_FORCE_SUCCESS,,Successful SSH Login After Brute-Force Activity,CRITICAL,4 failed SSH authentication attempts from 198.51.100.24 against user analyst were followed by a successful SSH authentication.,analyst,198.51.100.24,,,,,

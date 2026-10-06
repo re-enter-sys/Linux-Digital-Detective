@@ -1,0 +1,3 @@
+Oct  6 09:14:15 server sshd[2105]: pam_unix(sshd:session): session opened for user analyst
+Oct  6 09:15:02 server systemd[1]: Started User Manager for UID 1001.
+Oct  6 09:16:30 server kernel: audit: SSH authentication activity observed

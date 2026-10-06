@@ -1,0 +1,184 @@
+{
+    "events": [
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T11:40:01+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "192.0.2.55",
+            "process": "11",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 11:40:01 server sshd[4101]: Accepted password for analyst from 192.0.2.55 port 44500 ssh2",
+            "metadata": {
+                "port": 44500,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T11:40:02+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "11",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 11:40:02 server sshd[4101]: pam_unix(sshd:session): session opened for user analyst",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T11:42:01+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "11",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 11:42:01 server cron[4105]: (analyst) CMD (/tmp/update.sh)",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T11:47:01+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "11",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 11:47:01 server cron[4106]: (analyst) CMD (/tmp/update.sh)",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00003",
+            "timestamp": "2026-10-06T11:52:01+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "11",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 11:52:01 server cron[4107]: (analyst) CMD (/tmp/update.sh)",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "BASH-00001",
+            "timestamp": "2026-10-06T20:08:57.229769+00:00",
+            "source": "bash_history",
+            "event_type": "PERSISTENCE",
+            "message": "Potential persistence-related command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "crontab -l",
+            "severity": "HIGH",
+            "raw": "crontab -l",
+            "metadata": {
+                "shell": "bash",
+                "classification": "PERSISTENCE"
+            }
+        },
+        {
+            "event_id": "BASH-00002",
+            "timestamp": "2026-10-06T20:08:57.229861+00:00",
+            "source": "bash_history",
+            "event_type": "PERSISTENCE",
+            "message": "Potential persistence-related command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "crontab -e",
+            "severity": "HIGH",
+            "raw": "crontab -e",
+            "metadata": {
+                "shell": "bash",
+                "classification": "PERSISTENCE"
+            }
+        },
+        {
+            "event_id": "BASH-00003",
+            "timestamp": "2026-10-06T20:08:57.229887+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "echo \"*/5 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/analyst",
+            "severity": "INFO",
+            "raw": "echo \"*/5 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/analyst",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00004",
+            "timestamp": "2026-10-06T20:08:57.230030+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "chmod +x /tmp/update.sh",
+            "severity": "INFO",
+            "raw": "chmod +x /tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00005",
+            "timestamp": "2026-10-06T20:08:57.230068+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "./tmp/update.sh",
+            "severity": "INFO",
+            "raw": "./tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        }
+    ]
+}

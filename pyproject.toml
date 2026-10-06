@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linux-digital-detective"
+version = "1.0.0"
+description = "Linux Digital Detective - Turn scattered Linux evidence into an attack timeline."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.0",
+]
+
+[tool.setuptools]
+packages = [
+    "src",
+    "src.cases",
+    "src.evidence",
+    "src.parsers",
+    "src.timeline",
+    "src.detection",
+    "src.investigation",
+    "src.reporting",
+    "src.dashboard",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]
+testpaths = [
+    "tests"
+]
+addopts = "-ra"
+
+[tool.setuptools.package-data]
+"src.dashboard" = [
+    "static/**/*",
+    "templates/**/*"
+]

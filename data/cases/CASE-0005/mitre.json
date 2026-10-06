@@ -1,0 +1,67 @@
+[
+    {
+        "technique_id": "T1003",
+        "name": "OS Credential Dumping",
+        "tactic": "Credential Access",
+        "description": "Credential-related system files or artifacts were accessed.",
+        "finding_ids": [
+            "SUSPICIOUS-CMD-0001",
+            "SUSPICIOUS-CMD-0002"
+        ],
+        "event_ids": [
+            "BASH-00003",
+            "BASH-00004"
+        ]
+    },
+    {
+        "technique_id": "T1105",
+        "name": "Ingress Tool Transfer",
+        "tactic": "Command and Control",
+        "description": "Content was retrieved from a remote location.",
+        "finding_ids": [
+            "SUSPICIOUS-CMD-0005",
+            "NETWORK-ACTIVITY-0003"
+        ],
+        "event_ids": [
+            "BASH-00007"
+        ]
+    },
+    {
+        "technique_id": "T1053.003",
+        "name": "Cron",
+        "tactic": "Persistence",
+        "description": "Cron-based persistence activity was detected.",
+        "finding_ids": [
+            "PERSISTENCE-0001",
+            "PERSISTENCE-0002"
+        ],
+        "event_ids": [
+            "BASH-00009",
+            "BASH-00010"
+        ]
+    },
+    {
+        "technique_id": "T1046",
+        "name": "Network Service Scanning",
+        "tactic": "Discovery",
+        "description": "Network services were enumerated.",
+        "finding_ids": [
+            "NETWORK-ACTIVITY-0001"
+        ],
+        "event_ids": [
+            "BASH-00005"
+        ]
+    },
+    {
+        "technique_id": "T1049",
+        "name": "System Network Connections Discovery",
+        "tactic": "Discovery",
+        "description": "Active network connections were enumerated.",
+        "finding_ids": [
+            "NETWORK-ACTIVITY-0002"
+        ],
+        "event_ids": [
+            "BASH-00006"
+        ]
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "technique_id": "T1110.001",
+        "name": "Password Guessing",
+        "tactic": "Credential Access",
+        "description": "Repeated authentication attempts against an SSH account are consistent with password guessing.",
+        "finding_ids": [
+            "BRUTE-FORCE-0001",
+            "BRUTE-FORCE-SUCCESS-0001"
+        ],
+        "event_ids": [
+            "SSH-00001",
+            "SSH-00002",
+            "SSH-00003",
+            "SSH-00004",
+            "SSH-00005",
+            "SSH-00006"
+        ]
+    }
+]

@@ -1,0 +1,11 @@
+{
+    "case_id": "CASE-0001",
+    "title": "SSH Compromise Investigation",
+    "description": "Possible unauthorized SSH access followed by privilege escalation.",
+    "status": "NEW",
+    "severity": "HIGH",
+    "created_at": "2026-10-06T15:36:04.635509+00:00",
+    "updated_at": "2026-10-06T15:36:04.635509+00:00",
+    "investigator": "Linux Digital Detective",
+    "closed_at": null
+}

@@ -1,0 +1,47 @@
+[
+    {
+        "filename": "auth.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0006/auth.log",
+        "size_bytes": 408,
+        "acquired_at": "2026-10-06T20:08:50.892116+00:00",
+        "stored_filename": "auth.log",
+        "sha256": "54f638438198e423693f032a8547e64cf6f91aa0793be4d1360a5d618269a28b",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "bash_history",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0006/bash_history",
+        "size_bytes": 164,
+        "acquired_at": "2026-10-06T20:08:51.112483+00:00",
+        "stored_filename": "bash_history",
+        "sha256": "cb59837fd6d1b07774780f563328b58e6310f48f46762789ff8cabf9cc2002ac",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "ssh.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0006/ssh.log",
+        "size_bytes": 408,
+        "acquired_at": "2026-10-06T20:08:51.292107+00:00",
+        "stored_filename": "ssh.log",
+        "sha256": "54f638438198e423693f032a8547e64cf6f91aa0793be4d1360a5d618269a28b",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "sudo.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0006/sudo.log",
+        "size_bytes": 304,
+        "acquired_at": "2026-10-06T20:08:51.490408+00:00",
+        "stored_filename": "sudo.log",
+        "sha256": "ba776afd674684a37b60f2d1afbefb0f8d0f03baf2c086282f0aa73c89052674",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "syslog",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0006/syslog",
+        "size_bytes": 189,
+        "acquired_at": "2026-10-06T20:08:51.681298+00:00",
+        "stored_filename": "syslog",
+        "sha256": "ef661380f38b92ceffcc2e93b5140f6959541aea312ca4b945b8e864a766a7d8",
+        "integrity": "VERIFIED"
+    }
+]

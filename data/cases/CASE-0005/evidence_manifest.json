@@ -1,0 +1,38 @@
+[
+    {
+        "filename": "access.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0005/access.log",
+        "size_bytes": 487,
+        "acquired_at": "2026-10-06T20:08:50.270150+00:00",
+        "stored_filename": "access.log",
+        "sha256": "81b2edd21ad0fbdb64d5ca9b74fae45e08f226d30202dc8b881e459606893161",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "auth.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0005/auth.log",
+        "size_bytes": 193,
+        "acquired_at": "2026-10-06T20:08:50.489958+00:00",
+        "stored_filename": "auth.log",
+        "sha256": "3952a56e67e2fc6bb70f7d42ffda8772b92d473caca7aeaeea34e30f74f9ae71",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "syslog",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0005/syslog",
+        "size_bytes": 134,
+        "acquired_at": "2026-10-06T20:08:50.683889+00:00",
+        "stored_filename": "syslog",
+        "sha256": "6c797ca3b4fc53aa2ce76253c6b30ad72f75aba42dba48b8884fa5d8fd9b075d",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "CASE-0005-command-history.log",
+        "original_path": "/tmp/ldd_demo_fix/CASE-0005-command-history.log",
+        "size_bytes": 234,
+        "acquired_at": "2026-10-06T20:12:53.910312+00:00",
+        "stored_filename": "CASE-0005-command-history.log",
+        "sha256": "26a1fe0f96eb3e2056dc183070932b49eb7f1ad097caf8b0be9f27dec4f4c514",
+        "integrity": "VERIFIED"
+    }
+]

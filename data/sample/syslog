@@ -1,0 +1,8 @@
+Oct  6 15:41:05 server systemd[1]: Started OpenSSH server daemon.
+Oct  6 15:41:08 server kernel: Network interface event detected.
+Oct  6 15:41:12 server sshd[2201]: Authentication failure threshold reached.
+Oct  6 15:41:21 server sshd[2201]: Accepted password authentication for admin.
+Oct  6 15:41:24 server sudo[2230]: admin executed privileged command.
+Oct  6 15:41:26 server kernel: Audit event recorded for sensitive file access.
+Oct  6 15:41:30 server systemd[1]: Started suspicious-monitor.service.
+Oct  6 15:41:35 server systemd[1]: Network connection established.

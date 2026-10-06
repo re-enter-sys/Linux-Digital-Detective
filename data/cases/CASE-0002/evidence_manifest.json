@@ -1,0 +1,38 @@
+[
+    {
+        "filename": "auth.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0002/auth.log",
+        "size_bytes": 521,
+        "acquired_at": "2026-10-06T20:08:48.438285+00:00",
+        "stored_filename": "auth.log",
+        "sha256": "a2828e8a8f285b41875bdb54641e779be53bdd6f3c167d58f0a4f1426a57c7b5",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "ssh.log",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0002/ssh.log",
+        "size_bytes": 521,
+        "acquired_at": "2026-10-06T20:08:48.641030+00:00",
+        "stored_filename": "ssh.log",
+        "sha256": "a2828e8a8f285b41875bdb54641e779be53bdd6f3c167d58f0a4f1426a57c7b5",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "syslog",
+        "original_path": "/tmp/ldd_demo_cases/CASE-0002/syslog",
+        "size_bytes": 236,
+        "acquired_at": "2026-10-06T20:08:48.811809+00:00",
+        "stored_filename": "syslog",
+        "sha256": "2db7ec3bebd6aac46ed95ded3648b731e68338fdbff220826fece9f60fc184e1",
+        "integrity": "VERIFIED"
+    },
+    {
+        "filename": "CASE-0002-ssh-followup.log",
+        "original_path": "/tmp/ldd_demo_fix/CASE-0002-ssh-followup.log",
+        "size_bytes": 583,
+        "acquired_at": "2026-10-06T20:12:53.724794+00:00",
+        "stored_filename": "CASE-0002-ssh-followup.log",
+        "sha256": "09647554d0b6fc81c7b44b130be2feba75285a9dd9f8517584b77104930ef922",
+        "integrity": "VERIFIED"
+    }
+]

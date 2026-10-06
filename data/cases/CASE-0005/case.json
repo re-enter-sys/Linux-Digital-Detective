@@ -1,0 +1,11 @@
+{
+    "case_id": "CASE-0005",
+    "title": "Web Server Compromise",
+    "description": "Investigation into suspicious HTTP activity and possible exploitation of a Linux web server.",
+    "status": "NEW",
+    "severity": "HIGH",
+    "created_at": "2026-10-06T20:05:07.817000+00:00",
+    "updated_at": "2026-10-06T20:05:07.817000+00:00",
+    "investigator": "Linux Digital Detective",
+    "closed_at": null
+}

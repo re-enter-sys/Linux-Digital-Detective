@@ -1,0 +1,106 @@
+[
+    {
+        "technique_id": "T1110.001",
+        "name": "Password Guessing",
+        "tactic": "Credential Access",
+        "description": "Repeated authentication attempts against an SSH account are consistent with password guessing.",
+        "finding_ids": [
+            "BRUTE-FORCE-0001",
+            "BRUTE-FORCE-SUCCESS-0001"
+        ],
+        "event_ids": [
+            "AUTH-00001",
+            "AUTH-00002",
+            "AUTH-00003",
+            "AUTH-00004",
+            "AUTH-00005",
+            "AUTH-00006"
+        ]
+    },
+    {
+        "technique_id": "T1548.003",
+        "name": "Sudo and Sudo Caching",
+        "tactic": "Privilege Escalation",
+        "description": "Sudo was used to execute a command with higher local privileges.",
+        "finding_ids": [
+            "PRIV-ESC-0001",
+            "PRIV-ESC-0002",
+            "PRIV-ESC-0003",
+            "PRIV-ESC-0004",
+            "PRIV-ESC-0005"
+        ],
+        "event_ids": [
+            "SUDO-00001",
+            "SUDO-00002",
+            "SUDO-00003",
+            "SUDO-00004",
+            "AUTH-00007"
+        ]
+    },
+    {
+        "technique_id": "T1003",
+        "name": "OS Credential Dumping",
+        "tactic": "Credential Access",
+        "description": "Credential-related system files or artifacts were accessed.",
+        "finding_ids": [
+            "SUSPICIOUS-CMD-0001",
+            "SUSPICIOUS-CMD-0002",
+            "SUSPICIOUS-CMD-0006",
+            "SUSPICIOUS-CMD-0007"
+        ],
+        "event_ids": [
+            "BASH-00004",
+            "BASH-00005",
+            "BASH-00009",
+            "SUDO-00002"
+        ]
+    },
+    {
+        "technique_id": "T1105",
+        "name": "Ingress Tool Transfer",
+        "tactic": "Command and Control",
+        "description": "Content was retrieved from a remote location.",
+        "finding_ids": [
+            "SUSPICIOUS-CMD-0005"
+        ],
+        "event_ids": [
+            "BASH-00008"
+        ]
+    },
+    {
+        "technique_id": "T1098.004",
+        "name": "SSH Authorized Keys",
+        "tactic": "Persistence",
+        "description": "SSH authorized keys were modified.",
+        "finding_ids": [
+            "PERSISTENCE-0001"
+        ],
+        "event_ids": [
+            "BASH-00009"
+        ]
+    },
+    {
+        "technique_id": "T1049",
+        "name": "System Network Connections Discovery",
+        "tactic": "Discovery",
+        "description": "Active network connections were enumerated.",
+        "finding_ids": [
+            "NETWORK-ACTIVITY-0001"
+        ],
+        "event_ids": [
+            "BASH-00006"
+        ]
+    },
+    {
+        "technique_id": "T1046",
+        "name": "Network Service Scanning",
+        "tactic": "Discovery",
+        "description": "Network services were enumerated.",
+        "finding_ids": [
+            "NETWORK-ACTIVITY-0002"
+        ],
+        "event_ids": [
+            "BASH-00007"
+        ]
+    }
+]
